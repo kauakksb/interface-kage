@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/login-cadastro.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div id="head">
+        <div id="hsup">
+            <header>
+                <a href="/">
+                    <img src="../static/img/engrenagens.png" alt="Imagem da Logo">
+                    <h1>Kage</h1>
+                    <p>- COMÉRCIO E MANUTENÇÃO</p>
+                </a>
+            </header>
+            <div id="nav_pag">
+            </div>
+            <div id="func">
+                <form action="" id="pesquisa">
+                    
+                </form>
+                <a id="login" href="">
+                </a>
+            </div>
+        </div>
+        <div id="hinf">
+            
+        </div>
+    </div>
+
+    <section id="area-cadastro">
+        <div id="nome-pag">
+            <img src="../static/img/engrenagem.png" alt="">
+            <h2>Insira seus Dados</h2>
+        </div>
+        <div id="form-cadastro">
+            <form action="/inserir-dados" method="post">
+                <div id="sup">
+                    <div id="cesq">
+                        <div id="acesso">
+                            <h3>Dados de Acesso</h3>
+                            <div>
+                                <div><label>Email:</label><p>{{ast}}</p></div>
+                                <input type="text" name="email" value="{{value_email}}">
+                            </div>
+                            <div>
+                                <div><label>Senha:</label><p>{{ast}}</p></div>
+                                <input type="password" name="senha" value="{{value_senha}}">
+                            </div>
+                        </div>
+                        <div id="pessoais">
+                            <h3>Dados Pessoais</h3>
+                            <div>
+                                <div><label>Nome:</label><p>{{ast}}</p></div>
+                                <input type="text" name="nome" value="{{value_nome}}">
+                            </div>
+                            <div>
+                                <div><label>CPF:</label><p>{{ast}}</p></div>
+                                <input type="text" maxlength="11" placeholder="Somente os números" name="cpf" value="{{value_cpf}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cdir">
+                        <div id="endereco">
+                            <h3>Endereço</h3>
+                            <div>
+                                <div><label>Estado:</label><p>{{ast}}</p></div>
+                                <input type="text" name="est" value="{{value_est}}">
+                            </div>
+                            <div>
+                                <div><label>Cidade:</label><p>{{ast}}</p></div>
+                                <input type="text" name="cid" value="{{value_cid}}">
+                            </div>
+                            <div>
+                                <div><label>Bairro:</label><p>{{ast}}</p></div>
+                                <input type="text" name="bair" value="{{value_bair}}">
+                            </div>
+                            <div>
+                                <div><label>Rua:</label><p>{{ast}}</p></div>
+                                <input type="text" name="rua" value="{{value_rua}}">
+                            </div>
+                            <div>
+                                <div><label>Número:</label><p>{{ast}}</p></div>
+                                <input type="number" name="num" value="{{value_num}}">
+                            </div>
+                            <div>
+                                <div><label>Complemento:</label><p>{{ast}}</p></div>
+                                <input type="text" name="comp" value="{{value_comp}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>{{p}}</p>
+                <div id="bot-cad">
+                    <input type="submit" value="Cadastrar">
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <footer id="rodape">
+        <hr>
+        <h2>Informações</h2>
+        <ul id="rod-list">
+            <li id="contatos">
+                <h3>Contatos</h3>
+                <ul>
+                    <li>
+                        <img src="../static/img/telefone.png" alt="imagem">
+                        <a href="">
+                            <p style="margin-top: 26px;">Telefone</p>
+                        </a>
+                    </li>
+                    <li>
+                        <img src="../static/img/celular.png" alt="imagem" style="width: 60px;">
+                        <a href="">
+                            <p style="margin-top: 30px;">Celular</p>
+                        </a>
+                    </li>
+                    <li style="margin-top: 30px;">
+                        <img src="../static/img/o-email.png" alt="imagem" style="height: 50px;">
+                        <a href="mailto:kagemanutencaogv@gmail.com">
+                            <p style="margin-left: 20px;">E-mail</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li id="sociais">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li>
+                        <img src="../static/img/instagram.png" alt="logo do Instagram">
+                        <a href="https://www.instagram.com/kage_cm/" target="blank">Instagram</a>
+                    </li>
+                    <li>
+                        <img src="../static/img/facebook.png" alt="logo do Facebook">
+                        <a href="">Facebook</a>
+                    </li>
+                    <li>
+                        <img src="../static/img/whatsapp.png" alt="logo do TikTok">
+                        <a href="https://wa.me/+5533987147566" target="_blank">WhatsApp</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="info">
+                <h3>Quem Somos Nós?</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+                </p>
+                <div>
+                    <button>
+                        <a href="">Saiba Mais</a>
+                    </button>
+                </div>
+            </li>
+            <li id="pagam">
+                <h3>Formas de Pagamento</h3>
+                <ul>
+                    <div>
+                        <li>
+                            <img src="" alt="Forma de Pagamento">
+                        </li>
+                        <li>
+                            <img src="" alt="Forma de Pagamento">
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <img src="" alt="Forma de Pagamento">
+                        </li>
+                        <li>
+                            <img src="" alt="Forma de Pagamento">
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <img src="" alt="Forma de Pagamento">
+                        </li>
+                        <li>
+                            <img src="" alt="Forma de Pagamento">
+                        </li>
+                    </div>
+                </ul>
+                <div>
+                    <button>
+                        <a href="">Saiba Mais</a>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

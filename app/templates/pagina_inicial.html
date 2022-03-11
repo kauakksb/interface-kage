@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Kage - Comércio e Manutenção</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="hsup">
+        <header>
+          <a href="/">
+            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+            <h1>Kage</h1>
+            <p>- COMÉRCIO E MANUTENÇÃO</p>
+          </a>
+        </header>
+        <div id="nav_pag"></div>
+        <div id="func">
+          <form action="/busca" method="post" id="pesquisa">
+            <input
+              id="campo"
+              type="text"
+              name="camp_pesq"
+              autocomplete="off"
+              placeholder=" Pesquisar"
+            />
+            <button id="botao">
+              <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+            </button>
+          </form>
+
+          {% if state == True %}
+            <a id="login" href="/perfil">
+              <div>
+                <img src="../static/img/perfil.png" alt="imagem do login" />
+                <div>
+                  <p>Área do Usuário</p>
+                </div>
+              </div>
+            </a>
+            <div id="sair">
+
+              <form action="/logout">
+                <button>
+                    <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                </button>
+              </form>
+            </div>
+            
+          {% else %}
+          <a id="login" href="/perfil">
+            <div>
+              <img src="../static/img/perfil.png" alt="imagem do login" />
+              <div>
+                <p>Olá, faça login!</p>
+              </div>
+            </div>
+          </a>
+          <div id="sair">
+            
+          </div>
+          {% endif %}           
+        </div>
+      </div>
+      <div id="hinf"></div>
+    </div>
+    <section id="promo">
+      <div id="topo">
+        <div id="btesq">
+          <button id="but-esq">
+            <img src="../static/img/seta-esquerda.png" alt="" />
+          </button>
+        </div>
+        <div id="mid">
+          <div id="first">
+            <div id="pesq">
+              <div id="tit">
+                <h2>QUALIDADE É A NOSSA PRIORIDADE</h2>
+              </div>
+              <div id="inf">
+                <div id="texto">
+                  <ul>
+                    <li>
+                      <p>
+                        Buscando uma manutenção para seu: Compressor,
+                        Lavavadora, Motores, Motobombas, Equipamentos
+                        Pneumáticos, entre outras máquinas? Está no Lugar Certo!
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="nav">
+                <a id="link_prop" href="#prop">
+                  <p>Ofertas</p>
+                </a>
+                <a id="link_prod" href="#prod">
+                  <p>Produtos</p>
+                </a>
+                <a id="link_serv" href="#serv">
+                  <p>Serviços</p>
+                </a>
+              </div>
+            </div>
+            <div id="pdir">
+              <img src="../static/img/img-promo-removebg.png" alt="" />
+            </div>
+          </div>
+          <div id="second">
+            <div id="pesq">
+              <div id="tit">
+                <h2>QUALIDADE É A NOSSA PRIORIDADE</h2>
+              </div>
+              <div id="inf">
+                <div id="texto">
+                  <ul>
+                    <li>
+                      <p>
+                        Buscando uma manutenção para seu: Compressor,
+                        Lavavadora, Motores, Motobombas, Equipamentos
+                        Pneumáticos, entre outras máquinas? Está no Lugar Certo!
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="nav">
+                <a id="link_prop" href="#prop">
+                  <p>Ofertas</p>
+                </a>
+                <a id="link_prod" href="#prod">
+                  <p>Produtos</p>
+                </a>
+                <a id="link_serv" href="#serv">
+                  <p>Serviços</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="third">
+            <div id="pesq">
+              <div id="tit">
+                <h2>QUALIDADE É A NOSSA PRIORIDADE</h2>
+              </div>
+              <div id="inf"></div>
+              <div id="nav">
+                <a id="link_prop" href="#prop">
+                  <p>Ofertas</p>
+                </a>
+                <a id="link_prod" href="#prod">
+                  <p>Produtos</p>
+                </a>
+                <a id="link_serv" href="#serv">
+                  <p>Serviços</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="btdir">
+          <button id="but-dir">
+            <img src="../static/img/seta-direita.png" alt="" />
+          </button>
+        </div>
+      </div>
+      <div id="base">
+        <div id="bola1"></div>
+        <div id="bola2"></div>
+        <div id="bola3"></div>
+      </div>
+    </section>
+    <section id="prop">
+      <div id="sup">
+        <div id="dir">
+          <div id="etq">
+            <img src="../static/img/etiqueta-de-desconto.png" alt="imagem" />
+          </div>
+          <div id="text">
+            <p>ATÉ 30% DE DESCONTO</p>
+          </div>
+        </div>
+        <div id="esq">
+          <div id="cima">
+            <div class="tit">
+              <div>
+                <h2>Super Ofertas</h2>
+              </div>
+            </div>
+            <div id="comp"></div>
+          </div>
+          <div id="baixo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div id="rest">
+        <div id="ofer">
+          <ul>
+            <li>
+              <a href="/produto">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="/produto">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="../html/pagina_do_produto.html">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="ver-mais">
+          <a href=""><button id="botao">Ver Mais</button></a>
+        </div>
+      </div>
+    </section>
+    <section id="categ">
+      <nav id="nav_site">
+        <a id="l1" href="">
+          <p>Compressores</p>
+        </a>
+        <a id="l2" href="">
+          <p>Lavadoras</p>
+        </a>
+        <a id="l3" href="">
+          <p>Bombas</p>
+        </a>
+        <a id="l4" href="">
+          <p>Motores</p>
+        </a>
+        <a id="l5" href="">
+          <p>Ferramentas</p>
+        </a>
+      </nav>
+    </section>
+    <section id="prod">
+      <h2>Principais Produtos</h2>
+      <ul id="prods">
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- Grupo de Produtos: Mais Vendidos -->
+        <div class="gp-prod">
+          <div class="titulo">
+            <h3>Mais Vendidos</h3>
+          </div>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <div class="ver-mais-prod">
+            <a href=""><button id="botao">Ver Mais >></button></a>
+          </div>
+          <hr />
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- Grupo de Produtos: Novidades -->
+        <div class="gp-prod">
+          <div class="titulo">
+            <h3>Novidades</h3>
+          </div>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <div class="ver-mais-prod">
+            <a href=""><button id="botao">Ver Mais >></button></a>
+          </div>
+          <hr />
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- Grupo de Produtos: Adicionados Recentemente -->
+        <div class="gp-prod">
+          <div class="titulo">
+            <h3>Adicionados Recentemente</h3>
+          </div>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <div class="ver-mais-prod">
+            <a href=""><button id="botao">Ver Mais >></button></a>
+          </div>
+        </div>
+      </ul>
+    </section>
+    <section id="serv">
+      <div id="top">
+        <div class="tit">
+          <h2>Serviços</h2>
+        </div>
+      </div>
+      <div id="down">
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+            magni illo repudiandae minus laudantium voluptates, molestiae magnam
+            sapiente, impedit officia pariatur! Odit enim.
+          </p>
+          <div id="sm">
+            <a href=""><button id="botao">Saiba Mais</button></a>
+          </div>
+        </div>
+        <ul id="serv-list">
+          <li>
+            <a href="/serv">
+              <img src="../static/img/manutencao.png" alt="imagem do serviço" />
+              <h3>Manutenção</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                tempora architecto voluptates in ipsa suscipit labore quia cum
+                blanditiis!
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="/serv">
+              <img src="../static/img/manutencao (1).png" alt="imagem do serviço" />
+              <h3>Instalação</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                laborum sequi recusandae odio veritatis reiciendis, iusto
+                voluptas incidunt ullam
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="pagina_dos_produtos.html">
+              <img src="../static/img/botao-de-venda.png" alt="imagem do serviço" />
+              <h3>Venda</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                eius doloremque corrupti assumenda natus ut enim dolore pariatur
+                ipsa sapiente
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="/serv">
+              <img src="../static/img/chave-inglesa.png" alt="imagem do serviço" />
+              <h3>Montagem</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Praesentium porro odio sint aliquid laudantium modi fugit magnam
+                sequi
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <footer id="rodape">
+      <hr />
+      <h2>Informações</h2>
+      <ul id="rod-list">
+        <li id="contatos">
+          <h3>Contatos</h3>
+          <ul>
+            <li>
+              <img src="../static/img/telefone.png" alt="imagem" />
+              <a href="">
+                <p style="margin-top: 26px">Telefone</p>
+              </a>
+            </li>
+            <li>
+              <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+              <a href="">
+                <p style="margin-top: 30px">Celular</p>
+              </a>
+            </li>
+            <li style="margin-top: 30px">
+              <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+              <a href="mailto:kagemanutencaogv@gmail.com">
+                <p style="margin-left: 20px">E-mail</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="sociais">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li>
+              <img src="../static/img/instagram.png" alt="logo do Instagram" />
+              <a href="https://www.instagram.com/kage_cm/" target="blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <img src="../static/img/facebook.png" alt="logo do Facebook" />
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+              <a href="https://wa.me/+5533987147566" target="_blank"
+                >WhatsApp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li id="info">
+          <h3>Quem Somos Nós?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+            quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+            suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+          </p>
+          <div>
+            <button>
+              <a href="quem_somos_nos.html">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+        <li id="pagam">
+          <h3>Formas de Pagamento</h3>
+          <ul>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+          </ul>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="../static/js/inicio.js"></script>
+  </body>
+</html>

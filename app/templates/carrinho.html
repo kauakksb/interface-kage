@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/carrinho.css" />
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon">
+    <title>Finalizar compra</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="hsup">
+        <header>
+          <a href="/">
+            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+            <h1>Kage</h1>
+            <p>- COMÉRCIO E MANUTENÇÃO</p>
+          </a>
+        </header>
+        <div id="nav_pag"></div>
+        <div id="func">
+          <form action="/pegando-valores-busca" method="post" id="pesquisa">
+            <input
+              id="campo"
+              type="text"
+              name="camp_pesq"
+              autocomplete="off"
+              placeholder=" Pesquisar"
+            />
+            <button id="botao">
+              <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+            </button>
+          </form>
+          <a id="login" href="/perfil">
+            <div>
+              <img src="../static/img/perfil.png" alt="imagem do login" />
+              <div>
+                <p>{{texto}}</p>
+              </div>
+            </div>
+          </a>
+          <div id="sair">
+            {% if ap == True %}
+              {% endif %} 
+            {%if ap == False %}
+            <form action="/logout">
+              <button>
+                  <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+              </button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div id="hinf"></div>
+    </div>
+
+    <section id="geral">
+      <div id="inicio">
+        <img src="../static/img/engrenagem.png" alt="engrenagem" id="engrenagem" />
+        <h2>Meu carrinho</h2>
+      </div>
+      <div id="div-geral">
+        <div id="tudo">
+          <div id="prod">
+            <div id="cima">
+              <p class="pri">Itens</p>
+              <p class="seg">Preço</p>
+              <p class="ter">Quantidade</p>
+              <p class="quar">Subtotal</p>
+              <br />
+              <hr />
+            </div>
+            <div id="baixo">
+              <ul type="none">
+                <div class="grupo">
+                  <li class="linha">
+                    <div class="pri">
+                      <a href="#">
+                        <img
+                          id="img-prod"
+                          src="../static/img/audaz-removebg-preview.png"
+                          alt="imagem"
+                        />
+                      </a>
+                      <a href="../html/perfil.html" class="link">
+                        <p class="tab" class="nome">
+                          Compressor Pressure Super Ar 120 500W
+                        </p>
+                        <p class="tab" id="pre_ori">R$ 000,00</p>
+                        <p class="tab" id="pre_atu">R$ 000,00</p>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <p id="preco" class="seg">R$ 000,00</p>
+                  </li>
+                  <li>
+                    <div class="ter" id="mais-menos">
+                      <div id="div-bot-mais">
+                        <input type="button" name="mais" value="+" id="mais" />
+                      </div>
+                      <div id="quant">
+                        <input type="text" name="valor" value="0" size="1"/>
+                      </div>
+                      <div id="div-bot-menos">
+                        <input
+                          type="button"
+                          name="menos"
+                          value="-"
+                          id="menos"
+                        />
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p id="sub" class="quar">R$ 000,00</p>
+                  </li>
+                </div>
+                <div class="grupo" style="border-bottom: none">
+                  <li class="linha">
+                    <div class="pri">
+                      <a href="#">
+                        <img
+                          id="img-prod"
+                          src="../static/img/bombadagua-.png"
+                          alt="imagem"
+                        />
+                      </a>
+                      <a href="../html/perfil.html" class="link">
+                        <p class="tab" class="nome">
+                          Compressor Pressure Super Ar 120 500W
+                        </p>
+                        <p class="tab" id="pre_ori">R$ 000,00</p>
+                        <p class="tab" id="pre_atu">R$ 000,00</p>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <p id="preco" class="seg">R$ 000,00</p>
+                  </li>
+                  <li>
+                    <div class="ter" id="mais-menos">
+                      <div id="div-bot-mais">
+                        <input type="button" name="mais" value="+" id="mais" />
+                      </div>
+                      <div id="quant">
+                        <input type="text" name="valor" value="0" size="1"  />
+                      </div>
+                      <div id="div-bot-menos">
+                        <input type="button" name="menos" value="-" id="menos"/>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p id="sub" class="quar">R$ 000,00</p>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="final">
+            <div>
+              <div id="sub2">
+                <p>Subtotal</p>
+                <p id="subtotal">R$ 000,00</p>
+              </div>
+              <div id="tot">
+                <p>Total</p>
+                <p id="total">R$ 000,00</p>
+              </div>
+            </div>
+            <div id="finalizar">
+              <a href="../html/pagina_inicial.html">Continuar comprando</a>
+              <div id="div-bot-final">
+                <a href="../html/pagina_de_compra.html"><input type="submit" value="Finalizar pedido" id="bot-final"/></a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <footer id="rodape">
+      <hr/>
+      <h2>Informações</h2>
+      <ul id="rod-list">
+        <li id="contatos">
+          <h3>Contatos</h3>
+          <ul>
+            <li>
+              <img src="../static/img/telefone.png" alt="imagem" />
+              <a href="">
+                <p style="margin-top: 26px">Telefone</p>
+              </a>
+            </li>
+            <li>
+              <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+              <a href="">
+                <p style="margin-top: 30px">Celular</p>
+              </a>
+            </li>
+            <li style="margin-top: 30px">
+              <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+              <a href="mailto:kagemanutencaogv@gmail.com">
+                <p style="margin-left: 20px">E-mail</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="sociais">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li>
+              <img src="../static/img/instagram.png" alt="logo do Instagram" />
+              <a href="https://www.instagram.com/kage_cm/" target="blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <img src="../static/img/facebook.png" alt="logo do Facebook" />
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+              <a href="https://wa.me/+5533987147566" target="_blank"
+                >WhatsApp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li id="info">
+          <h3>Quem Somos Nós?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+            quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+            suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+          </p>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+        <li id="pagam">
+          <h3>Formas de Pagamento</h3>
+          <ul>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+          </ul>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

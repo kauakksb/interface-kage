@@ -1,0 +1,993 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&family=Signika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/* Parte Superior do Site (Header e Navs) */
+#head{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Parte de cima do Head da Página (Header e Nav da Pág) */
+#head > #hsup{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 85px;
+  background-color: rgb(110, 110, 110);
+}
+
+
+
+/*  */
+/* Cabeçalho da Página(Título e Logo) */
+header{
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+}
+
+header > a{
+  height: 85px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: black;
+}
+
+header > a > img{
+  margin-left: 15%;
+  margin-top: 17px;
+  height: 50px;
+  width: 50px;
+}
+
+header > a > h1{
+  margin-top: 14px;
+  margin-left: 1%;
+  height: 35px;
+  font-size: 44px;
+  font-family: 'Roboto Slab', serif;
+}
+
+header > a > p{
+  height: 12px;
+  margin: 0;
+  margin-top: 40px;
+  margin-left: 2px;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+}
+
+
+
+/*  */
+/* Nav da Página */
+#nav_pag{  
+  display: flex;
+  flex-direction: row;
+  height: 85px;
+  width: 33%;
+  margin: 0;
+  margin-left: 2%;
+}
+
+/*  */
+/* Funções disponíveis no cabeçalho da página - pesquisa e login */
+#func{
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+  height: 100px;
+}
+
+#func > #pesquisa{
+  display: flex;
+  flex-direction: row;
+}
+
+#func > #pesquisa > #campo{
+  margin-left:30%;
+  width:200px;
+  height: 25px;
+  margin-top: 27px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(228, 228, 228);
+  color: rgb(78, 78, 78);
+}
+
+#func > #pesquisa > #botao{
+  margin-top: 25px;
+  margin-left: 2px;
+  background-color: rgb(110, 110, 110);
+  border: none;
+  height: 34px;
+  width: 34px;
+}
+
+#func > #pesquisa > #botao > img{
+  height: 30px;
+}
+
+
+
+/*  */
+/* Botão de Login */
+#func > #login{
+  margin-left: 8%;
+  width: 35%;
+  height: 85px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#func > #login:hover{
+  margin-left: 8%;
+  width: 35%;
+  height: 85px;
+  text-decoration: underline;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+}
+
+#func > #login > div{
+  display: flex;
+  flex-direction: row;
+}
+
+#func > #login > div > img{
+  height: 30px;
+}
+
+#func > #login > div > div{
+  height: 34px;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#func > #login > div > div > p{
+  text-align: justify;
+  height: 25px;
+  margin: 0;
+  margin-left: 5px;
+  
+}
+
+
+#sair button{
+  display: flex;
+  align-items: center;
+  background-color: #ffffff00;
+  border: none;
+  margin-top: 30%;
+}
+
+#sair img{
+  height: 32px;
+  width: 30px;
+  margin: 8px 6px; 
+}
+
+#sair img:hover{
+  height: 34px;
+  width: 32px;
+  margin: 7px 5px;
+  transition: 200ms;
+}
+
+
+/*  */
+/* Parte Inferior do Cabeçalho */
+#hinf{
+  display: flex;
+  flex-direction: row;
+  height:15px;
+  width: 100%;
+  background-color: #ff8400;
+}
+
+
+/*  */
+/* Parte do Produto selecionado */
+#prod {
+  background-color: rgb(243, 243, 243);
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  padding-top: 40px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#prod > #img-prod {
+  padding: 70px 60px;
+  border: rgba(0, 0, 0, 0.281) solid 1px;
+  border-radius: 3px;
+  margin: 5px 15px;
+}
+
+#prod > #img-prod:hover {
+  cursor: pointer;
+}
+
+#imagem-prod{
+  width: 550px;
+}
+
+#prod > #info_prod {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 15px;
+}
+
+#prod > #info_prod > #nome_prod {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#prod > #info_prod > #parcelas {
+  display: flex;
+  flex-direction: column;
+}
+
+#prod > #info_prod > #parcelas > p {
+  margin: 0px;
+}
+
+#prod > #info_prod > #parcelas > a {
+  color: black;
+}
+
+#prod > #info_prod > #parcelas > A:hover {
+  color: #ff8400;
+}
+
+#prod > #info_prod > #parcelas > #preco {
+  font-size: 30px;
+  margin: 0px;
+}
+
+#calc {
+  height: 30px;
+  width: 100px;
+  border: none;
+  color: white;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+#calc:hover {
+  height: 30px;
+  width: 100px;
+  border: none;
+  color: #ff8400;
+  background-color: white;
+  font-size: 17px;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  border-radius: 2px;
+  border: 1px solid #ff8400;
+}
+
+#cep {
+  border: 1px solid rgb(241, 241, 241);
+  height: 30px;
+  width: 200px;
+}
+
+#prod > #info_prod > #div-btn {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#prod > #info_prod > #div-btn > form > button {
+  height: 40px;
+  width: 500px;
+  border: none;
+  color: white;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  border-radius: 2px;
+  margin-top: 18px;
+  transition: 300ms;
+}
+
+#prod > #info_prod > #div-btn > form > button:hover {
+  height: 45px;
+  width: 510px;
+  border: none;
+  color: white;
+  background-color: #ff8400;
+  font-size: 17px;
+  font-family: "Roboto Slab", serif;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+#prod > #info_prod > #div-btn {
+  height: 50px;
+  width: 512px;
+}
+
+#prod > #info_prod > #parcelas > #div-aval-prod {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+#prod > #info_prod > #parcelas > #div-aval-prod > img {
+  height: 15px;
+}
+
+#categ {
+  margin-top: 6px;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+#nav_site {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+#nav_site > a {
+  text-decoration: none;
+  color: rgb(78, 78, 78);
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  margin: 20px 5px;
+  height: 30px;
+  width: 100px;
+  padding: 6px;
+}
+
+#nav_site > a:hover {
+  height: 30px;
+  width: 100px;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #ff840015;
+  color: #ff8400cc;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  margin: 20px 5px;
+  transition: 300ms;
+}
+
+#nav_site > a > p {
+  text-align: center;
+  margin: 0;
+  margin-top: 4px;
+}
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* Funções */
+#funcoes {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  font-family: "Roboto Slab", serif;
+}
+
+#desc {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;*/
+}
+
+#div_desc {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*width: 80%;
+  height: 400px;
+  display: flex;
+  background-color: #cccccc60;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;*/
+}
+
+#div_desc p {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*width: 80%;
+  text-align: center;*/
+}
+
+#carac {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;*/
+}
+
+#div_carac {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*width: 80%;
+  height: 500px;
+  display: flex;
+  background-color: #cccccc60;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;*/
+}
+
+#div_carac > ul {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*list-style: none;*/
+}
+
+#tit {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
+  /*font-weight: bold;
+  font-size: 20px;*/
+}
+
+#coment {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#div_coment {
+  width: 80%;
+  height: 500px;
+  display: flex;
+  background-color: #cccccc60;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#div_coment > ul {
+  list-style: none;
+}
+
+#div_coment > ul > li {
+  text-align: start;
+}
+
+#coment_pre {
+  font-weight: bold;
+}
+
+#avaliacao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#aval_img {
+  display: flex;
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+}
+
+#nome_usu {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#like_unlike > button {
+  background-color: #ff8400cc;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  width: 50px;
+}
+
+#like_unlike > button:hover {
+  background-color: #ffa23ecc;
+}
+
+#like_unlike > button > img {
+  height: 20px;
+}
+
+#space {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: rgba(156, 156, 156, 0.322);
+}
+
+#linha {
+  margin: 0px;
+  height: 1px;
+  width: 70%;
+  background-color: rgb(110, 110, 110);
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Parte de Produtos Ofertados no Site */
+#mais_prod {
+  height: 800px;
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mais_prod > h2 {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 36px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+#mais_prod > #prods {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+#mais_prod > #prods > .gp-prod {
+  height: 825px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#mais_prod > #prods > .gp-prod > .titulo {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+#mais_prod > #prods > .gp-prod > .titulo > h3 {
+  text-decoration: underline;
+  font-family: "Roboto Slab", serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin: 0px;
+  margin-left: 9%;
+  margin-bottom: 20px;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 7px 0px;
+  padding: 0;
+  justify-content: center;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li {
+  height: 275px;
+  width: 200px;
+  background-color: rgb(250, 250, 250);
+  margin: 18px 12px;
+  border-radius: 2px;
+  border: 1px solid rgb(167, 167, 167);
+  list-style-type: none;
+  box-shadow: 1px 2px 4px 1px #a5a5a5;
+  transition: 300ms;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li:hover {
+  height: 279px;
+  width: 200px;
+  margin: 16px 12px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 2px;
+  border: 1px solid rgb(167, 167, 167);
+  list-style-type: none;
+  box-shadow: 1px 3px 5px 3px #a5a5a5;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a {
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  height: 275px;
+  width: 200px;
+  align-items: center;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #img-prod {
+  height: 130px;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #div-aval {
+  height: 10px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #div-aval > #aval {
+  height: 12px;
+  margin-left: 10px;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #div-aval > #num-aval {
+  font-family: "Roboto Slab", serif;
+  font-size: 10px;
+  margin: 0;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #nome {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 12px;
+  width: 175px;
+  margin-top: 5px;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #nome:hover {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 12px;
+  width: 175px;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #pre-ori {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 10px;
+  width: 175px;
+  margin-top: 5px;
+  text-decoration: line-through;
+}
+
+#mais_prod > #prods > .gp-prod > .list_prod > li > a > #pre {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-weight: 500;
+  width: 175px;
+  margin-top: 5px;
+}
+
+#mais_prod > #prods > .gp-prod > hr {
+  width: 77.5%;
+  background-color: rgb(110, 110, 110);
+  margin-top: 10px;
+}
+
+/* Comentários */
+#coment {
+  font-family: "Roboto Slab", serif;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#txt {
+  width: 400px;
+  height: 25px;
+}
+
+#button {
+  height: 25px;
+  width: 200px;
+  border: none;
+  color: white;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+#button:hover {
+  color: #ff8400;
+  background-color: white;
+  border: 1px solid #ff8400;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Rodapé do Site */
+#rodape {
+  height: 550px;
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#rodape > h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 32px;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+#rodape > #rod-list {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  list-style-type: none;
+}
+
+#rodape > #rod-list > li {
+  width: 275px;
+  height: 425px;
+  margin: 0px 20px;
+}
+
+#rodape > #rod-list > li > h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  color: #ff8400;
+  text-decoration: underline black;
+}
+
+#contatos > ul {
+  margin: 0;
+  padding: 0px;
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+#contatos > ul > li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  height: 60px;
+  width: 275px;
+}
+
+#contatos > ul > li > a {
+  text-decoration: none;
+}
+
+#contatos > ul > li > a > p {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: black;
+}
+
+#contatos > ul > li > a > p:hover {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 10px;
+  text-decoration: underline;
+  color: black;
+}
+
+#contatos > ul > li > img {
+  height: 55px;
+}
+
+#sociais > ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 40px;
+}
+
+#sociais > ul > li {
+  height: 50px;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+#sociais > ul > li > img {
+  height: 35px;
+  margin-top: 15px;
+}
+
+#sociais > ul > li > a {
+  margin-top: 21px;
+  margin-left: 5px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+#sociais > ul > li > a:hover {
+  margin-top: 21px;
+  margin-left: 5px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  text-decoration: underline;
+  color: black;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#info > p {
+  text-align: center;
+  height: 175px;
+  width: 225px;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  margin: 0px;
+  margin-top: 30px;
+}
+
+#info > div {
+  height: 75px;
+}
+
+#info > div > button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  border-radius: 2px;
+  margin-top: 18px;
+  transition: 300ms;
+}
+
+#info > div > button:hover {
+  height: 43px;
+  width: 105px;
+  border: none;
+  background-color: #ff8400;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+#info > div > button > a {
+  text-decoration: none;
+  color: white;
+}
+
+#pagam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pagam > ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+}
+
+#pagam > ul > div {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+}
+
+#pagam > div {
+  height: 75px;
+}
+
+#pagam > div > button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  border-radius: 2px;
+  margin-top: 18px;
+  transition: 300ms;
+}
+
+#pagam > div > button:hover {
+  height: 43px;
+  width: 105px;
+  border: none;
+  background-color: #ff8400;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+#pagam > div > button > a {
+  text-decoration: none;
+  color: white;
+}

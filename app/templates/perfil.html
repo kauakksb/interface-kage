@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/css/perfil.css" />
+    <title>Área Restrita</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="hsup">
+        <header>
+          <a href="/">
+            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+            <h1>Kage</h1>
+            <p>- COMÉRCIO E MANUTENÇÃO</p>
+          </a>
+        </header>
+        <div id="nav_pag"></div>
+        <div id="func">
+          <form action="/pegando-valores-busca" method="post" id="pesquisa">
+            <input
+              id="campo"
+              type="text"
+              name="camp_pesq"
+              autocomplete="off"
+              placeholder=" Pesquisar"
+            />
+            <button id="botao">
+              <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+            </button>
+          </form>
+          {% if state == True %}
+            <a id="login" href="/perfil">
+              <div>
+                <img src="../static/img/perfil.png" alt="imagem do login" />
+                <div>
+                  <p>Área do Usuário</p>
+                </div>
+              </div>
+            </a>
+            <div id="sair">
+
+              <form action="/logout">
+                <button>
+                    <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                </button>
+              </form>
+            </div>
+            
+          {% else %}
+          <a id="login" href="/login">
+            <div>
+              <img src="../static/img/perfil.png" alt="imagem do login" />
+              <div>
+                <p>Olá, faça login!</p>
+              </div>
+            </div>
+          </a>
+          <div id="sair">
+            
+          </div>
+          {% endif %} 
+        </div>
+      </div>
+      <div id="hinf"></div>
+    </div>
+
+    <section id="area-dados">
+      <div id="nome-pag">
+        <img src="../static/img/engrenagem.png" alt="" />
+        <h2>Área Restrita</h2>
+      </div>
+    </section>
+    <section id="usab">
+      <div id="top"> 
+        <div id="tit">
+          <h3>Painel de Controle</h3>
+        </div>
+        <div id="categ">
+          <div id="nav_site">
+            <div id="l3" href="">
+              <p>Serviços</p>
+            </div>
+            <div id="l2" href="">
+              <p>Histórico</p>
+            </div>
+            <div id="l4" href="">
+              <p>Carrinho</p>
+            </div>
+            <div id="l1" href="">
+              <p style="margin: 0px; font-size: 14px">Informações pessoais</p>
+            </div>
+          </div>
+        </div>
+        <hr id="linha" />
+      </div>
+      <div id="funcoes">
+        <div id="servic">
+          <div class="nome-func">
+            <h4>Serviços</h4>
+          </div>
+          <div id="serv-prest">
+            <div id="num-serv">
+              <p>Serviços sendo prestados:</p>
+            </div>
+            <ul id="list-serv">
+              {% for pos in range(0,num_serv) %}
+
+                {% set servico = servicos[pos]%}
+                {% set id_bot = 'bot{}'.format(pos+1)%}
+                {% set id_sec = 'serv{}'.format(pos+1)%}
+                {% set id_oc = 'oc{}'.format(pos+1)%}
+                {% set id_seta = 'seta{}'.format(pos+1)%}
+                {% set id_tbot = 'tbot{}'.format(pos+1)%}
+                <li class="serv" id="{{id_sec}}">
+                  <div class="nome-maq">
+                    <p>{{servico[3]}}</p>
+                  </div>
+                  <div class="info">
+                    <ul class="inf1">
+                      <li class="nuos"><p>Número da OS:</p><p class="nuosc">{{servico[0]}}</p></li>
+                      <li class="val"><p>Valor:</p><p class="valc">{{servico[5]}}</p></li>
+                      <div class="ocult" id="{{id_oc}}">
+                        <li class="cat"><p>Categoria:</p><p class="categc">{{servico[4]}}</p></li>
+                        <li class="marc"><p>Marca:</p><p class="marcc">{{servico[4]}}</p></li>
+                      </div>
+                    </ul>
+                    <div class="inf2">  
+                      <div class="status">
+                        <p id="st">Status:</p>
+                        <img src="../static/img/circulo-vermei.png" alt="cor" />
+                        <p>{{servico[7]}}</p>
+                      </div>
+                      <div class="explic">
+                        <p>
+                          * Máquina se encontra em análise e o orçamento está sendo feito.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mais-det">
+                    <div class="bot-md" id="{{id_bot}}">
+                      <p id="{{id_tbot}}">Mais Detalhes</p>
+                      <img src="../static/img/seta-baixo.png" alt="seta" id="{{id_seta}}"/>
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div id="hist">
+          <div class="nome-func">
+            <h4>Histórico</h4>
+          </div>
+          <div id="hist-comp">
+            <p>Últimas Compras:</p>
+          </div>
+          <div id="list-comp">
+            <ul>
+              {% for c in range(0, num_prods) %}
+                {% set dados_prod = prods[c] %}
+                <li class="prod-hist">
+                  <div class="img-prod">
+                    <img src="{{dados_prod[5]}}" alt="" />
+                  </div>
+                  <hr class="linha-prod" />
+                  <div class="info-hist">
+                    <div class="info-esq">
+                      <div class="nome-prod">
+                        <p>{{dados_prod[1]}}</p>
+                      </div>
+                      <ul class="info-prod">
+                        <li>
+                          <p class="npre">Preço:</p>
+                          <p class="pre">R$ {{dados_prod[2]}}</p>
+                        </li>
+                        <li>
+                          <p class="num-prod">Unidades:</p>
+                          <p class="nprod">1</p>
+                        </li>
+                        <li>
+                          <p class="categ-prod">Categoria:</p>
+                          <p class="cprod">Compressor</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="info-dir">
+                      <div class="status-prod">
+                        <p class="tit-stat">Status:</p>
+                        <p class="cont-stat">Saiu para Entrega</p>
+                      </div>
+                      
+                      <div class="mais-det-prod">
+                        <button class="bot-md-prod" id="bot1-prod">
+                          <p id="tbot1">Mais Detalhes</p>
+                          <img src="../static/img/seta-baixo.png" alt="seta" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}  
+            </ul>
+          </div>
+        </div>
+        <div id="carr">
+          <div class="nome-func">
+            <h4>Carrinho</h4>
+          </div>
+          <div id="div-geral">
+            <div id="tudo">
+              <div id="prod">
+                <div id="cima">
+                  <p class="pri">Itens</p>
+                  <p class="seg">Preço</p>
+                  <p class="ter">Quantidade</p>
+                  <p class="quar">Subtotal</p>
+                  <br />
+                  <hr />
+                </div>
+                <div id="baixo">
+                  <ul type="none">
+                    {% for d in range(0,num_prods_carr) %}
+                      {% set info_prod = prods_carr[d] %}
+                      {% set num_prod_carr = quant_prod[d]%}
+
+                      <div class="grupo">
+                        <li class="linha">
+                          <div class="pri">
+                            <a href="#">
+                              <img
+                                id="img-prod"
+                                src="{{info_prod[5]}}"
+                                alt="imagem"
+                              />
+                            </a>
+                            <a href="../html/perfil.html" class="link">
+                              <p class="tab" class="nome">
+                                {{info_prod[1]}}
+                              </p>
+                              <p class="tab" id="pre_ori">R$ {{info_prod[2]}}</p>
+                              <p class="tab" id="pre_atu">R$ {{info_prod[2]}}</p>
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <p id="preco" class="seg">R$ {{info_prod[2]}}</p>
+                        </li>
+                        <li>
+                          <div class="ter" id="mais-menos">
+                            <div id="div-bot-mais">
+                              <input type="button" name="mais" value="+" id="mais" />
+                            </div>
+                            <div id="quant">
+                              <input type="text" name="valor" value="{{num_prod_carr}}" size="1"/>
+                            </div>
+                            <div id="div-bot-menos">
+                              <input
+                                type="button"
+                                name="menos"
+                                value="-"
+                                id="menos"
+                              />
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <p id="sub" class="quar">R$ {{info_prod[2]}}</p>
+                        </li>
+                      </div>
+                    {% endfor %}  
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="final">
+              <div>
+                <div id="sub2">
+                  <p>Subtotal</p>
+                  <p id="subtotal">R$ 000,00</p>
+                </div>
+                <div id="tot">
+                  <p>Total</p>
+                  <p id="total">R$ {{valor_total_carr}}</p>
+                </div>
+              </div>
+              <div id="finalizar">
+                <a href="/finalizar-compra">Continuar comprando</a>
+                <div id="div-bot-final">
+                  <a href="../html/pagina_de_compra.html"><input type="submit" value="Finalizar pedido" id="bot-final"/></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dados">
+          <div class="nome-func">
+            <h4>Informações Pessoais</h4>
+          </div>
+          <div id="cont-dados">
+            <ul id="list-dados">
+              {%for dado in dados%}
+                <div id="dpa">
+                  <h4>Dados Pessoais e de Acesso</h4>
+                  <div id="cont">
+                    <li>
+                      <p>Email:</p><p class="dado">{{dado[0]}}</p>
+                    </li>
+                    <li>
+                      <p>Nome:</p><p class="dado">{{dado[1]}}</p>
+                    </li>
+                    <li>
+                      <p>CPF:</p><p class="dado">{{dado[3]}}</p>
+                    </li>
+                  </div>
+                </div>
+                <div id="end">
+                  <h4>Endereço</h4>
+                  <div id="cont">
+                    <li>
+                      <p>Estado:</p><p class="dado">{{dado[4]}}</p>
+                    </li>
+                    <li>
+                      <p>Cidade:</p><p class="dado">{{dado[5]}}</p>
+                    </li>
+                    <li>
+                      <p>Bairro:</p><p class="dado">{{dado[6]}}</p>
+                    </li>
+                    <li>
+                      <p>Rua:</p><p class="dado">{{dado[7]}}</p>
+                    </li>
+                    <li>
+                      <p>Número:</p><p class="dado">{{dado[8]}}</p>
+                    </li>
+                    <li>
+                      <p>Complemento:</p><p class="dado">{{dado[9]}}</p>
+                    </li>
+                  </div>
+                </div>
+              {% endfor %}
+            </ul>
+          </div>
+          <div id="alt-dados">
+            <a href="/alt-dados">
+              <p>Atualizar Dados</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="rodape">
+      <hr />
+      <h2>Informações</h2>
+      <ul id="rod-list">
+        <li id="contatos">
+          <h3>Contatos</h3>
+          <ul>
+            <li>
+              <img src="../static/img/telefone.png" alt="imagem" />
+              <a href="">
+                <p style="margin-top: 26px">Telefone</p>
+              </a>
+            </li>
+            <li>
+              <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+              <a href="">
+                <p style="margin-top: 30px">Celular</p>
+              </a>
+            </li>
+            <li style="margin-top: 30px">
+              <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+              <a href="mailto:kagemanutencaogv@gmail.com">
+                <p style="margin-left: 20px">E-mail</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="sociais">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li>
+              <img src="../static/img/instagram.png" alt="logo do Instagram" />
+              <a href="https://www.instagram.com/kage_cm/" target="blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <img src="../static/img/facebook.png" alt="logo do Facebook" />
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+              <a href="https://wa.me/+5533987147566" target="_blank"
+                >WhatsApp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li id="info">
+          <h3>Quem Somos Nós?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+            quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+            suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+          </p>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+        <li id="pagam">
+          <h3>Formas de Pagamento</h3>
+          <ul>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+          </ul>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </footer>
+    <script src="../static/js/area-restrita.js"></script>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/css/pagina_dos_produtos.css" />
+    <title>Kage - Comércio e Manutenção</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="hsup">
+        <header>
+          <a href="/">
+            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+            <h1>Kage</h1>
+            <p>- COMÉRCIO E MANUTENÇÃO</p>
+          </a>
+        </header>
+        <div id="nav_pag"></div>
+        <div id="func">
+          <form action="/busca" method="post" id="pesquisa">
+            <input
+              id="campo"
+              type="text"
+              name="camp_pesq"
+              autocomplete="off"
+              placeholder=" Pesquisar"
+            />
+            <button id="botao">
+              <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+            </button>
+          </form>
+          {% if state == True %}
+            <a id="login" href="/perfil">
+              <div>
+                <img src="../static/img/perfil.png" alt="imagem do login" />
+                <div>
+                  <p>Área do Usuário</p>
+                </div>
+              </div>
+            </a>
+            <div id="sair">
+
+              <form action="/logout">
+                <button>
+                    <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                </button>
+              </form>
+            </div>
+            
+          {% else %}
+          <a id="login" href="/login">
+            <div>
+              <img src="../static/img/perfil.png" alt="imagem do login" />
+              <div>
+                <p>Olá, faça login!</p>
+              </div>
+            </div>
+          </a>
+          <div id="sair">
+            
+          </div>
+          {% endif %} 
+        </div>
+      </div>
+      <div id="hinf"></div>
+    </div>
+
+    <div id="cabecalho">
+      <div id="pesquisa-corpo">
+        <h3>Resultados de:</h3>
+        <p>{{buscado}}</p>
+      </div>
+      <div><p>Resultados encontrados: {{num_elem}}</p></div>
+    </div>
+
+    <div id="corpo_pag">
+      <section id="filtro">
+        <nav>
+          <form action="" >
+            <div id="tit_filtro">
+              <p class="tit_filtro">Filtrar por:</p>
+            </div>
+            <div id="filtro_preco">
+              <p>Preço entre: </p>
+                <div><label class="max">Máx:</label><input class="input_max" type="text" placeholder="R$ 000,00" ></div>
+                <div><label class="min">Mín:</label><input class="input_min" type="text" placeholder="R$ 000,00" ></div>
+                <br>
+            </div>
+            <div id="filtro_categ">
+              <p>Categoria: </p>
+                <div>
+                  <input type="checkbox"><label>Compressor</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Lavadora</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Motor</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Propulsora</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Motobomba</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Ferramentas</label>
+                </div><br>
+            </div>
+            <div id="filtro_marca">
+              <p>Marca: </p>
+                <div>
+                  <input type="checkbox"><label>Schulz</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Irwin</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Gedore</label>
+                </div>
+                <div>
+                  <input type="checkbox"><label>Somar</label>
+                </div><br>
+            </div><br>
+            <input id="btn-filtro" type="submit" value="Filtrar">
+          </nav>
+        </form>
+          
+      </section>
+      <section id="prod">
+      <ul id="prods">
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- Produtos relacionados a pesquisa -->
+        <div class="gp-prod">
+          {% set init = 0 %}
+          {% set fim = 5 %}
+          {% for i in range(0, num) %}
+          {% set n = 5*i %}
+            <ul class="list_prod">
+              {% for prod in prods[init+n:fim+n] %}
+                {% set id_prod = prod[0] %}
+                <li>
+                  <form action="/produto" method="post">
+                    <button>
+                      <div id="div-img">
+                        <img
+                          id="img-prod"
+                          src="{{prod[5]}}"
+                          alt="imagem"
+                        />
+                      </div>
+                      <div id="div-aval">
+                        <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                        <p id="num-aval">(000)</p>
+                      </div>
+                      <p id="nome">{{prod[1]}}</p>
+                      <p id="pre-ori">R$ {{prod[2]}}</p>
+                      <p id="pre">R$ {{prod[2]}}</p>
+                      <input type="text" name="id_prod" value="{{id_prod}}" style="display: none;visibility: hidden;">
+                    </button> 
+                  </form>
+                </li>
+              {% endfor %}
+            </ul>
+
+          {% endfor %}
+      
+          <br>
+          <div id="mais_prods">
+            <nav>
+              <div id="left">
+                <button>
+                  <img src="../static/img/seta-left.png" alt="">
+                </button>
+              </div>
+              <div id="num">
+                <button><p>1</p></button>
+              </div>
+              <div id="num">
+                <button><p>2</p></button>
+              </div>
+              <div id="num">
+                <button><p>3</p></button>
+              </div>
+              <div id="num">
+                <button><p>4</p></button>
+              </div>
+              <div id="num">
+                <button><p>5</p></button>
+              </div>
+              <div id="right">
+                <button>
+                  <img src="../static/img/seta-right.png" alt="">
+                </button>
+              </div>
+            </nav>
+          </div><br>
+          <hr />
+        </div>
+      </ul>
+      </section>
+    </div>
+    <footer id="rodape">
+      <hr />
+      <h2>Informações</h2>
+      <ul id="rod-list">
+        <li id="contatos">
+          <h3>Contatos</h3>
+          <ul>
+            <li>
+              <img src="../static/img/telefone.png" alt="imagem" />
+              <a href="">
+                <p style="margin-top: 26px">Telefone</p>
+              </a>
+            </li>
+            <li>
+              <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+              <a href="">
+                <p style="margin-top: 30px">Celular</p>
+              </a>
+            </li>
+            <li style="margin-top: 30px">
+              <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+              <a href="mailto:kagemanutencaogv@gmail.com">
+                <p style="margin-left: 20px">E-mail</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="sociais">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li>
+              <img src="../static/img/instagram.png" alt="logo do Instagram" />
+              <a href="https://www.instagram.com/kage_cm/" target="blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <img src="../static/img/facebook.png" alt="logo do Facebook" />
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+              <a href="https://wa.me/+5533987147566" target="_blank"
+                >WhatsApp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li id="info">
+          <h3>Quem Somos Nós?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+            quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+            suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+          </p>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+        <li id="pagam">
+          <h3>Formas de Pagamento</h3>
+          <ul>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+          </ul>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

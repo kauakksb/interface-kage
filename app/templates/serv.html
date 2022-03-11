@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/serv.css">
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon">
+    <title>Serviço</title>
+</head>
+<body>
+    <div id="head">
+        <div id="hsup">
+            <header>
+            <a href="/">
+                <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+                <h1>Kage</h1>
+                <p>- COMÉRCIO E MANUTENÇÃO</p>
+            </a>
+            </header>
+            <div id="nav_pag"></div>
+            <div id="func">
+                <form action="/pegando-valores-busca" method="post" id="pesquisa">
+                    <input
+                      id="campo"
+                      type="text"
+                      name="camp_pesq"
+                      autocomplete="off"
+                      placeholder=" Pesquisar"
+                    />
+                    <button id="botao">
+                      <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+                    </button>
+                </form>
+                <a id="login" href="/perfil">
+                    <div>
+                      <img src="../static/img/perfil.png" alt="imagem do login" />
+                      <div>
+                        <p>{{texto}}</p>
+                      </div>
+                    </div>
+                  </a>
+                  <div id="sair">
+                    {% if ap == True %}
+                      {% endif %} 
+                    {%if ap == False %}
+                    <form action="/logout">
+                      <button>
+                          <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                      </button>
+                    </form>
+                    {% endif %}
+                  </div>
+            </div>
+        </div>
+        <div id="hinf"></div>
+    </div>
+
+    <section id="func-serv">
+        <div id="nome-pag">
+            <img src="../static/img/engrenagem.png" alt="Engrenagem">
+            <h2>Serviço</h2>
+        </div>
+        <div id="categ">
+            <div id="nav_site">
+              <div id="l1" href="">
+                <p>Manutenção</p>
+              </div>
+              <div id="l2" href="">
+                <p>Instalação</p>
+              </div>
+              <div id="l3" href="">
+                <p>Montagem</p>
+              </div>
+            </div>
+          </div>
+          <hr id="linha" /> 
+        <div id="funcoes">
+            <div id="manut">
+                <div class="nome-func">
+                    <h3>Manutenção</h3>
+                </div>
+                <div id="form-manut">
+                    <form action="" method="" id="manut-f">
+                        <div class="cliente">
+                            <div id="dados-cliente">
+                                <label>Nome do Cliente</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div id="maquinas">
+                            <div class="if" id="info-manut">
+                                <div id="top">
+                                    <div id="model">
+                                        <label>1. Nome/Modelo da Máquina</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="probl">
+                                    <div class="detal">
+                                        <div>
+                                            <label>Detalhamento do Problema</label>
+                                        </div>
+                                        <div>
+                                            <textarea name="" id="det-probl" cols="105" rows=20" maxlength="255" ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="if" id="info-manut2">
+                                <div id="top">
+                                    <div id="model">
+                                        <label>2. Nome/Modelo da Máquina</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="probl">
+                                    <div class="detal">
+                                        <div>
+                                            <label>Detalhamento do Problema</label>
+                                        </div>
+                                        <div>
+                                            <textarea name="" id="det-probl2" cols="105" rows=20" maxlength="255" ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="if" id="info-manut3">
+                                <div id="top">
+                                    <div id="model">
+                                        <label>3. Nome/Modelo da Máquina</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="probl">
+                                    <div class="detal">
+                                        <div>
+                                            <label>Detalhamento do Problema</label>
+                                        </div>
+                                        <div>
+                                            <textarea name="" id="det-probl3" cols="105" rows=20"  maxlength="255"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="if" id="info-manut4">
+                                <div id="top">
+                                    <div id="model">
+                                        <label>4. Nome/Modelo da Máquina</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="probl">
+                                    <div class="detal">
+                                        <div>
+                                            <label>Detalhamento do Problema</label>
+                                        </div>
+                                        <div>
+                                            <textarea name="" id="det-probl4" cols="105" rows=20"  maxlength="255"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="if" id="info-manut5">
+                                <div id="top">
+                                    <div id="model">
+                                        <label>5. Nome/Modelo da Máquina</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="probl">
+                                    <div class="detal">
+                                        <div>
+                                            <label>Detalhamento do Problema</label>
+                                        </div>
+                                        <div>
+                                            <textarea name="" id="det-probl5" cols="105" rows=20"  maxlength="255"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+                        <div class="botoes">
+                            <div class="add">
+                                <div id="botao-add" ><p>Adicionar Máquina</p></div>
+                            </div>
+                            <div class="rev" id="rev">
+                                <div id="botao-rev"><p>Remover Máquina</p></div>
+                            </div>
+                            <div class="enviar">
+                                <input type="submit">
+                            </div>
+                            <p id="aviso"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="instal">
+                <div class="nome-func">
+                    <h3>Instalação</h3>
+                </div>
+                <div id="form-inst">
+                    <form action="">
+                        <div id="cliente">
+                            <div id="dados-cliente">
+                                <label>Nome do Cliente</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div id="dados-inst">
+                            <div id="info-inst">
+                                <div>
+                                    <label>Detalhamento da Instalação</label>
+                                </div>
+                                <div>
+                                    <textarea name="" id="" cols="105" rows="15" maxlength="255"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="enviar">
+                                <input type="submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="mont">
+                <div class="nome-func">
+                    <h3>Montagem</h3>
+                </div>
+                <div id="form-mont">
+                    <form action="">
+                        <div id="cliente">
+                            <div id="dados-cliente">
+                                <label>Nome do Cliente</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div id="info-mont">
+                            <div id="top-mont">
+                                <div id="model-mont">
+                                    <label>Nome/Modelo da Máquina</label>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div id="probl-mont">
+                                <div id="detal-mont">
+                                    <div>
+                                        <label>Detalhamento da Montagem</label>
+                                    </div>
+                                    <div>
+                                        <textarea name="" id="" cols="105" rows=20" maxlength="255"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botoes">
+                            <div class="add">
+                                <div id="botao-add-mont">Adicionar Máquina</div>
+                            </div>
+                            <div class="enviar">
+                                <input type="submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="rodape">
+        <hr/>
+        <h2>Informações</h2>
+        <ul id="rod-list">
+            <li id="contatos">
+                <h3>Contatos</h3>
+                <ul>
+                <li>
+                    <img src="../static/img/telefone.png" alt="imagem" />
+                    <a href="">
+                        <p style="margin-top: 26px">Telefone</p>
+                    </a>
+                </li>
+                <li>
+                    <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+                    <a href="">
+                        <p style="margin-top: 30px">Celular</p>
+                    </a>
+                </li>
+                <li style="margin-top: 30px">
+                    <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+                    <a href="mailto:kagemanutencaogv@gmail.com">
+                        <p style="margin-left: 20px">E-mail</p>
+                    </a>
+                </li>
+                </ul>
+            </li>
+            <li id="sociais">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li>
+                        <img src="../static/img/instagram.png" alt="logo do Instagram" />
+                        <a href="https://www.instagram.com/kage_cm/" target="blank"
+                        >Instagram</a
+                        >
+                    </li>
+                    <li>
+                        <img src="../static/img/facebook.png" alt="logo do Facebook" />
+                        <a href="">Facebook</a>
+                    </li>
+                    <li>
+                        <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+                        <a href="https://wa.me/+5533987147566" target="_blank"
+                        >WhatsApp</a
+                        >
+                    </li>
+                </ul>
+            </li>
+            <li id="info">
+                <h3>Quem Somos Nós?</h3>
+                <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+                quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+                suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+                </p>
+                <div>
+                    <button>
+                        <a href="">Saiba Mais</a>
+                    </button>
+                </div>
+            </li>
+            <li id="pagam">
+                <h3>Formas de Pagamento</h3>
+                <ul>
+                    <div>
+                        <li>
+                            <img src="" alt="Forma de Pagamento" />
+                        </li>
+                        <li>
+                            <img src="" alt="Forma de Pagamento" />
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <img src="" alt="Forma de Pagamento" />
+                        </li>
+                        <li>
+                            <img src="" alt="Forma de Pagamento" />
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <img src="" alt="Forma de Pagamento" />
+                        </li>
+                        <li>
+                            <img src="" alt="Forma de Pagamento" />
+                        </li>
+                    </div>
+                </ul>
+                <div>
+                    <button>
+                        <a href="">Saiba Mais</a>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="../static/js/serv.js"></script>
+    
+
+</body>
+</html>

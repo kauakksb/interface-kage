@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&family=Signika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/* Parte Superior do Site (Header e Navs) */
+#head{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Parte de cima do Head da Página (Header e Nav da Pág) */
+#head > #hsup{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 85px;
+  background-color: rgb(110, 110, 110);
+}
+
+
+
+/*  */
+/* Cabeçalho da Página(Título e Logo) */
+header{
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+}
+
+header > a{
+  height: 85px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: black;
+}
+
+header > a > img{
+  margin-left: 15%;
+  margin-top: 17px;
+  height: 50px;
+  width: 50px;
+}
+
+header > a > h1{
+  margin-top: 14px;
+  margin-left: 1%;
+  height: 35px;
+  font-size: 44px;
+  font-family: 'Roboto Slab', serif;
+}
+
+header > a > p{
+  height: 12px;
+  margin: 0;
+  margin-top: 40px;
+  margin-left: 2px;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+}
+
+
+
+/*  */
+/* Nav da Página */
+#nav_pag{  
+  display: flex;
+  flex-direction: row;
+  height: 85px;
+  width: 33%;
+  margin: 0;
+  margin-left: 2%;
+}
+
+/*  */
+/* Funções disponíveis no cabeçalho da página - pesquisa e login */
+#func{
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+  height: 100px;
+}
+
+#func > #pesquisa{
+  display: flex;
+  flex-direction: row;
+}
+
+#func > #pesquisa > #campo{
+  margin-left:30%;
+  width:200px;
+  height: 25px;
+  margin-top: 27px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(228, 228, 228);
+  color: rgb(78, 78, 78);
+}
+
+#func > #pesquisa > #botao{
+  margin-top: 25px;
+  margin-left: 2px;
+  background-color: rgb(110, 110, 110);
+  border: none;
+  height: 34px;
+  width: 34px;
+}
+
+#func > #pesquisa > #botao > img{
+  height: 30px;
+}
+
+
+
+/*  */
+/* Botão de Login */
+#func > #login{
+  margin-left: 8%;
+  width: 35%;
+  height: 85px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#func > #login:hover{
+  margin-left: 8%;
+  width: 35%;
+  height: 85px;
+  text-decoration: underline;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+}
+
+#func > #login > div{
+  display: flex;
+  flex-direction: row;
+}
+
+#func > #login > div > img{
+  height: 30px;
+}
+
+#func > #login > div > div{
+  height: 34px;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#func > #login > div > div > p{
+  text-align: justify;
+  height: 25px;
+  margin: 0;
+  margin-left: 5px;
+  
+}
+
+
+#sair button{
+  display: flex;
+  align-items: center;
+  background-color: #ffffff00;
+  border: none;
+  margin-top: 30%;
+}
+
+#sair img{
+  height: 32px;
+  width: 30px;
+  margin: 8px 6px; 
+}
+
+#sair img:hover{
+  height: 34px;
+  width: 32px;
+  margin: 7px 5px;
+  transition: 200ms;
+}
+
+
+/*  */
+/* Parte Inferior do Cabeçalho */
+#hinf{
+  display: flex;
+  flex-direction: row;
+  height:15px;
+  width: 100%;
+  background-color: #ff8400;
+}
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Página de compra */
+
+p,
+h2 {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+}
+
+section{
+  margin: 15px 0px 15px 0px;
+}
+
+#finalizar{
+  display: flex;
+  margin-bottom: 4px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#tudo{
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+#resumo {
+  padding: 17px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 6px;
+  border: 0.5px solid rgb(162, 162, 162);
+  margin-right: 10px;
+}
+
+#resumo-pedido {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.nome {
+  font-family: "Roboto Slab", serif;
+  color: black;
+  font-size: 12px;
+  width: 175px;
+  margin-top: 5px;
+}
+
+.nome:hover {
+  text-decoration: underline;
+}
+
+#scroll {
+  margin: 0px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+#scroll::-webkit-scrolbar {
+  width: 10px;
+}
+
+#scroll > ul {
+  height: 200px;
+  padding: 0px;
+  margin-top: 0px;
+}
+
+#scroll > ul > li > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#scroll > ul > li > a > img {
+  width: 80px;
+  padding-right: 10px;
+}
+
+#finalzin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#finalzin > div {
+  display: flex;
+  flex-direction: row;
+  font-family: "Roboto Slab", serif;
+  font-size: 14.5px;
+  font-weight: 400;
+}
+
+#finalzin > div > p {
+  padding: 5px 50px 5px 50px;
+}
+
+#sub {
+  border-top: 1px solid rgb(112, 112, 112);
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+#entrega {
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+#tot > p {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+#voltar {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(40, 136, 201);
+}
+
+#voltar:hover{
+  text-decoration: underline;
+}
+
+#dados{
+  padding: 17px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 6px;
+  border: 0.5px solid rgb(162, 162, 162);
+  margin-left: 10px;
+  
+}
+
+#dados-pessoais{
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#preencher-dados{
+  display: flex;
+  flex-direction: column;
+}
+
+.linha{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo{
+  display: flex;
+  flex-direction: row;
+}
+
+#nome,
+#cpf{
+  padding: 0px 10px 0px 0px;
+}
+
+.grupo > .linha > input{
+  width: 150px;
+}
+
+.nome-input{
+  margin: 4px 0px 0px 0px;
+  font-size: 14px;
+  font-family: "Roboto Slab", serif;
+  color: rgb(100, 100, 100);
+}
+
+#email-preencher{
+  font-family: "Roboto Slab", serif;
+  padding: 6px;
+  border-radius: 5px;
+  border: 0.5px solid rgb(162, 162, 162);
+}
+
+.linha > input{
+  font-family: "Roboto Slab", serif;
+  padding: 6px;
+  border-radius: 5px;
+  border: 0.5px solid rgb(162, 162, 162);
+}
+
+#juridica{
+  font-size: 14px;
+  color: rgb(40, 136, 201);
+}
+
+#juridica:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#fim{
+  margin-top: 25px;
+}
+
+#fim > form{
+  display: flex;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+}
+
+#fim > form > input{
+  margin: 4px 3px 0px 0px;
+}
+
+#promo{
+  display: flex;
+  text-decoration: none;
+}
+
+#entrega-pag{
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+#entrega-pag > input{
+  color: white;
+  background-color: #ff8400;
+  width: 220px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  transition: 200ms;
+  font-size: 16px;
+}
+
+#entrega-pag > input:hover{
+  cursor: pointer;
+  width: 240px;
+  height: 35px;
+  margin: 0px;
+}
+
+
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Rodapé do Site */
+#rodape {
+  height: 550px;
+  width: 100%;
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#rodape > h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 32px;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+#rodape > #rod-list {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  list-style-type: none;
+}
+
+#rodape > #rod-list > li {
+  width: 275px;
+  height: 425px;
+  margin: 0px 20px;
+}
+
+#rodape > #rod-list > li > h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  color: #ff8400;
+  text-decoration: underline black;
+}
+
+#contatos > ul {
+  margin: 0;
+  padding: 0px;
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+#contatos > ul > li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  height: 60px;
+  width: 275px;
+}
+
+#contatos > ul > li > a {
+  text-decoration: none;
+}
+
+#contatos > ul > li > a > p {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: black;
+}
+
+#contatos > ul > li > a > p:hover {
+  margin: 0px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 10px;
+  text-decoration: underline;
+  color: black;
+}
+
+#contatos > ul > li > img {
+  height: 55px;
+}
+
+#sociais > ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 40px;
+}
+
+#sociais > ul > li {
+  height: 50px;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+#sociais > ul > li > img {
+  height: 35px;
+  margin-top: 15px;
+}
+
+#sociais > ul > li > a {
+  margin-top: 21px;
+  margin-left: 5px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+#sociais > ul > li > a:hover {
+  margin-top: 21px;
+  margin-left: 5px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  text-decoration: underline;
+  color: black;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#info > p {
+  text-align: center;
+  height: 175px;
+  width: 225px;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  margin: 0px;
+  margin-top: 30px;
+}
+
+#info > div {
+  height: 75px;
+}
+
+#info > div > button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  border-radius: 2px;
+  margin-top: 18px;
+  transition: 300ms;
+}
+
+#info > div > button:hover {
+  height: 43px;
+  width: 105px;
+  border: none;
+  background-color: #ff8400;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+#info > div > button > a {
+  text-decoration: none;
+  color: white;
+}
+
+#pagam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pagam > ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+}
+
+#pagam > ul > div {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+}
+
+#pagam > div {
+  height: 75px;
+}
+
+#pagam > div > button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  background-color: #ff8400;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  border-radius: 2px;
+  margin-top: 18px;
+  transition: 300ms;
+}
+
+#pagam > div > button:hover {
+  height: 43px;
+  width: 105px;
+  border: none;
+  background-color: #ff8400;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+#pagam > div > button > a {
+  text-decoration: none;
+  color: white;
+}

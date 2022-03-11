@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/entr-pag.css" />
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon">
+    <title>Finalizar compra</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="hsup">
+        <header>
+          <a href="pagina_inicial.html">
+            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+            <h1>Kage</h1>
+            <p>- COMÉRCIO E MANUTENÇÃO</p>
+          </a>
+        </header>
+        <div id="nav_pag"></div>
+        <div id="func">
+          <form action="/busca" method="post" id="pesquisa">
+
+          </form>
+          <a id="login" href="../html/login.html">
+            <div>
+              
+            </div>
+          </a>
+        </div>
+      </div>
+      <div id="hinf"></div>
+    </div>
+
+    <section id="entr-container">
+      <div id="entr-box">
+      <form action="">
+        <div id="finalizar">
+          <h2>Finalizar pedido</h2>
+        </div>
+        <div id="tudo">
+          <div id="resumo">
+            <p id="resumo-pedido">Resumo do pedido</p>
+            <div id="scroll">
+              <ul type="none">
+                <li>
+                  <a href="pagina_do_produto.html" class="link">
+                    <img src="../static/img/bombadagua-.png" alt="imagem" />
+                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="pagina_do_produto.html" class="link">
+                    <img src="../static/img/bombadagua-.png" alt="imagem" />
+                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="pagina_do_produto.html" class="link">
+                    <img src="../static/img/bombadagua-.png" alt="imagem" />
+                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="pagina_do_produto.html" class="link">
+                    <img src="../static/img/bombadagua-.png" alt="imagem" />
+                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="pagina_do_produto.html" class="link">
+                    <img src="../static/img/bombadagua-.png" alt="imagem" />
+                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div id="finalzin">
+                <div id="sub">
+                  <p class="alinhar">Subtotal</p>
+                  <p>R$ 000,00</p>
+                </div>
+                <div id="val-entrega">
+                  <p class="alinhar">Entrega</p>
+                  <p>R$ 000,00</p>
+                </div>
+                <div id="tot">
+                  <p class="alinhar">Total</p>
+                  <p>R$ 000,00</p>
+                </div>
+                <a href="carrinho.html" id="voltar">Voltar para meu carrinho de compras</a>
+              </div>
+            </div>
+          </div>
+          <div id="entrega">
+            <h2 id="tit_entrega">Entrega</h2>
+            <div>
+              <form class="linha">
+                <p class="p">CEP</p>
+                <input id="inputcep" type="text" maxlength="8">
+                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" rel="noreferrer" id="meu-cep">Não sei meu CEP</a>
+              </form><br>
+              <form action="">
+                <p class="p">Forma de entrega</p><br>
+                <label id="btn1" onclick="clique1()">
+                  <div id="forma1">
+                    <p>Normal</p>
+                    <p>Entregue em até 10 dias</p>
+                  </div>
+                  <div id="valor1">
+                    <p>R$ 000,00</p>
+                  </div>
+                </label>
+                <label id="btn2" onclick="clique2()">
+                  <div id="forma2">
+                    <p>Rápido</p>
+                    <p>Entregue em até 6 dias</p>
+                  </div>
+                  <div id="valor2">
+                    <p>R$ 000,00</p>
+                  </div>
+              </form>
+              </label>
+              <p id="end_entrega">Endereço de entrega</p>
+              <div id="rua_num">
+                <form action="" class="linha">
+                  <p class="p">Rua</p>
+                  <input type="text">
+                </form>
+                <form action="" id="padding" class="linha">
+                  <p class="p">Número</p>
+                  <input type="text">
+                </form>
+              </div><br>
+              <div id="comp_bairro">
+                <form action="" class="linha">
+                  <p class="p">Complemento e referência</p>
+                  <input type="text">
+                </form>
+                <form action="" id="padding" class="linha">
+                  <p class="p">Bairro</p>
+                  <input type="text">
+                </form>
+              </div><br>
+              <div id="cid_est">
+                <form action="" class="linha">
+                  <p class="p">Cidade</p>
+                  <input type="text">
+                </form>
+                <form action="" id="padding" class="opcao">
+                  <p class="p">Estado</p>
+                  <select name="" id="">
+                    <option value="uf" disabled selected>UF</option>
+                    <option value="ac">AC</option>
+                    <option value="al">AL</option>
+                    <option value="ap">AP</option>
+                    <option value="am">AM</option>
+                    <option value="ba">BA</option>
+                    <option value="ce">CE</option>
+                    <option value="df">DF</option>
+                    <option value="es">ES</option>
+                    <option value="go">GO</option>
+                    <option value="ma">MA</option>
+                    <option value="mt">MT</option>
+                    <option value="ms">MS</option>
+                    <option value="mg">MG</option>
+                    <option value="pa">PA</option>
+                    <option value="pb">PB</option>
+                    <option value="pr">PR</option>
+                    <option value="pe">PE</option>
+                    <option value="pi">PI</option>
+                    <option value="rn">RN</option>
+                    <option value="rs">RS</option>
+                    <option value="rj">RJ</option>
+                    <option value="ro">RO</option>
+                    <option value="rr">RR</option>
+                    <option value="sc">SC</option>
+                    <option value="sp">SP</option>
+                    <option value="se">SE</option>
+                    <option value="to">TO</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="pagamento">
+          <div id="pag">
+            <div>
+              <h2>Pagamento</h2>
+            </div>
+            <div>
+              <form action="">
+                <p class="p2">Número do cartão</p>
+                <input type="text" id="num-cartao">
+              </form>
+              <form action="">
+                <p class="p2">Nome impresso no cartão</p>
+                <input type="text" id="nome-impre">
+              </form>
+              <form action="">
+                <p class="p2">Validade</p>
+                <div id="validade">
+                  <select name="" id="1">
+                    <option value="mes" disabled selected>Mês</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <p id="barra">/</p>
+                  <select name="" id="2">
+                    <option value="ano" disabled selected>Ano</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                  </select>
+                </div>
+              </form>
+              <form action="">
+                <p class="p2">Código de segurança</p>
+                <input type="text" maxlength="3" id="cod">
+              </form>
+              <form action="" id="comprar">
+                <div>
+                  <input type="submit" value="Finalizar compra" class="comprar">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    </section>
+    <script>
+          function clique1(){
+            document.getElementById('btn1').style.backgroundColor = "#ff8400";
+            document.getElementById('btn1').style.color = "white";
+            document.getElementById('btn2').style.backgroundColor = "white";
+            document.getElementById('btn2').style.color = "black";
+          }
+          function clique2(){
+            document.getElementById('btn2').style.backgroundColor = "#ff8400";
+            document.getElementById('btn2').style.color = "white";
+            document.getElementById('btn1').style.backgroundColor = "white";
+            document.getElementById('btn1').style.color = "black";
+          }
+    </script>
+
+    <footer id="rodape">
+      <hr />
+      <h2>Informações</h2>
+      <ul id="rod-list">
+        <li id="contatos">
+          <h3>Contatos</h3>
+          <ul>
+            <li>
+              <img src="../static/img/telefone.png" alt="imagem" />
+              <a href="">
+                <p style="margin-top: 26px">Telefone</p>
+              </a>
+            </li>
+            <li>
+              <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+              <a href="">
+                <p style="margin-top: 30px">Celular</p>
+              </a>
+            </li>
+            <li style="margin-top: 30px">
+              <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+              <a href="mailto:kagemanutencaogv@gmail.com">
+                <p style="margin-left: 20px">E-mail</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="sociais">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li>
+              <img src="../static/img/instagram.png" alt="logo do Instagram" />
+              <a href="https://www.instagram.com/kage_cm/" target="blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <img src="../static/img/facebook.png" alt="logo do Facebook" />
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+              <a href="https://wa.me/+5533987147566" target="_blank"
+                >WhatsApp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li id="info">
+          <h3>Quem Somos Nós?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+            quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+            suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+          </p>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+        <li id="pagam">
+          <h3>Formas de Pagamento</h3>
+          <ul>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+          </ul>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

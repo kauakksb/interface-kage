@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/css/pagina_do_produto.css" />
+    <title>Página do Produto</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="hsup">
+        <header>
+          <a href="/">
+            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+            <h1>Kage</h1>
+            <p>- COMÉRCIO E MANUTENÇÃO</p>
+          </a>
+        </header>
+        <div id="nav_pag"></div>
+        <div id="func">
+          <form action="/pegando-valores-busca" method="post" id="pesquisa">
+            <input
+              id="campo"
+              type="text"
+              name="camp_pesq"
+              autocomplete="off"
+              placeholder=" Pesquisar"
+            />
+            <button id="botao">
+              <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+            </button>
+          </form>
+          {% if state == True %}
+            <a id="login" href="/perfil">
+              <div>
+                <img src="../static/img/perfil.png" alt="imagem do login" />
+                <div>
+                  <p>Área do Usuário</p>
+                </div>
+              </div>
+            </a>
+            <div id="sair">
+
+              <form action="/logout">
+                <button>
+                    <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                </button>
+              </form>
+            </div>
+            
+          {% else %}
+          <a id="login" href="/perfil">
+            <div>
+              <img src="../static/img/perfil.png" alt="imagem do login" />
+              <div>
+                <p>Olá, faça login!</p>
+              </div>
+            </div>
+          </a>
+          <div id="sair">
+            
+          </div>
+          {% endif %}       
+        </div>
+      </div>
+      <div id="hinf"></div>
+    </div>
+    <section id="prod">
+      <div id="img-prod">
+        <img
+          id="imagem-prod"
+          src="{{dados_prod[5]}}"
+          alt="imagem"
+        />
+      </div>
+      <div id="info_prod">
+        <p id="nome_prod">{{dados_prod[1]}}</p>
+        <div id="parcelas">
+          <p id="preco">R$ {{dados_prod[2]}}</p>
+          <div id="div-aval-prod">
+            <img id="aval-prod" src="../static/img/avaliacao.png" alt="" />
+            <p>(000)</p>
+          </div>
+          <p>Com até 10x sem juros!</p>
+          <a href=""><p>Mais formas de pagamento</p></a>
+        </div>
+        <p id="estoque">Estoque: {{dados_prod[3]}}</p>
+        <form action="">
+          <label>Frete:</label>
+          <input
+            id="cep"
+            type="text"
+            placeholder="CEP: 00000-000"
+            maxlength="9"
+          />
+          <input type="submit" value="calcular" id="calc" />
+        </form>
+        <div id="div-btn">
+          <form action="/add-carr" method="post">
+            {% set id_prod = dados_prod[0] %}
+            <input type="text" name="id_prod" value="{{id_prod}}" style="display: none;visibility: hidden;">
+            <button id="btn-add">Adicionar ao Carrinho</button>
+          </form>            
+        </div>
+        <div id="div-btn">
+          <form action="/finalizar-compra">
+            <button id="btn-buy">Comprar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="categ">
+      <nav id="nav_site">
+        <a id="l1" href="">
+          <p>Descrição</p>
+        </a>
+        <a id="l2" href="">
+          <p>Características</p>
+        </a>
+        <a id="l3" href="">
+          <p>Comentários</p>
+        </a>
+      </nav>
+    </section>
+
+    <section id="funcoes">
+      <div id="desc">
+        <div id="div_desc">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias
+            iure, labore fugiat unde quod sit ad exercitationem repellat culpa
+            maxime cumque et quos maiores, consequuntur commodi voluptatibus
+            dicta ipsa. lorem
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
+            corporis nostrum, animi tenetur amet odio hic maiores corrupti
+            laborum possimus neque, quod, impedit eaque nam similique ratione
+            asperiores. Esse, optio.
+          </p>
+          <div>
+            <button id="ver_mais">Ver mais <img src="" alt="" /></button>
+          </div>
+        </div>
+      </div>
+      <div id="carac">
+        <div id="div_carac">
+          <ul>
+            <li>
+              <p id="tit">Altura</p>
+              <blockquote><p>...(Altura)...</p></blockquote>
+            </li>
+            <li>
+              <p id="tit">Largura</p>
+              <blockquote>
+                <p>...(Largura)...</p>
+              </blockquote>
+            </li>
+            <li>
+              <p id="tit">Comprimento</p>
+              <blockquote><p>...(Comprimento)...</p></blockquote>
+            </li>
+            <li>
+              <p id="tit">Volume</p>
+              <blockquote><p>...(Volume)...</p></blockquote>
+            </li>
+            <li>
+              <p id="tit">Cod. de Ident.</p>
+              <blockquote><p>...(Cod. de Ident.)...</p></blockquote>
+            </li>
+          </ul>
+          <div id="ver_mais">
+            <button>Ver mais <img src="" alt="" /></button>
+          </div>
+        </div>
+      </div>
+      <div id="coment">
+        <div id="div_coment">
+          <ul>
+            <li>
+              <p id="nome_usu">Nome Usuario</p>
+              <blockquote>
+                <div id="avaliacao">
+                  <p id="coment_pre">(Comentario predefinido)</p>
+                  <div id="aval_img">
+                    <img src="../static/img/avaliacao.png" alt="" />
+                  </div>
+                </div>
+              </blockquote>
+              <blockquote>
+                <p id="coment_liv">...(Comentario livre)...</p>
+              </blockquote>
+              <div id="like_unlike">
+                <button><img id="like" src="../static/img/like.png" alt="" /></button>
+                <button>
+                  <img id="unlike" src="../static/img/unlike.png" alt="" />
+                </button>
+              </div>
+            </li>
+            <li>
+              <p id="nome_usu">Nome Usuario</p>
+              <blockquote>
+                <div id="avaliacao">
+                  <p id="coment_pre">(Comentario predefinido)</p>
+                  <div id="aval_img">
+                    <img src="../static/img/avaliacao.png" alt="" />
+                  </div>
+                </div>
+              </blockquote>
+              <blockquote>
+                <p id="coment_liv">...(Comentario livre)...</p>
+              </blockquote>
+              <div id="like_unlike">
+                <button><img id="like" src="../static/img/like.png" alt="" /></button>
+                <button>
+                  <img id="unlike" src="../static/img/unlike.png" alt="" />
+                </button>
+              </div>
+            </li>
+          </ul>
+          <div id="ver_mais">
+            <button>Ver mais <img src="" alt="" /></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mais_prod">
+      <ul id="prods">
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- Mais Produtos -->
+        <div class="gp-prod">
+          <div class="titulo">
+            <h3>Mais Produtos</h3>
+          </div>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="list_prod">
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/bombadagua-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/audaz-removebg-preview.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img id="img-prod" src="../static/img/motorweg-.png" alt="imagem" />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/lavadorajacto.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  id="img-prod"
+                  src="../static/img/Produtos-Pressure-SUPERAR-120-500W.png"
+                  alt="imagem"
+                />
+                <div id="div-aval">
+                  <img id="aval" src="../static/img/avaliacao.png" alt="" />
+                  <p id="num-aval">(000)</p>
+                </div>
+                <p id="nome">Compressor Pressure Super Ar 120 500W</p>
+                <p id="pre-ori">R$ 000,00</p>
+                <p id="pre">R$ 000,00</p>
+              </a>
+            </li>
+          </ul>
+          <hr />
+        </div>
+      </ul>
+    </section>
+    <section id="coment">
+      <form action="" method="post">
+        <h2>Comentários</h2>
+        <input type="text" name="coment" id="txt" /><br /><br />
+        <input id="button" type="submit" value="Comentar" />
+      </form>
+    </section>
+    <footer id="rodape">
+      <hr />
+      <h2>Informações</h2>
+      <ul id="rod-list">
+        <li id="contatos">
+          <h3>Contatos</h3>
+          <ul>
+            <li>
+              <img src="../static/img/telefone.png" alt="imagem" />
+              <a href="">
+                <p style="margin-top: 26px">Telefone</p>
+              </a>
+            </li>
+            <li>
+              <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+              <a href="">
+                <p style="margin-top: 30px">Celular</p>
+              </a>
+            </li>
+            <li style="margin-top: 30px">
+              <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+              <a href="mailto:kagemanutencaogv@gmail.com">
+                <p style="margin-left: 20px">E-mail</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="sociais">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li>
+              <img src="../static/img/instagram.png" alt="logo do Instagram" />
+              <a href="https://www.instagram.com/kage_cm/" target="blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <img src="../static/img/facebook.png" alt="logo do Facebook" />
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <img src="../static/img/whatsapp.png" alt="logo do TikTok" />
+              <a href="https://wa.me/+5533987147566" target="_blank"
+                >WhatsApp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li id="info">
+          <h3>Quem Somos Nós?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio amet
+            quia suscipit nisi aspernatur velit inventore nobis. Odio amet quia
+            suscipit nisi ipsum dolor sit amet consectetur, adipisicing elit
+          </p>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+        <li id="pagam">
+          <h3>Formas de Pagamento</h3>
+          <ul>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+            <div>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+              <li>
+                <img src="" alt="Forma de Pagamento" />
+              </li>
+            </div>
+          </ul>
+          <div>
+            <button>
+              <a href="">Saiba Mais</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
