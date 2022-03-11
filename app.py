@@ -154,6 +154,8 @@ def alt_dados():
 @app.route('/busca', methods = ["GET", "POST"])
 def busca():
     global valor_inserido, results, num
+
+    valor_inserido = ""
     
     valor_inserido = request.form.get('camp_pesq')
     if len(str(valor_inserido)) == 0:
