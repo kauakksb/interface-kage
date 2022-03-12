@@ -24,12 +24,18 @@ results = ''
 num = None
 target = ''
 dados_prod = None
+email_logado = ''
+anonymous = True
+
 
 @app.route('/')
 def homepage():
-    global state
+    global state, user, email_logado, anonymous
 
-    if User.is_authenticated():
+    if anonymous == True:
+        user = User(email_logado)
+
+    if user.is_authenticated():
         state = True
     else:
         state = False
@@ -47,11 +53,9 @@ def login():
 
 @app.route('/validando-login', methods = ["GET", "POST"])
 def verific_login():
-    global email_logado, target
+    global email_logado, target, user, anonymous
     email = request.form.get('email')
     senha = request.form.get('senha')
-
-    email_logado = email
 
     if len(str(email)) == 0 or len(senha) == 0:
         
@@ -64,7 +68,10 @@ def verific_login():
     
 
     if email == user_data[0] and senha == user_data[2]:
-        User.log(email)
+        email_logado = email
+        user = User(email_logado)
+        user.log()
+        anonymous = False
         if target == 'perfil':
             return redirect('/perfil')
         elif target == 'prod':
@@ -77,32 +84,33 @@ def verific_login():
 
 @app.route('/logout')
 def logout():
-    global email_logado
-    User.logout_user(email_logado)
+    global email_logado, user, anonymous
+    user.logout_user(email_logado)
     email_logado = None
+    anonymous = True
     return redirect('/')
 
 
 @app.route('/perfil')
 def perfil():
-    global target, state
+    global target, state, user
     target = 'perfil'
 
     sinais = ['[',']','(',')', "'"]
     sinais2 = ['(',')', "'",',']
 
-    if User.is_authenticated():
+    if user.is_authenticated():
         try:
             prods = []
             prods_carr = []
             valor_total = 0 
             
-            servicos = db.searchData('*', 'servicos','email_cliente',User.get_id())
-            info_pessoais = db.searchData('*', 'usuarios', 'email_usu', User.get_id())
-            hist = db.searchData('id_produto', 'hist', 'id_cliente', User.get_id())
-            carr = db.searchData('id_produto','carr', 'id_cliente', User.get_id())
+            servicos = db.searchData('*', 'servicos','email_cliente', user.get_id())
+            info_pessoais = db.searchData('*', 'usuarios', 'email_usu', user.get_id())
+            hist = db.searchData('id_produto', 'hist', 'id_cliente', user.get_id())
+            carr = db.searchData('id_produto','carr', 'id_cliente', user.get_id())
 
-            quant = str(db.searchData('quant','carr', 'id_cliente', User.get_id()))
+            quant = str(db.searchData('quant','carr', 'id_cliente', user.get_id()))
             for sinal in sinais:
                 quant = quant.replace(sinal,'')
             quant = quant.replace(',' ," ")
@@ -134,7 +142,7 @@ def perfil():
         except:
             '''nada'''
 
-        if User.is_authenticated():
+        if user.is_authenticated():
             state = True
         else:
             state = False
@@ -151,9 +159,11 @@ def alt_dados():
     return render_template('alt_dados.html')
 
 
-@app.route('/busca', methods = ["GET", "POST"])
-def busca():
-    global valor_inserido, results, num
+
+
+@app.route('/produtos', methods = ["GET", "POST"])
+def produtos():
+    global valor_inserido, results, num, state
 
     valor_inserido = ""
     
@@ -166,19 +176,13 @@ def busca():
     except:
         return 'Não foi possível realizar a busca'
 
+    if results == '':
+        return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = valor_inserido, state = state)
+
     if len(results) % 5 == 0:
         num = len(results) // 5
     elif len(results) % 5 <= 4:
         num = (len(results) // 5) + 1
-
-
-    return redirect('/produtos')
-
-
-
-@app.route('/produtos', methods = ["GET", "POST"])
-def produtos():
-    global valor_inserido, results, num, state
 
     return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = valor_inserido, state = state)
 
@@ -228,7 +232,13 @@ def add_carr():
         return redirect('/login')
 
 
+
+@app.route('/serv')
+def serv():
+    return render_template('serv.html')
         
+
+
 
 
 if __name__ == '__main__':
