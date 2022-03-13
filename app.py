@@ -75,7 +75,7 @@ def verific_login():
         if target == 'perfil':
             return redirect('/perfil')
         elif target == 'prod':
-            return redirect('/produto')
+            return redirect('/add-carr')
 
 
     else:
@@ -205,17 +205,17 @@ def produto():
 
 @app.route('/add-carr', methods = ["GET", "POST"])
 def add_carr():
-    global target, email_logado
+    global target, email_logado, user, anonymous
     
     
-    if User.is_authenticated():
+    if anonymous == False:
         id_prod = request.form.get('id_prod')
 
         try:
             prods = db.searchData('id_produto', 'carr', 'id_cliente', email_logado, 'id_produto', id_prod)
         except:
             print('Não foi possível realizar a busca')
-            # return redirect('/produto')
+            return redirect('/produto')
 
         if len(prods) == 0:
             db.insertData('carr', email_logado, id_prod, 1)
@@ -238,6 +238,19 @@ def serv():
     return render_template('serv.html')
         
 
+@app.route('/insert-serv')
+def insert_serv():
+    return redirect('/serv')
+
+
+@app.route('/servicos')
+def servicos():
+    return render_template('servicos.html')
+
+
+@app.route('/quem-somos-nos')
+def quem_somos_nos():
+    return render_template('quem_somos_nos.html')
 
 
 

@@ -1,1381 +1,2958 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&family=Signika&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600&display=swap');
 
-html{
-    scroll-behavior: smooth;
-}
 
-body{
-    margin: 0;
-    padding: 0;
-}
-
-
-/*  */
-/*  */
-/*  */
-/*  */
-/* Parte Superior do Site (Header e Navs) */
-#head{
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    width: 100%;
-    margin: 0;
-}
-
-/* Parte de cima do Head da Página (Header e Nav da Pág) */
-#head > #hsup{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 85px;
-    background-color: rgb(110, 110, 110);
-}
-
-
-
-/*  */
-/* Cabeçalho da Página(Título e Logo) */
-header{
-    display: flex;
-    flex-direction: row;
-    width: 33%;
-}
-
-header > a{
-    height: 85px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    color: black;
-}
-
-header > a > img{
-    margin-left: 15%;
-    margin-top: 17px;
-    height: 50px;
-    width: 50px;
-}
-
-header > a > h1{
-    margin-top: 14px;
-    margin-left: 1%;
-    height: 35px;
-    font-size: 44px;
-    font-family: 'Roboto Slab', serif;
-}
-
-header > a > p{
-    height: 12px;
-    margin: 0;
-    margin-top: 40px;
-    margin-left: 2px;
-    font-size: 14px;
-    font-family: 'Roboto Slab', serif;
-}
-
-
-
-/*  */
-/* Nav da Página */
-#nav_pag{  
-    display: flex;
-    flex-direction: row;
-    height: 85px;
-    width: 33%;
-    margin: 0;
-    margin-left: 2%;
-}
-
-/*  */
-/* Funções disponíveis no cabeçalho da página - pesquisa e login */
-#func{
-    display: flex;
-    flex-direction: row;
-    width: 33%;
-    height: 100px;
-}
-
-#func > #pesquisa{
-    display: flex;
-    flex-direction: row;
-}
-
-#func > #pesquisa > #campo{
-    margin-left:30%;
-    width:200px;
-    height: 25px;
-    margin-top: 27px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(228, 228, 228);
-    color: rgb(78, 78, 78);
-}
-
-#func > #pesquisa > #botao{
-    margin-top: 25px;
-    margin-left: 2px;
-    background-color: rgb(110, 110, 110);
-    border: none;
-    height: 34px;
-    width: 34px;
-}
-
-#func > #pesquisa > #botao > img{
-    height: 30px;
-}
-
-
-
-/*  */
-/* Botão de Login */
-#func > #login{
-    margin-left: 8%;
-    width: 35%;
-    height: 85px;
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    font-family: 'Roboto Slab', serif;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-#func > #login:hover{
-    margin-left: 8%;
-    width: 35%;
-    height: 85px;
-    text-decoration: underline;
-    color: white;
-    font-size: 14px;
-    font-family: 'Roboto Slab', serif;
-}
-
-#func > #login > div{
-    display: flex;
-    flex-direction: row;
-}
-
-#func > #login > div > img{
-    height: 30px;
-}
-
-#func > #login > div > div{
-    height: 34px;
-    display: flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#func > #login > div > div > p{
-    text-align: justify;
-    height: 25px;
-    margin: 0;
-    margin-left: 5px;
+@media (min-width:1200px){
     
-}
-
-
-#sair button{
-    display: flex;
-    align-items: center;
-    background-color: #ffffff00;
-    border: none;
-    margin-top: 30%;
-}
-
-#sair img{
-    height: 32px;
-    width: 30px;
-    margin: 8px 6px; 
-}
-
-#sair img:hover{
-    height: 34px;
-    width: 32px;
-    margin: 7px 5px;
-    transition: 200ms;
-}
-
-
-/*  */
-/* Parte Inferior do Cabeçalho */
-#hinf{
-    display: flex;
-    flex-direction: row;
-    height:15px;
-    width: 100%;
-    background-color: #ff8400;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Mensagem promocional */
-#promo{
-    height: 475px;
-    background-color: rgba(156, 156, 156, 0.322);
-    display: flex;
-    flex-direction: column;
-}
-
-#topo{
-    height: 450px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-#base{
-    height: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#base > div{
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
-    background-color: #a5a5a5;
-    margin: 5px;
-}
-
-#base > #bola1{
-    background-color: #666565;
-}
-
-#mid{
-    display: flex;
-    justify-content: right;
-    width: 90%;
-    overflow: hidden;
-}
-
-#first{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 400px;
-}
-
-#second{
-    width: 0px;
-    height: 400px;
-    visibility: hidden;
-}
-
-#third{
-    width: 0px;
-    height: 400px;
-    visibility: hidden;
-}
-
-#pesq > #tit{
-    height: 70px;
-    width: 100%;
-    margin-top: 100px;
-    text-align: center;
-    border-radius: 4px;
-}
-
-#pesq > #tit > h2{
-    margin: 0px;
-    font-size: 42px;
-    font-family: 'Roboto Slab', serif;
-    margin-top: 8px;
-    color: rgb(0, 0, 0);
-}
-
-#pesq> #inf{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 120px;
-    margin-top: 20px;
-    border-radius: 3px;
-}
-
-#pesq{
-    width: 65%;
-    height: 450px;
-    margin-left: 5%;
-}
-
-#pdir{
-    width: 35%;
-    display: flex;
-}
-
-#pdir > img{
-    height: 300px;
-    margin-top: 75px;
-    margin-left: 10%;
-}
-
-#nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-#nav a{
-    margin: 3px 10px;
-    height: 40px;
-    width: 100px;
-    border: none;
-    background-color: #ff8400;
-    text-decoration: none;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 15px;
-    border-radius: 2px;
-    transition: 300ms;
-    text-align: center;
-}
-
-#nav a:hover{
-    margin: 0px 7px;
-    height: 46px;
-    width: 106px;
-    border: none;
-    background-color: #ff8400;
-    text-decoration: none;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    border-radius: 2px;
-    transition: 300ms;
-    text-align: center;
-}
-
-#nav > a > p{
-    margin: 10px 0px;
-}
-
-
-#inf > #texto{
-    display: flex;
-    width: 100%;
-    height: 100px;
-    justify-content: center;
-}
-
-#inf > #texto > ul{
-    list-style-type: none;
-    height: 100px;
-    width: 80%;
-    padding: 0px;
-    margin: 0px;
-}
-
-#inf > #texto > ul > li > p{
-    text-align: center;
-    font-size: 22px;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    color: rgb(0, 0, 0);
-    margin: 0;
-    margin-top: 27px;
-}
-
-
-#btesq{
-    height: 475px;
-    width: 5%;
-    display: flex;
-    align-items: center;
-}
-
-#btesq > button{
-    height: 45px;
-    width: 45px;
-    margin-left: 50%;
-    border: none;
-    border-radius: 22px;
-    background-color: #fffafaaf;
-}
-
-#btesq > button:hover{
-    height: 45px;
-    width: 45px;
-    margin-left: 50%;
-    border: none;
-    border-radius: 22px;
-    background-color: #ffffffee;
-    cursor: pointer;
-}
-
-#btesq > button > img{
-    height: 30px;
-    width: 30px;
-    margin-top: 4px;
-    margin-right: 3px;
-}
-
-#btdir{
-    height: 475px;
-    width: 5%;
-    display: flex;
-    align-items: center;
-}
-
-#btdir > button{
-    height: 45px;
-    width: 45px;
-    margin-right: 50%;
-    border: none;
-    border-radius: 22px;
-    background-color: #fffafaaf;
-}
-
-#btdir > button:hover{
-    height: 45px;
-    width: 45px;
-    margin-right: 50%;
-    border: none;
-    border-radius: 22px;
-    background-color: #ffffffee;
-    cursor: pointer;
-}
-
-
-#btdir > button > img{
-    height: 30px;
-    width: 30px;
-    margin-top: 4px;
-    margin-left: 3px;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Categorias */
-
-#categ{
-    margin-top: 6px;
-    height: 80px;
-    width: 100%;
-    border-top: 2px solid #b3b3b3;
-    border-bottom: 1px solid #b4b4b4;
-}
-
-#nav_site{
-    display: flex;
-    flex-direction: row;
-    height: 20px;
-    width: 100%;
-    justify-content: center;
-}
-
-#nav_site > a{
-    text-decoration: none;
-    color: rgb(78, 78, 78);
-    font-size: 15px;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 600;
-    margin: 20px 5px;
-    height: 30px;
-    width: 100px;
-    padding: 6px;
-}
-
-#nav_site > a:hover{
-    height: 30px;
-    width: 100px;
-    padding: 6px;
-    border-radius: 5px;
-    background-color: #ff840015;
-    color: #ff8400cc;
-    font-size: 15px;
-    font-family: 'Roboto Slab', serif;
-    margin: 20px 5px;
-    transition: 300ms;
-}
-
-#nav_site > a > p{
-    text-align: center;
-    margin: 0;
-    margin-top: 4px;
-}
-
-
-#space{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    background-color: rgba(156, 156, 156, 0.322);
-}
-
-#linha{
-    margin: 0px;
-    height: 1px;
-    width: 70%;
-    background-color: rgb(110, 110, 110);
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Propaganda */
-#prop{
-    height: 750px;
-    display: flex;
-    flex-direction: column;
-}
-
-#prop > #sup{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 280px;
-}
-
-#prop > #sup > #dir{
-    width: 33%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-}
-
-#prop > #sup > #dir > #etq{
-    width: 100%;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
-}
-
-#prop > #sup > #dir > #etq > img{
-    height: 110px;
-    margin-left: 0%;
-    margin-top: 70px;
-}
-
-#prop > #sup > #dir > #text{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(75, 75, 75);
-}
-
-#prop > #sup > #dir > #text > p{
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 32px;
-    margin: 0px;
-    text-align: center;
-    width: 200px;
-    height: 75px;
-    margin-top: 10px;
-}
-
-#prop > #sup > #esq{
-    width: 67%;
-    display: flex;
-    flex-direction: column;
-}
-
-#prop > #sup > #esq > #cima{
-    display: flex;
-    flex-direction: row;
-}
-
-#prop > #sup > #esq > #cima > .tit{
-    width: 50%;
-    height: 180px;
-    background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
-    display: flex;
-    justify-content: center;
-}
-
-#prop > #sup > #esq > #cima > .tit > div{
-    height: 75px;
-    width: 225px;
-    border-radius: 5px;
-    background-color: #ff8400;
-    text-align: center;
-    margin-top: 52px;
-}
-
-#prop > #sup > #esq > #cima > .tit > div > h2{
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 30px;
-    font-weight: 400;
-    margin: 18px 0px;
-    height: 32px;
-}
-
-#prop > #sup > #esq > #cima > #comp{
-    width: 50%;
-    height: 180px;
-    background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
-}
-
-#prop > #sup > #esq > #baixo{
-    height: 100px;
-    background-color: rgb(75, 75, 75);
-}
-
-#prop > #sup > #esq > #baixo > p{
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 26px;
-    font-weight: 300;
-}
-
-
-
-/*  */
-/* Parte das ofertas da Propaganda */
-#prop > #rest{
-    height: 400px;
-    width: 100%;
-}
-
-
-#prop > #rest > #ofer{
-    height: 350px;
-    width: 100%;
-}
-
-#prop > #rest > #ofer > ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0px;
-    padding: 0px;
-    height: 350px;
-    background-color: rgb(75, 75, 75);
-}
-
-#prop > #rest > #ofer > ul > li{
-    height: 275px;
-    width: 200px;
-    background-color: rgb(88, 88, 88);
-    margin: 37px 20px;
-    border-radius: 5px;
-    list-style-type: none;
-}
-
-#prop > #rest > #ofer > ul > li:hover{
-    height: 275px;
-    width: 200px;
-    background-color: rgb(99, 98, 98);
-    margin: 37px 20px;
-    border-radius: 5px;
-    list-style-type: none;
-}
-
-#prop > #rest > #ofer > ul > li > a{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    text-decoration: none;
-    height: 275px;
-    width: 200px;
-    align-items: center;
-}
-
-#prop > #rest > #ofer > ul > li > a > #img-prod{
-    height: 130px;
-}
-
-#prop > #rest > #ofer > ul > li > a > #div-aval{
-    height: 10px;
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-}
-
-#prop > #rest > #ofer > ul > li > a > #div-aval > #aval{
-    height: 12px;
-    margin-left: 10px;
-}
-
-#prop > #rest > #ofer > ul > li > a > #div-aval > #num-aval{
-    font-family: 'Roboto Slab', serif;
-    font-size: 10px;
-    margin: 0;
-}
-
-#prop > #rest > #ofer > ul > li > a > #nome{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 12px;
-    width: 175px;
-    margin-top: 5px;
-}
-#prop > #rest > #ofer > ul > li > a > #nome:hover{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 12px;
-    width: 175px;
-    margin-top: 5px;
-    text-decoration: underline;
-}
-
-#prop > #rest > #ofer > ul > li > a > #pre-ori{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 10px;
-    width: 175px;
-    margin-top: 5px;
-    text-decoration: line-through;
-}
-
-#prop > #rest > #ofer > ul > li > a > #pre{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    width: 175px;
-    margin-top: 5px;
-}
-
-
-/*  */
-/* Botão para ver mais ofertas do site */
-#prop > #rest > #ver-mais{
-    height: 125px;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(75, 75, 75);
-}
-
-#prop > #rest > #ver-mais > a > #botao{
-    height: 40px;
-    width: 100px;
-    border: none;
-    background-color: #ff8400;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    border-radius: 2px;
-    margin-top: 18px;
-    transition: 300ms;
-}
-
-#prop > #rest > #ver-mais > a > #botao:hover{
-    height: 43px;
-    width: 105px;
-    border: none;
-    background-color: #ff8400;
-    font-size: 15px;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    border-radius: 2px;
-    margin-top: 16px;
-    cursor: pointer;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Parte de Produtos Ofertados no Site */
-#prod{
-    height: 2775px;
-    width: 100%;
-    background-color: rgb(243, 243, 243);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-#prod > h2{
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
-    font-size: 36px;
-    padding-top: 50px;
-    text-align: center;
-}
-
-#prod > #prods{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-}
-
-#prod > #prods > .gp-prod{
-    height: 825px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-}
-
-#prod > #prods > .gp-prod > .titulo{
-    width: 100%;
-    display: flex;
-    justify-content: left;
-}
-
-#prod > #prods > .gp-prod > .titulo > h3{
-    text-decoration: underline;
-    font-family: 'Roboto Slab', serif;
-    font-size: 26px;
-    font-weight: 400;
-    margin: 0px;
-    margin-left: 9%;
-    margin-bottom: 20px;
-}
-
-#prod > #prods > .gp-prod > .list_prod{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 7px 0px;
-    padding: 0;
-    justify-content: center;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li{
-    height: 275px;
-    width: 200px;
-    background-color: rgb(250, 250, 250);
-    margin: 18px 12px;
-    border-radius: 2px;
-    border: 1px solid rgb(167, 167, 167);
-    list-style-type: none;
-    box-shadow: 1px 2px 4px 1px #a5a5a5;
-    transition: 300ms;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li:hover{
-    height: 279px;
-    width: 200px;
-    margin: 16px 12px;
-    background-color: rgb(250, 250, 250);
-    border-radius: 2px;
-    border: 1px solid rgb(167, 167, 167);
-    list-style-type: none;
-    box-shadow: 1px 3px 5px 3px #a5a5a5;
+    html{
+        scroll-behavior: smooth;
+    }
     
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Parte Superior do Site (Header e Navs) */
+    #head{
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Parte de cima do Head da Página (Header e Nav da Pág) */
+    #head > #hsup{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 85px;
+        background-color: rgb(110, 110, 110);
+    }
+    
+    #cont-sup{
+        display: flex;
+        flex-direction: row;
+        width: 85%;
+    }
+    
+    
+    /*  */
+    /* Cabeçalho da Página(Título e Logo) */
+    header{
+        display: flex;
+        flex-direction: row;
+        width: 33%;
+    }
+    
+    header > a{
+        height: 85px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        color: black;
+    }
+    
+    header > a > img{
+        margin-left: 15%;
+        margin-top: 17px;
+        height: 50px;
+        width: 50px;
+    }
+    
+    header > a > h1{
+        margin-top: 14px;
+        margin-left: 1%;
+        height: 35px;
+        font-size: 44px;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    header > a > p{
+        height: 12px;
+        margin: 0;
+        margin-top: 40px;
+        margin-left: 2px;
+        font-size: 14px;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    
+    
+    /*  */
+    /* Nav da Página */
+    #nav_pag{  
+        display: flex;
+        flex-direction: row;
+        height: 85px;
+        width: 33%;
+        margin: 0;
+        margin-left: 2%;
+    }
+    
+    /*  */
+    /* Funções disponíveis no cabeçalho da página - pesquisa e login */
+    #func{
+        display: flex;
+        flex-direction: row;
+        width: 33%;
+        height: 100px;
+        justify-content: right;
+    }
+    
+    #func > #pesquisa{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+    }
+    
+    #func > #pesquisa > #campo{
+        width:200px;
+        height: 25px;
+        margin-top: 27px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(228, 228, 228);
+        color: rgb(78, 78, 78);
+    }
+    
+    #func > #pesquisa > #botao{
+        margin-top: 25px;
+        margin-left: 2px;
+        background-color: rgb(110, 110, 110);
+        border: none;
+        height: 34px;
+        width: 34px;
+    }
+    
+    #func > #pesquisa > #botao > img{
+        height: 30px;
+    }
+    
+    
+    #div-login{
+        width: 15%;
+    }
+    
+    /*  */
+    /* Botão de Login */
+    #login{
+        width: 100%;
+        height: 85px;
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        font-family: 'Roboto Slab', serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #login:hover{
+        width: 100%;
+        height: 85px;
+        text-decoration: underline;
+        color: white;
+        font-size: 14px;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    #login > div{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #login > div > img{
+        height: 30px;
+    }
+    
+    #login > div > div{
+        height: 34px;
+        display: flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #login > div > div > p{
+        text-align: justify;
+        height: 25px;
+        margin: 0;
+        margin-left: 5px;
+        
+    }
+    
+    
+    #sair button{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff00;
+        border: none;
+        margin-top: 30%;
+    }
+    
+    #sair img{
+        height: 32px;
+        width: 30px;
+        margin: 8px 6px; 
+    }
+    
+    #sair img:hover{
+        height: 34px;
+        width: 32px;
+        margin: 7px 5px;
+        transition: 200ms;
+    }
+    
+    
+    /*  */
+    /* Parte Inferior do Cabeçalho */
+    #hinf{
+        display: flex;
+        flex-direction: row;
+        height:15px;
+        width: 100%;
+        background-color: #ff8400;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Mensagem promocional */
+    #promo{
+        height: 475px;
+        background-color: rgba(156, 156, 156, 0.322);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #topo{
+        height: 450px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #base{
+        height: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #base > div{
+        height: 10px;
+        width: 10px;
+        border-radius: 5px;
+        background-color: #a5a5a5;
+        margin: 5px;
+    }
+    
+    #base > #bola1{
+        background-color: #666565;
+    }
+    
+    #mid{
+        display: flex;
+        justify-content: right;
+        width: 90%;
+        overflow: hidden;
+    }
+    
+    #first{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400px;
+    }
+
+    #sup-first{
+        display: flex;
+        flex-direction: row;
+        height: 350px;
+    }
+    
+    #second{
+        width: 0px;
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        visibility: hidden;
+    }
+    
+    #third{
+        width: 0px;
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        visibility: hidden;
+    }
+    
+    #pesq > #tit{
+        height: 70px;
+        width: 100%;
+        margin-top: 100px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+    #pesq > #tit > h2{
+        margin: 0px;
+        font-size: 42px;
+        font-family: 'Roboto Slab', serif;
+        margin-top: 8px;
+        color: rgb(0, 0, 0);
+    }
+    
+    #pesq> #inf{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 120px;
+        margin-top: 20px;
+        border-radius: 3px;
+    }
+    
+    #pesq{
+        width: 65%;
+        height: 450px;
+        margin-left: 5%;
+    }
+    
+    #pdir{
+        width: 35%;
+        display: flex;
+    }
+    
+    #pdir > img{
+        height: 300px;
+        margin-top: 75px;
+        margin-left: 10%;
+    }
+    
+    #nav{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #nav > div{
+        display: flex;
+        flex-direction: row;
+        margin-left: 23%;
+    }
+    
+    #nav > div > a{
+        margin: 3px 10px;
+        height: 40px;
+        width: 100px;
+        border: none;
+        background-color: #ff8400;
+        text-decoration: none;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 15px;
+        border-radius: 2px;
+        transition: 300ms;
+        text-align: center;
+    }
+    
+    #nav > div > a:hover{
+        margin: 0px 7px;
+        height: 46px;
+        width: 106px;
+        border: none;
+        background-color: #ff8400;
+        text-decoration: none;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 16px;
+        border-radius: 2px;
+        transition: 300ms;
+        text-align: center;
+    }
+    
+    #nav > div > a > p{
+        margin: 10px 0px;
+    }
+    
+    
+    #inf > #texto{
+        display: flex;
+        width: 100%;
+        height: 100px;
+        justify-content: center;
+    }
+    
+    #inf > #texto > ul{
+        list-style-type: none;
+        height: 100px;
+        width: 80%;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    #inf > #texto > ul > li > p{
+        text-align: center;
+        font-size: 22px;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        margin-top: 27px;
+    }
+    
+    
+    #btesq{
+        height: 475px;
+        width: 5%;
+        display: flex;
+        align-items: center;
+    }
+    
+    #btesq > button{
+        height: 45px;
+        width: 45px;
+        margin-left: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #fffafaaf;
+    }
+    
+    #btesq > button:hover{
+        height: 45px;
+        width: 45px;
+        margin-left: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #ffffffee;
+        cursor: pointer;
+    }
+    
+    #btesq > button > img{
+        height: 30px;
+        width: 30px;
+        margin-top: 4px;
+        margin-right: 3px;
+    }
+    
+    #btdir{
+        height: 475px;
+        width: 5%;
+        display: flex;
+        align-items: center;
+    }
+    
+    #btdir > button{
+        height: 45px;
+        width: 45px;
+        margin-right: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #fffafaaf;
+    }
+    
+    #btdir > button:hover{
+        height: 45px;
+        width: 45px;
+        margin-right: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #ffffffee;
+        cursor: pointer;
+    }
+    
+    
+    #btdir > button > img{
+        height: 30px;
+        width: 30px;
+        margin-top: 4px;
+        margin-left: 3px;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Categorias */
+    
+    #categ{
+        margin-top: 6px;
+        height: 80px;
+        width: 100%;
+        border-top: 2px solid #b3b3b3;
+        border-bottom: 1px solid #b4b4b4;
+    }
+    
+    #nav_site{
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #nav_site > a{
+        text-decoration: none;
+        color: rgb(78, 78, 78);
+        font-size: 15px;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 600;
+        margin: 20px 5px;
+        height: 30px;
+        width: 100px;
+        padding: 6px;
+    }
+    
+    #nav_site > a:hover{
+        height: 30px;
+        width: 100px;
+        padding: 6px;
+        border-radius: 5px;
+        background-color: #ff840015;
+        color: #ff8400cc;
+        font-size: 15px;
+        font-family: 'Roboto Slab', serif;
+        margin: 20px 5px;
+        transition: 300ms;
+    }
+    
+    #nav_site > a > p{
+        text-align: center;
+        margin: 0;
+        margin-top: 4px;
+    }
+    
+    
+    #space{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        background-color: rgba(156, 156, 156, 0.322);
+    }
+    
+    #linha{
+        margin: 0px;
+        height: 1px;
+        width: 70%;
+        background-color: rgb(110, 110, 110);
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Propaganda */
+    #prop{
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #prop > #sup{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 280px;
+    }
+    
+    #prop > #sup > #dir{
+        width: 33%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #prop > #sup > #dir > #etq{
+        width: 100%;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
+    }
+    
+    #prop > #sup > #dir > #etq > img{
+        height: 110px;
+        margin-left: 0%;
+        margin-top: 70px;
+    }
+    
+    #prop > #sup > #dir > #text{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #prop > #sup > #dir > #text > p{
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 32px;
+        margin: 0px;
+        text-align: center;
+        width: 200px;
+        height: 75px;
+        margin-top: 10px;
+    }
+    
+    #prop > #sup > #esq{
+        width: 67%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #prop > #sup > #esq > #cima{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #prop > #sup > #esq > #cima > .tit{
+        width: 50%;
+        height: 180px;
+        background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
+        display: flex;
+        justify-content: center;
+    }
+    
+    #prop > #sup > #esq > #cima > .tit > div{
+        height: 75px;
+        width: 225px;
+        border-radius: 5px;
+        background-color: #ff8400;
+        text-align: center;
+        margin-top: 52px;
+    }
+    
+    #prop > #sup > #esq > #cima > .tit > div > h2{
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 30px;
+        font-weight: 400;
+        margin: 18px 0px;
+        height: 32px;
+    }
+    
+    #prop > #sup > #esq > #cima > #comp{
+        width: 50%;
+        height: 180px;
+        background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
+    }
+    
+    #prop > #sup > #esq > #baixo{
+        height: 100px;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #prop > #sup > #esq > #baixo > p{
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 26px;
+        font-weight: 300;
+    }
+    
+    
+    
+    /*  */
+    /* Parte das ofertas da Propaganda */
+    #prop > #rest{
+        height: 400px;
+        width: 100%;
+    }
+    
+    
+    #prop > #rest > #ofer{
+        height: 350px;
+        width: 100%;
+    }
+    
+    #prop > #rest > #ofer > ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px;
+        height: 350px;
+        background-color: rgb(75, 75, 75);
+    }
+
+    #prop > #rest > #ofer > ul > .gp{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li{
+        height: 275px;
+        width: 200px;
+        background-color: rgb(88, 88, 88);
+        margin: 37px 20px;
+        border-radius: 5px;
+        list-style-type: none;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li:hover{
+        height: 275px;
+        width: 200px;
+        background-color: rgb(99, 98, 98);
+        margin: 37px 20px;
+        border-radius: 5px;
+        list-style-type: none;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        text-decoration: none;
+        height: 275px;
+        width: 200px;
+        align-items: center;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #img-prod{
+        height: 130px;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #div-aval{
+        height: 10px;
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #div-aval > #aval{
+        height: 12px;
+        margin-left: 10px;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #div-aval > #num-aval{
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        margin: 0;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #nome{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        width: 175px;
+        margin-top: 5px;
+    }
+    #prop > #rest > #ofer > ul > .gp > li > a > #nome:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        width: 175px;
+        margin-top: 5px;
+        text-decoration: underline;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #pre-ori{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        width: 175px;
+        margin-top: 5px;
+        text-decoration: line-through;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #pre{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        width: 175px;
+        margin-top: 5px;
+    }
+    
+    
+    /*  */
+    /* Botão para ver mais ofertas do site */
+    #prop > #rest > #ver-mais{
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #prop > #rest > #ver-mais > a > #botao{
+        height: 40px;
+        width: 100px;
+        border: none;
+        background-color: #ff8400;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        border-radius: 2px;
+        margin-top: 18px;
+        transition: 300ms;
+    }
+    
+    #prop > #rest > #ver-mais > a > #botao:hover{
+        height: 43px;
+        width: 105px;
+        border: none;
+        background-color: #ff8400;
+        font-size: 15px;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        border-radius: 2px;
+        margin-top: 16px;
+        cursor: pointer;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Parte de Produtos Ofertados no Site */
+    #prod{
+        height: 2775px;
+        width: 100%;
+        background-color: rgb(243, 243, 243);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    #prod > h2{
+        margin: 0;
+        font-family: 'Roboto Slab', serif;
+        font-size: 36px;
+        padding-top: 50px;
+        text-align: center;
+    }
+    
+    #prod > #prods{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+    
+    #prod > #prods > .gp-prod{
+        height: 825px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    
+    #prod > #prods > .gp-prod > .titulo{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+    }
+    
+    #prod > #prods > .gp-prod > .titulo > h3{
+        text-decoration: underline;
+        font-family: 'Roboto Slab', serif;
+        font-size: 26px;
+        font-weight: 400;
+        margin: 0px;
+        margin-left: 9%;
+        margin-bottom: 20px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 7px 0px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li{
+        height: 275px;
+        width: 200px;
+        background-color: rgb(250, 250, 250);
+        margin: 18px 12px;
+        border-radius: 2px;
+        border: 1px solid rgb(167, 167, 167);
+        list-style-type: none;
+        box-shadow: 1px 2px 4px 1px #a5a5a5;
+        transition: 300ms;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li:hover{
+        height: 279px;
+        width: 200px;
+        margin: 16px 12px;
+        background-color: rgb(250, 250, 250);
+        border-radius: 2px;
+        border: 1px solid rgb(167, 167, 167);
+        list-style-type: none;
+        box-shadow: 1px 3px 5px 3px #a5a5a5;
+        
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a{
+        display: flex;
+        flex-direction: column;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        height: 275px;
+        width: 200px;
+        align-items: center;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #img-prod{
+        height: 130px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval{
+        height: 10px;
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval > #aval{
+        height: 12px;
+        margin-left: 10px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval > #num-aval{
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        margin: 0;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #nome{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        width: 175px;
+        margin-top: 5px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #nome:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        width: 175px;
+        margin-top: 5px;
+        text-decoration: underline;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #pre-ori{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        width: 175px;
+        margin-top: 5px;
+        text-decoration: line-through;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #pre{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        font-weight: 500;
+        width: 175px;
+        margin-top: 5px;
+    }
+
+
+    #last{
+        height: 275px;
+        width: 200px;
+        background-color: rgb(250, 250, 250);
+        margin: 18px 12px;
+        border-radius: 2px;
+        border: 1px solid rgb(167, 167, 167);
+        list-style-type: none;
+        box-shadow: 1px 2px 4px 1px #a5a5a5;
+        transition: 300ms;
+    }
+
+
+    #last > a{
+        display: flex;
+        flex-direction: column;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        height: 275px;
+        width: 200px;
+        align-items: center;
+    }
+
+    #last > a > #img-prod{
+        height: 130px;
+    }
+
+    #last > a > #div-aval{
+        height: 10px;
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+    }
+
+    #last > a > #div-aval > #aval{
+        height: 12px;
+        margin-left: 10px;
+    }
+
+    #last > a > #div-aval > #num-aval{
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        margin: 0;
+    }
+
+    #last > a > #nome{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        width: 175px;
+        margin-top: 5px;
+    }
+
+    #last > a > #nome:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        width: 175px;
+        margin-top: 5px;
+        text-decoration: underline;
+    }
+
+    #last > a > #pre-ori{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        width: 175px;
+        margin-top: 5px;
+        text-decoration: line-through;
+    }
+
+    #last > a > #pre{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        font-weight: 500;
+        width: 175px;
+        margin-top: 5px;
+    }
+
+
+    
+    #prod > #prods > .gp-prod > .ver-mais-prod{
+        height: 75px;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        background-color: rgb(243, 243, 243);
+    }
+    
+    
+    #prod > #prods > .gp-prod > .ver-mais-prod > a > #botao{
+        height: 40px;
+        width: 100px;
+        border: none;
+        background-color: #ff8400;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        border-radius: 2px;
+        margin-top: 18px;
+        margin-right: 75px;
+        transition: 300ms;
+    }
+    
+    #prod > #prods > .gp-prod > .ver-mais-prod > a > #botao:hover{
+        height: 43px;
+        width: 105px;
+        border: none;
+        background-color: #ff8400;
+        font-size: 15px;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        border-radius: 2px;
+        margin-top: 16px;
+        margin-right: 72px;
+        cursor: pointer;
+    }
+    
+    #prod > #prods > .gp-prod > hr{
+        width: 77.5%;
+        background-color: rgb(110, 110, 110);
+        margin-top: 10px;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Parte de Serviços oferecidos pela Empresa */
+    #serv{
+        height: 625px;
+        width: 100%;
+    }
+    
+    #serv > #top{
+        height: 100px;
+        width: 100%;
+        background: linear-gradient(rgb(243, 243, 243) 50%,rgb(75, 75, 75) 50% );
+        display: flex;
+        justify-content: center;
+    }
+    
+    #serv > #top > .tit{
+        height: 75px;
+        width: 225px;
+        border-radius: 5px;
+        background-color: #ff8400;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+    }
+    
+    #serv > #top > .tit > h2{
+        margin: 0px;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 30px;
+        font-weight: 400;
+        margin-top: 18px;
+    }
+    
+    #serv > #down{
+        height: 525px;
+        width: 100%;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #serv > #down > div{
+        width: 100%;
+        height: 80px;
+        background-color: rgb(75, 75, 75);
+        display: flex;
+        justify-content: center;
+    }
+    
+    #serv > #down > div > p{
+        height: 50px;
+        width: 60%;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 22px;
+        font-weight: 300;
+        margin: 0px;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 150px;
+    }
+    
+    #serv > #down > div > div{
+        height: 50px;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        margin-left: 75px;
+    }
+    
+    #serv > #down > div > div > a > button{
+        height: 40px;
+        width: 100px;
+        border: none;
+        background-color: #ff8400;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        border-radius: 2px;
+        margin-top: 5px;
+        transition: 300ms;
+    }
+    
+    #serv > #down > div > div > a > button:hover{
+        height: 43px;
+        width: 105px;
+        border: none;
+        background-color: #ff8400;
+        font-size: 16px;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        border-radius: 2px;
+        margin-top: 3px;
+        cursor: pointer;
+    }
+    
+    #serv > #down > #serv-list{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .gp-serv{
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li{
+        width: 48%;
+        height: 350px;
+        background-color: rgb(85, 85, 85);
+        margin: 5px 15px;
+        border-radius: 2px;
+        box-shadow: 0px 1px 3px 2px rgb(107, 107, 107);
+        transition: 350ms;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li:hover{
+        width: 48%;
+        height: 360px;
+        background-color: rgb(85, 85, 85);
+        margin: 0px 15px;
+        border-radius: 2px;
+        box-shadow: 0px 1px 3px 3px rgb(107, 107, 107);
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a{
+        color: rgb(214, 214, 214);
+        text-decoration: none;
+        font-family: 'Roboto Slab', serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a > h3{
+        text-decoration: underline;
+        font-size: 22px;
+        font-weight: 300;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a > p{
+        font-size: 15px;
+        font-weight: 300;
+        text-align: justify;
+        width: 85%;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a > img{
+        height: 100px;
+        margin-top: 20px;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Rodapé do Site */
+    #rodape{
+        height: 550px;
+        width: 100%;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #rodape > h2{
+        font-family: 'Roboto Slab', serif;
+        font-size: 32px;
+        text-decoration: underline;
+        font-weight: 400;
+    }
+    
+    #rodape > #rod-list{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        list-style-type: none;
+    }
+    
+    #rodape > #rod-list > li{
+        width: 275px;
+        height: 425px;
+        margin: 0px 20px;
+    }
+    
+    #rodape > #rod-list > li > h3{
+        font-family: 'Roboto Slab', serif;
+        font-size: 24px;
+        color: #ff8400;
+        text-decoration: underline black;
+    }
+    
+    #contatos > ul{
+        margin: 0;
+        padding: 0px;
+        list-style-type: none;
+        margin-top: 30px;
+    }
+    
+    #contatos > ul > li{
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        height: 60px;
+        width: 275px;
+    }
+    
+    #contatos > ul > li > a{
+        text-decoration: none;
+    }
+    
+    #contatos > ul > li > a > p{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-left: 10px;
+        color: black;
+    }
+    
+    #contatos > ul > li > a > p:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-left: 10px;
+        text-decoration: underline;
+        color: black;
+    }
+    
+    #contatos > ul > li > img{
+        height: 55px;
+    }
+    
+    #sociais > ul{
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 40px;
+    }
+    
+    #sociais > ul > li{
+        height: 50px;
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #sociais > ul > li > img{
+        height: 35px;
+        margin-top: 15px;
+    }
+    
+    #sociais > ul > li > a{
+        margin-top: 21px;
+        margin-left: 5px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+    }
+    
+    #sociais > ul > li > a:hover{
+        margin-top: 21px;
+        margin-left: 5px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        text-decoration: underline;
+        color: black;
+    }
+    
+    #info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #info > p{
+        text-align: center;
+        height: 175px;
+        width: 225px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 16px;
+        margin: 0px;
+        margin-top: 30px;
+    }
+    
+    #info > div{
+        height: 75px;
+    }
+    
+    #info > div > button{
+        height: 40px;
+        width: 100px;
+        border: none;
+        background-color: #ff8400;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        border-radius: 2px;
+        margin-top: 18px;
+        transition: 300ms;
+    }
+    
+    #info > div > button:hover{
+        height: 43px;
+        width: 105px;
+        border: none;
+        background-color: #ff8400;
+        font-size: 15px;
+        font-family: 'Roboto Slab', serif;
+        border-radius: 2px;
+        margin-top: 16px;
+    }
+    
+    #info > div > button > a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+    #pagam{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #pagam > ul{
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 170px;
+    }
+    
+    #pagam > ul > div{
+        display: flex;
+        flex-direction: row;
+        height: 55px;
+    }
+    
+    #pagam > div{
+        height: 75px;
+    }
+    
+    #pagam > div > button{
+        height: 40px;
+        width: 100px;
+        border: none;
+        background-color: #ff8400;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        border-radius: 2px;
+        margin-top: 18px;
+        transition: 300ms;
+    }
+    
+    #pagam > div > button:hover{
+        height: 43px;
+        width: 105px;
+        border: none;
+        background-color: #ff8400;
+        font-size: 15px;
+        font-family: 'Roboto Slab', serif;
+        border-radius: 2px;
+        margin-top: 16px;
+    }
+    
+    #pagam > div > button > a{
+        text-decoration: none;
+        color: white;
+    }
+    
+
 }
 
-#prod > #prods > .gp-prod > .list_prod > li > a{
-    display: flex;
-    flex-direction: column;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    height: 275px;
-    width: 200px;
-    align-items: center;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #img-prod{
-    height: 130px;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #div-aval{
-    height: 10px;
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #div-aval > #aval{
-    height: 12px;
-    margin-left: 10px;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #div-aval > #num-aval{
-    font-family: 'Roboto Slab', serif;
-    font-size: 10px;
-    margin: 0;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #nome{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 12px;
-    width: 175px;
-    margin-top: 5px;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #nome:hover{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 12px;
-    width: 175px;
-    margin-top: 5px;
-    text-decoration: underline;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #pre-ori{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 10px;
-    width: 175px;
-    margin-top: 5px;
-    text-decoration: line-through;
-}
-
-#prod > #prods > .gp-prod > .list_prod > li > a > #pre{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    font-weight: 500;
-    width: 175px;
-    margin-top: 5px;
-}
-
-#prod > #prods > .gp-prod > .ver-mais-prod{
-    height: 75px;
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    background-color: rgb(243, 243, 243);
-}
 
 
-#prod > #prods > .gp-prod > .ver-mais-prod > a > #botao{
-    height: 40px;
-    width: 100px;
-    border: none;
-    background-color: #ff8400;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    border-radius: 2px;
-    margin-top: 18px;
-    margin-right: 75px;
-    transition: 300ms;
-}
+@media (max-width: 390px){
 
-#prod > #prods > .gp-prod > .ver-mais-prod > a > #botao:hover{
-    height: 43px;
-    width: 105px;
-    border: none;
-    background-color: #ff8400;
-    font-size: 15px;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    border-radius: 2px;
-    margin-top: 16px;
-    margin-right: 72px;
-    cursor: pointer;
-}
+    html{
+        scroll-behavior: smooth;
+    }
+    
+    body{
+        margin: 0;
+        padding: 0;
+    }
 
-#prod > #prods > .gp-prod > hr{
-    width: 77.5%;
-    background-color: rgb(110, 110, 110);
-    margin-top: 10px;
-}
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Parte Superior do Site (Header e Navs) */
+    #head{
+        display: flex;
+        flex-direction: column;
+        height: 125px;
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Parte de cima do Head da Página (Header e Nav da Pág) */
+    #head > #hsup{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 110px;
+        background-color: rgb(110, 110, 110);
+    }
+    
+    #cont-sup{
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+    }
+    
+    /*  */
+    /* Cabeçalho da Página(Título e Logo) */
+    header{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    header > a{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        color: black;
+    }
+    
+    header > a > img{
+        margin-left: 5%;
+        margin-top: 17px;
+        height: 30px;
+        width: 30px;
+    }
+    
+    header > a > h1{
+        margin-top: 10px;
+        margin-left: 1%;
+        height: 37px;
+        font-size: 33px;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    header > a > p{
+        height: 12px;
+        margin: 0;
+        margin-top: 28px;
+        margin-left: 2px;
+        font-size: 10px;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    
+    
+    /*  */
+    /* Nav da Página */
+    #nav_pag{  
+        display: flex;
+        flex-direction: row;
+        height: 85px;
+        width: 0%;
+        margin: 0;
+        margin-left: 2%;
+        display: none;
+    }
+    
+    /*  */
+    /* Funções disponíveis no cabeçalho da página - pesquisa e login */
+    #func{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 35px;
+    }
+    
+    #func > #pesquisa{
+        display: flex;
+        flex-direction: row;
+        height: 35px;
+    }
+    
+    #func > #pesquisa > #campo{
+        margin: 0;
+        margin-left: 30px;
+        margin-top: 15px;
+        width: 240px;
+        height: 25px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(228, 228, 228);
+        color: rgb(78, 78, 78);
+    }
+    
+    #func > #pesquisa > #botao{
+        margin: 0;
+        margin: 15px;
+        margin-left: 2px;
+        background-color: rgb(110, 110, 110);
+        border: none;
+        height: 30px;
+        width: 30px;
+    }
+    
+    #func > #pesquisa > #botao > img{
+        height: 28px;
+    }
+    
+    
+    
+    /*  */
+    /* Botão de Login */
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Parte de Serviços oferecidos pela Empresa */
-#serv{
-    height: 625px;
-    width: 100%;
-}
-
-#serv > #top{
-    height: 100px;
-    width: 100%;
-    background: linear-gradient(rgb(243, 243, 243) 50%,rgb(75, 75, 75) 50% );
-    display: flex;
-    justify-content: center;
-}
-
-#serv > #top > .tit{
-    height: 75px;
-    width: 225px;
-    border-radius: 5px;
-    background-color: #ff8400;
-    display: flex;
-    justify-content: center;
-    margin-top: 12px;
-}
-
-#serv > #top > .tit > h2{
-    margin: 0px;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 30px;
-    font-weight: 400;
-    margin-top: 18px;
-}
-
-#serv > #down{
-    height: 525px;
-    width: 100%;
-    background-color: rgb(75, 75, 75);
-}
-
-#serv > #down > div{
-    width: 100%;
-    height: 80px;
-    background-color: rgb(75, 75, 75);
-    display: flex;
-    justify-content: center;
-}
-
-#serv > #down > div > p{
-    height: 50px;
-    width: 60%;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 0px;
-    text-align: center;
-    margin-top: 30px;
-    margin-left: 150px;
-}
-
-#serv > #down > div > div{
-    height: 50px;
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    margin-left: 75px;
-}
-
-#serv > #down > div > div > a > button{
-    height: 40px;
-    width: 100px;
-    border: none;
-    background-color: #ff8400;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    border-radius: 2px;
-    margin-top: 5px;
-    transition: 300ms;
-}
-
-#serv > #down > div > div > a > button:hover{
-    height: 43px;
-    width: 105px;
-    border: none;
-    background-color: #ff8400;
-    font-size: 16px;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    border-radius: 2px;
-    margin-top: 3px;
-    cursor: pointer;
-}
-
-#serv > #down > #serv-list{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0px;
-    justify-content: center;
-    padding-top: 40px;
-}
-
-#serv > #down > #serv-list > li{
-    width: 20%;
-    height: 350px;
-    background-color: rgb(85, 85, 85);
-    margin: 5px 10px;
-    border-radius: 2px;
-    box-shadow: 0px 1px 3px 2px rgb(107, 107, 107);
-    transition: 350ms;
-}
-
-#serv > #down > #serv-list > li:hover{
-    width: 20%;
-    height: 360px;
-    background-color: rgb(85, 85, 85);
-    margin: 0px 10px;
-    border-radius: 2px;
-    box-shadow: 0px 1px 3px 3px rgb(107, 107, 107);
-}
-
-#serv > #down > #serv-list > li > a{
-    color: rgb(214, 214, 214);
-    text-decoration: none;
-    font-family: 'Roboto Slab', serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#serv > #down > #serv-list > li > a > h3{
-    text-decoration: underline;
-    font-size: 22px;
-    font-weight: 300;
-}
-
-#serv > #down > #serv-list > li > a > p{
-    font-size: 15px;
-    font-weight: 300;
-    text-align: justify;
-    width: 85%;
-}
-
-#serv > #down > #serv-list > li > a > img{
-    height: 100px;
-    margin-top: 20px;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Rodapé do Site */
-#rodape{
-    height: 550px;
-    width: 100%;
-    background-color: #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#rodape > h2{
-    font-family: 'Roboto Slab', serif;
-    font-size: 32px;
-    text-decoration: underline;
-    font-weight: 400;
-}
-
-#rodape > #rod-list{
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    list-style-type: none;
-}
-
-#rodape > #rod-list > li{
-    width: 275px;
-    height: 425px;
-    margin: 0px 20px;
-}
-
-#rodape > #rod-list > li > h3{
-    font-family: 'Roboto Slab', serif;
-    font-size: 24px;
-    color: #ff8400;
-    text-decoration: underline black;
-}
-
-#contatos > ul{
-    margin: 0;
-    padding: 0px;
-    list-style-type: none;
-    margin-top: 30px;
-}
-
-#contatos > ul > li{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    height: 60px;
-    width: 275px;
-}
-
-#contatos > ul > li > a{
-    text-decoration: none;
-}
-
-#contatos > ul > li > a > p{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-left: 10px;
-    color: black;
-}
-
-#contatos > ul > li > a > p:hover{
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-left: 10px;
-    text-decoration: underline;
-    color: black;
-}
-
-#contatos > ul > li > img{
-    height: 55px;
-}
-
-#sociais > ul{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 40px;
-}
-
-#sociais > ul > li{
-    height: 50px;
-    margin: 20px 0px;
-    display: flex;
-    flex-direction: row;
-}
-
-#sociais > ul > li > img{
-    height: 35px;
-    margin-top: 15px;
-}
-
-#sociais > ul > li > a{
-    margin-top: 21px;
-    margin-left: 5px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    text-decoration: none;
-    color: black;
-}
-
-#sociais > ul > li > a:hover{
-    margin-top: 21px;
-    margin-left: 5px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    text-decoration: underline;
-    color: black;
-}
-
-#info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#info > p{
-    text-align: center;
-    height: 175px;
-    width: 225px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    margin: 0px;
-    margin-top: 30px;
-}
-
-#info > div{
-    height: 75px;
-}
-
-#info > div > button{
-    height: 40px;
-    width: 100px;
-    border: none;
-    background-color: #ff8400;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    border-radius: 2px;
-    margin-top: 18px;
-    transition: 300ms;
-}
-
-#info > div > button:hover{
-    height: 43px;
-    width: 105px;
-    border: none;
-    background-color: #ff8400;
-    font-size: 15px;
-    font-family: 'Roboto Slab', serif;
-    border-radius: 2px;
-    margin-top: 16px;
-}
-
-#info > div > button > a{
-    text-decoration: none;
-    color: white;
-}
+    #div-login{
+        width: 8%;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 2%;
+    }
 
 
-#pagam{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    #login{
+        height: 32px;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        font-size: 10px;
+        font-family: 'Roboto Slab', serif;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    
+    #login:hover{
+        text-decoration: underline;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    #login > div{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #login > div > img{
+        margin: 0;
+        height: 30px;
+    }
+    
+    #login > div > div{
+        height: 34px;
+        display: flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #login > div > div > p{
+        text-align: justify;
+        height: 25px;
+        margin: 0;
+        margin-left: 5px;
+        display: none;
+        
+    }
+    
+    
+    #sair button{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff00;
+        border: none;
+    }
+    
+    #sair img{
+        height: 28px;
+        width: 26px;
+        margin-top: 12px;
+        margin-left: 2px;
+    }
+    
+    
+    
+    /*  */
+    /* Parte Inferior do Cabeçalho */
+    #hinf{
+        display: flex;
+        flex-direction: row;
+        height:15px;
+        width: 100%;
+        background-color: #ff8400;
+    }
 
-#pagam > ul{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 170px;
-}
 
-#pagam > ul > div{
-    display: flex;
-    flex-direction: row;
-    height: 55px;
-}
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Mensagem promocional */
+    #promo{
+        height: 325px;
+        background-color: rgba(156, 156, 156, 0.322);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #topo{
+        height: 300px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #base{
+        height: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    
+    #base > div{
+        height: 10px;
+        width: 10px;
+        border-radius: 5px;
+        background-color: #a5a5a5;
+        margin: 5px;
+        display: none;
+    }
+    
+    #base > #bola1{
+        background-color: #666565;
+    }
+    
+    #mid{
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    #first{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+    }
 
-#pagam > div{
-    height: 75px;
-}
+    #sup-first{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #second{
+        width: 0px;
+        height: 300px;
+        visibility: hidden;
+        display: none;
+    }
+    
+    #third{
+        width: 0px;
+        height: 300px;
+        visibility: hidden;
+        display: none;
+    }
+    
+    #pesq > #tit{
+        height: 30px;
+        width: 280px;
+        margin-top: 30px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+    #pesq > #tit > h2{
+        margin: 0px;
+        font-size: 20px;
+        font-family: 'Roboto Slab', serif;
+        margin-top: 8px;
+        color: rgb(0, 0, 0);
+    }
+    
+    #pesq> #inf{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 120px;
+        margin-top: 20px;
+        border-radius: 3px;
+    }
+    
+    #pesq{
+        width: 65%;
+        height: 240px;
+    }
+    
+    #pdir{
+        width: 35%;
+        display: flex;
+        height: 240px;
+    }
+    
+    #pdir > img{
+        height: 120px;
+        margin-top: 75px;
+    }
+    
+    
+    #nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
 
-#pagam > div > button{
-    height: 40px;
-    width: 100px;
-    border: none;
-    background-color: #ff8400;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    border-radius: 2px;
-    margin-top: 18px;
-    transition: 300ms;
-}
+    #nav > div{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #nav > div > a{
+        margin: 3px 10px;
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: #ff8400;
+        text-decoration: none;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        border-radius: 2px;
+        transition: 300ms;
+        text-align: center;
+    }
+    
+    #nav > div > a:hover{
+        margin: 0px 7px;
+        height: 36px;
+        width: 76px;
+        border: none;
+        background-color: #ff8400;
+        text-decoration: none;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        border-radius: 2px;
+        transition: 300ms;
+        text-align: center;
+    }
+    
+    #nav > div > a > p{
+        margin: 5px 0px;
+    }
+    
+    
+    
+    #inf > #texto{
+        display: flex;
+        width: 100%;
+        height: 100px;
+        justify-content: right;
+    }
+    
+    #inf > #texto > ul{
+        list-style-type: none;
+        height: 100px;
+        width: 80%;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    #inf > #texto > ul > li > p{
+        text-align: center;
+        font-size: 11px;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        margin-top: 27px;
+    }
+    
+    
+    #btesq{
+        height: 325px;
+        width: 5%;
+        display: none;
+        align-items: center;
+    }
+    
+    #btesq > button{
+        height: 20px;
+        width: 20px;
+        margin-left: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #fffafaaf;
+    }
+    
+    #btesq > button:hover{
+        height: 20px;
+        width: 20px;
+        margin-left: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #ffffffee;
+        cursor: pointer;
+    }
+    
+    #btesq > button > img{
+        height: 15px;
+        width: 15px;
+        margin-top: 4px;
+        margin-right: 3px;
+    }
+    
+    #btdir{
+        height: 325px;
+        width: 5%;
+        display: none;
+        align-items: center;
+    }
+    
+    #btdir > button{
+        height: 20px;
+        width: 20px;
+        margin-right: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #fffafaaf;
+    }
+    
+    #btdir > button:hover{
+        height: 20px;
+        width: 20px;
+        margin-right: 50%;
+        border: none;
+        border-radius: 22px;
+        background-color: #ffffffee;
+        cursor: pointer;
+    }
+    
+    
+    #btdir > button > img{
+        height: 15px;
+        width: 15px;
+        margin-top: 4px;
+        margin-left: 3px;
+    }
+    
 
-#pagam > div > button:hover{
-    height: 43px;
-    width: 105px;
-    border: none;
-    background-color: #ff8400;
-    font-size: 15px;
-    font-family: 'Roboto Slab', serif;
-    border-radius: 2px;
-    margin-top: 16px;
-}
 
-#pagam > div > button > a{
-    text-decoration: none;
-    color: white;
+
+
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Categorias */
+    
+    #categ{
+        margin-top: 2px;
+        height: 80px;
+        width: 100%;
+        border-top: 2px solid #b3b3b3;
+        border-bottom: 1px solid #b4b4b4;
+    }
+    
+    #nav_site{
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #nav_site > a{
+        text-decoration: none;
+        color: rgb(78, 78, 78);
+        font-size: 11px;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 600;
+        margin: 20px 5px;
+        height: 20px;
+        width: 50px;
+        padding: 6px;
+    }
+    
+    #nav_site > a:hover{
+        height: 20px;
+        width: 50px;
+        padding: 6px;
+        border-radius: 5px;
+        background-color: #ff840015;
+        color: #ff8400cc;
+        font-size: 11px;
+        font-family: 'Roboto Slab', serif;
+        margin: 20px 5px;
+        transition: 300ms;
+    }
+    
+    #nav_site > a > p{
+        text-align: center;
+        margin: 0;
+        margin-top: 4px;
+    }
+
+    #nav_site #l1{
+        display: none;
+    }
+    
+    
+    #space{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        background-color: rgba(156, 156, 156, 0.322);
+    }
+    
+    #linha{
+        margin: 0px;
+        height: 1px;
+        width: 70%;
+        background-color: rgb(110, 110, 110);
+    }
+
+
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Propaganda */
+    #prop{
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(rgba(156, 156, 156, 0) 50%, rgb(75, 75, 75)50%);
+    }
+    
+    #prop > #sup{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 200px;
+    }
+    
+    #prop > #sup > #dir{
+        width: 33%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #prop > #sup > #dir > #etq{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
+    }
+    
+    #prop > #sup > #dir > #etq > img{
+        height: 60px;
+        margin-left: 0%;
+        margin-top:40px;
+    }
+    
+    #prop > #sup > #dir > #text{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #prop > #sup > #dir > #text > p{
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        margin: 0px;
+        text-align: center;
+        width: 200px;
+        height: 75px;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    
+    #prop > #sup > #esq{
+        width: 67%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #prop > #sup > #esq > #cima{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #prop > #sup > #esq > #cima > .tit{
+        width: 61%;
+        height: 100px;
+        background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    #prop > #sup > #esq > #cima > .tit > div{
+        height: 45px;
+        width: 225px;
+        border-radius: 5px;
+        background-color: #ff8400;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    #prop > #sup > #esq > #cima > .tit > div > h2{
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 17px;
+        font-weight: 400;
+        margin: 9px 0px;
+        height: 32px;
+    }
+    
+    #prop > #sup > #esq > #cima > #comp{
+        width: 62%;
+        height: 100px;
+        background: linear-gradient(rgba(156, 156, 156, 0.322) 50%, rgb(75, 75, 75)50%);
+    }
+    
+    #prop > #sup > #esq > #baixo{
+        height: 100px;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #prop > #sup > #esq > #baixo > p{
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+    
+    
+    
+    /*  */
+    /* Parte das ofertas da Propaganda */
+    #prop > #rest{
+        height: 650px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    #prop > #rest > #ofer{
+        height: 425px;
+        width: 100%;
+    }
+    
+    #prop > #rest > #ofer > ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:0px;
+        padding: 15px 0px 0px 0px;
+        height: 425px;
+        background-color: rgb(75, 75, 75);
+    }
+
+    #prop > #rest > #ofer > ul > .gp{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li{
+        height: 175px;
+        width: 125px;
+        background-color: rgb(88, 88, 88);
+        margin: 10px 15px;
+        border-radius: 5px;
+        list-style-type: none;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li:hover{
+        height: 175px;
+        width: 125px;
+        background-color: rgb(99, 98, 98);
+        margin: 10px 20px;  
+        border-radius: 5px;
+        list-style-type: none;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        text-decoration: none;
+        height: 175px;
+        width: 125px;
+        align-items: center;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #img-prod{
+        height: 70px;
+    }
+
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #div-aval{
+        height: 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #div-aval > #aval{
+        height: 8px;
+        margin-left: 8px;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #div-aval > #num-aval{
+        font-family: 'Roboto Slab', serif;
+        font-size: 8px;
+        margin: 0;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #nome{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 12px;
+    }
+    #prop > #rest > #ofer > ul > .gp > li > a > #nome:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        width: 100%;
+        margin-top: 5px;
+        text-decoration: underline;
+        margin-left: 12px;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #pre-ori{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 8px;
+        width: 100%;
+        margin-top: 5px;
+        text-decoration: line-through;
+        margin-left: 12px;
+    }
+    
+    #prop > #rest > #ofer > ul > .gp > li > a > #pre{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 12px;
+    }
+    
+    
+    /*  */
+    /* Botão para ver mais ofertas do site */
+    #prop > #rest > #ver-mais{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #prop > #rest > #ver-mais > a > #botao{
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: #ff8400;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        border-radius: 2px;
+        margin-top: 10px;
+    }
+    
+
+
+
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Parte de Produtos Ofertados no Site */
+    #prod{
+        height: 3400px;
+        width: 100%;
+        background-color: rgb(243, 243, 243);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    #prod > h2{
+        margin: 0;
+        font-family: 'Roboto Slab', serif;
+        font-size: 24px;
+        padding-top: 50px;
+        text-align: center;
+    }
+    
+    #prod > #prods{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+    
+    #prod > #prods > .gp-prod{
+        height: 1050px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    
+    #prod > #prods > .gp-prod > .titulo{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+    }
+    
+    #prod > #prods > .gp-prod > .titulo > h3{
+        text-decoration: underline;
+        font-family: 'Roboto Slab', serif;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0px;
+        margin-left: 9%;
+        margin-bottom: 20px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 7px 0px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp{
+        display: flex;
+        flex-direction: row;
+        margin: 15px 0px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li{
+        height: 175px;
+        width: 125px;
+        background-color: rgb(250, 250, 250);
+        margin: 0px 12px;
+        border-radius: 2px;
+        border: 1px solid rgb(167, 167, 167);
+        list-style-type: none;
+        box-shadow: 1px 2px 4px 1px #a5a5a5;
+        transition: 300ms;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li:hover{
+        height: 175px;
+        width: 125px;
+        margin: 0px 12px;
+        background-color: rgb(250, 250, 250);
+        border-radius: 2px;
+        border: 1px solid rgb(167, 167, 167);
+        list-style-type: none;
+        box-shadow: 1px 3px 5px 3px #a5a5a5;
+        
+    }
+
+    #last{
+        display: none;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a{
+        display: flex;
+        flex-direction: column;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        height: 175px;
+        width: 125px;
+        align-items: center;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #img-prod{
+        height: 70px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval{
+        height: 8px;
+        width: 125px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval > #aval{
+        height: 8px;
+        margin-left: 10px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval > #num-aval{
+        font-family: 'Roboto Slab', serif;
+        font-size: 8px;
+        margin: 0;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #nome{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        width: 100px;
+        margin-top: 5px;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #nome:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        font-weight: 600;
+        width: 175px;
+        text-decoration: underline;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #pre-ori{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 8px;
+        width: 100px;
+        margin-top: 5px;
+        text-decoration: line-through;
+    }
+    
+    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #pre{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100px;
+        margin-top: 5px;
+    }
+    
+    #prod > #prods > .gp-prod > .ver-mais-prod{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(243, 243, 243);
+        padding-top: 30px;
+    }
+    
+    
+    #prod > #prods > .gp-prod > .ver-mais-prod > a > #botao{
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: #ff8400;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        border-radius: 2px;
+        transition: 300ms;
+    }
+    
+    #prod > #prods > .gp-prod > .ver-mais-prod > a > #botao:hover{
+        height: 43px;
+        width: 105px;
+        border: none;
+        background-color: #ff8400;
+        font-size: 12px;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        border-radius: 2px;
+        margin-top: 16px;
+        margin-right: 72px;
+        cursor: pointer;
+    }
+    
+    #prod > #prods > .gp-prod > hr{
+        width: 77.5%;
+        background-color: rgb(110, 110, 110);
+        margin-top: 10px;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Parte de Serviços oferecidos pela Empresa */
+    #serv{
+        height: 800px;
+        width: 100%;
+    }
+    
+    #serv > #top{
+        height: 80px;
+        width: 100%;
+        background: linear-gradient(rgb(243, 243, 243) 50%,rgb(75, 75, 75) 50% );
+        display: flex;
+        justify-content: center;
+    }
+    
+    #serv > #top > .tit{
+        height: 50px;
+        width: 125px;
+        border-radius: 5px;
+        background-color: #ff8400;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+    }
+    
+    #serv > #top > .tit > h2{
+        margin: 0px;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+    
+    #serv > #down{
+        height: 717px;
+        width: 100%;
+        background-color: rgb(75, 75, 75);
+    }
+    
+    #serv > #down > div{
+        width: 100%;
+        height: 80px;
+        background-color: rgb(75, 75, 75);
+        display: flex;
+    }
+    
+    #serv > #down > div > p{
+        height: 40px;
+        width: 60%;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 10px;
+        font-weight: 300;
+        margin: 0px;
+        text-align: center;  
+        margin-top: 15px;
+        margin-left: 15px;      
+    }
+    
+    #serv > #down > div > div{
+        height: 50px;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #serv > #down > div > div > a{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+    
+    #serv > #down > div > div > a > button{
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: #ff8400;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        border-radius: 2px;
+        margin-top: 20px;
+        transition: 300ms;
+    }
+    
+    
+    #serv > #down > #serv-list{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    #serv > #down > #serv-list > .gp-serv{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li{
+        width: 150px;
+        height: 230px;
+        background-color: rgb(85, 85, 85);
+        margin: 8px 9px;
+        border-radius: 2px;
+        box-shadow: 0px 1px 3px 2px rgb(107, 107, 107);
+        transition: 350ms;
+    }
+    
+    
+    #serv > #down > #serv-list > .gp-serv > li > a{
+        color: rgb(214, 214, 214);
+        text-decoration: none;
+        font-family: 'Roboto Slab', serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a > h3{
+        text-decoration: underline;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a > p{
+        font-size: 11px;
+        font-weight: 300;
+        text-align: center;
+        width: 85%;
+        margin-top: 12px;
+    }
+    
+    #serv > #down > #serv-list > .gp-serv > li > a > img{
+        height: 60px;
+        margin-top: 20px;
+    }
+    
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /*  */
+    /* Rodapé do Site */
+    #rodape{
+        height: 1025px;
+        width: 100%;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #rodape > h2{
+        font-family: 'Roboto Slab', serif;
+        font-size: 32px;
+        text-decoration: underline;
+        font-weight: 400;
+    }
+    
+    #rodape > #rod-list{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        list-style-type: none;
+        margin-top: 40px;
+    }
+    
+    
+    #rodape > #rod-list > li > h3{
+        font-family: 'Roboto Slab', serif;
+        font-size: 20px;
+        color: #ff8400;
+        text-decoration: underline black;
+        margin-left: 6%;
+    }
+
+    #contatos{
+        width: 100%;
+    }
+    
+    #contatos > ul{
+        width: 100%;
+        margin: 0;
+        padding: 0px;
+        list-style-type: none;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    #contatos > ul > li{
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+        margin: 0px 10px;
+    }
+    
+    #contatos > ul > li > a{
+        text-decoration: none;
+    }
+    
+    #contatos > ul > li > a > p{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        margin-top: 14px;
+        margin-left: 10px;
+        color: black;
+    }
+    
+    #contatos > ul > li > a > p:hover{
+        margin: 0px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 18px;
+        margin-left: 10px;
+        text-decoration: underline;
+        color: black;
+    }
+    
+    #contatos > ul > li > img{
+        height: 35px;
+    }
+
+    #email-img{
+        margin-top: 5px;
+    }
+
+    #sociais{
+        margin-top: 40px;
+    }
+    
+    #sociais > ul{
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #sociais > ul > li{
+        height: 26px;
+        margin: 10px 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #sociais > ul > li > img{
+        height: 25px;
+    }
+    
+    #sociais > ul > li > a{
+        margin-left: 5px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        text-decoration: none;
+        color: black;
+        margin-top: 5px;
+    }
+    
+    #sociais > ul > li > a:hover{
+        margin-left: 5px;
+        font-family: 'Roboto Slab', serif;
+        font-size: 14px;
+        text-decoration: underline;
+        color: black;
+    }
+    
+    #info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    #info > h3{
+        width: 94%;
+    }
+    
+    #info > p{
+        text-align: center;
+        height: 115px;
+        width: 85%;
+        font-family: 'Roboto Slab', serif;
+        font-size: 13px;
+        margin: 0px;
+        margin-top: 30px;
+    }
+    
+    #info > div{
+        height: 50px;
+    }
+    
+    #info > div > button{
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: #ff8400;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        border-radius: 2px;
+        transition: 300ms;
+    }
+    
+    
+    #info > div > button > a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+    #pagam{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    #pagam h3{
+        width: 94%;
+    }
+    
+    #pagam > ul{
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 170px;
+    }
+    
+    #pagam > ul > div{
+        display: flex;
+        flex-direction: row;
+        height: 55px;
+    }
+    
+    #pagam > div{
+        height: 50px;
+    }
+    
+    #pagam > div > button{
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: #ff8400;
+        font-family: 'Roboto Slab', serif;
+        font-size: 12px;
+        border-radius: 2px;
+        transition: 300ms;
+    }
+    
+    
+    #pagam > div > button > a{
+        text-decoration: none;
+        color: white;
+    }
+    
 }
