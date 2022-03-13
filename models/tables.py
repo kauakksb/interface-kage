@@ -1,7 +1,7 @@
 import email
 import sqlite3
 from sqlite3 import Error
-from database import ClassDatabase
+from models.database import ClassDatabase
 
 class ClassTableUser:
 
