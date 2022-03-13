@@ -1,4 +1,3 @@
-from turtle import st
 from flask import Flask, redirect, url_for, render_template, request
 import sqlite3
 from sqlite3 import Cursor, Error
