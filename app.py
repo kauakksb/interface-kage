@@ -1,3 +1,4 @@
+from turtle import st
 from flask import Flask, redirect, url_for, render_template, request
 import sqlite3
 from sqlite3 import Cursor, Error
@@ -53,7 +54,7 @@ def login():
 
 @app.route('/validando-login', methods = ["GET", "POST"])
 def verific_login():
-    global email_logado, target, user, anonymous
+    global email_logado, target, user, anonymous, state
     email = request.form.get('email')
     senha = request.form.get('senha')
 
@@ -72,10 +73,13 @@ def verific_login():
         user = User(email_logado)
         user.log()
         anonymous = False
+        state = True
         if target == 'perfil':
             return redirect('/perfil')
         elif target == 'prod':
             return redirect('/add-carr')
+        elif target == 'serv':
+            return redirect('/serv')
 
 
     else:
@@ -84,10 +88,13 @@ def verific_login():
 
 @app.route('/logout')
 def logout():
-    global email_logado, user, anonymous
+    global email_logado, user, anonymous, state
+
     user.logout_user(email_logado)
     email_logado = None
     anonymous = True
+    state = False
+
     return redirect('/')
 
 
@@ -103,7 +110,7 @@ def perfil():
         try:
             prods = []
             prods_carr = []
-            valor_total = 0 
+            valor_total = 0
             
             servicos = db.searchData('*', 'servicos','email_cliente', user.get_id())
             info_pessoais = db.searchData('*', 'usuarios', 'email_usu', user.get_id())
@@ -142,10 +149,6 @@ def perfil():
         except:
             '''nada'''
 
-        if user.is_authenticated():
-            state = True
-        else:
-            state = False
         
         return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods, prods_carr = prods_carr, num_prods_carr = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant, state = state)
     
@@ -199,8 +202,8 @@ def produto():
     except:
         print('Não foi possível buscar os dados do produto')
 
-
     return render_template('pagina_do_produto.html', id_prod = id_prod, dados_prod = dados_prod)
+
 
 
 @app.route('/add-carr', methods = ["GET", "POST"])
@@ -235,11 +238,21 @@ def add_carr():
 
 @app.route('/serv')
 def serv():
-    return render_template('serv.html')
+    global user, target, state
+
+    if user.is_authenticated():
+        return render_template('serv.html')
+
+    else:
+        target = 'serv'
+        return redirect('/login')
         
 
 @app.route('/insert-serv')
 def insert_serv():
+
+
+
     return redirect('/serv')
 
 

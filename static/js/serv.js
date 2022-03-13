@@ -52,8 +52,8 @@ var clique = "pri"
 
 
 // Defininindo tamanho da seção
-func_serv.style.height = "1100px"
-funcoes.style.height = "900px"
+func_serv.style.height = "1000px"
+funcoes.style.height = "800px"
 
 // Guardando tamanho das seções nas variáveis
 var alt_sec = func_serv.style.height
@@ -164,10 +164,12 @@ function controle_geral(){
             if (quadro == "inst"){
 
                 sec_inst.style.display = "none"
+                sec_inst.style.transition = "0ms"
                 sec_inst.style.width = "0px"
                 sec_inst.style.visibility = "hidden"
 
-                setTimeout(sec_inst.style.display = "flex", 400)
+                setInterval(400)
+                sec_inst.style.display = "flex"
 
             } else if(quadro == "mont") {
                 sec_mont.style.transition = "0ms"
@@ -175,7 +177,8 @@ function controle_geral(){
                 sec_mont.style.width = "0px"
                 sec_mont.style.visibility = "hidden"
 
-                setTimeout(sec_mont.style.display = "flex", 400)
+                setInterval(400)
+                sec_mont.style.display = "flex"
             }
 
             quadro = "manut"
@@ -232,7 +235,8 @@ function controle_geral(){
                 sec_manut.style.width = "0px"
                 sec_manut.style.visibility = "hidden"
 
-                setTimeout(sec_manut.style.display = "flex", 400)
+                setTimeout(400)
+                sec_manut.style.display = "flex"
 
             } else if(quadro == "mont"){
                 funcoes.style.justifyContent = "left"
@@ -241,7 +245,8 @@ function controle_geral(){
                 sec_mont.style.width = "0px"
                 sec_mont.style.visibility = "hidden"
 
-                setTimeout(sec_mont.style.display = "flex", 400)
+                setInterval(400)
+                sec_mont.style.display = "flex"
             }
 
             quadro = "inst"
@@ -294,7 +299,8 @@ function controle_geral(){
                 sec_manut.style.transition = "0ms"
                 sec_manut.style.visibility = "hidden"
 
-                setTimeout(sec_manut.style.display = "flex", 400)
+                setTimeout(400)
+                sec_manut.style.display = "flex"
 
             } else if(quadro == "inst") {
 
@@ -304,7 +310,8 @@ function controle_geral(){
                 sec_inst.style.visibility = "hidden"
 
 
-                setTimeout(sec_inst.style.display = "flex", 400)
+                setInterval(400)
+                sec_inst.style.display = "flex"
             }
 
             quadro = "mont"

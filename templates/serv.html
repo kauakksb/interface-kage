@@ -11,47 +11,65 @@
 <body>
     <div id="head">
         <div id="hsup">
-            <header>
-            <a href="/">
-                <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
-                <h1>Kage</h1>
-                <p>- COMÉRCIO E MANUTENÇÃO</p>
-            </a>
-            </header>
-            <div id="nav_pag"></div>
-            <div id="func">
-                <form action="/pegando-valores-busca" method="post" id="pesquisa">
-                    <input
-                      id="campo"
-                      type="text"
-                      name="camp_pesq"
-                      autocomplete="off"
-                      placeholder=" Pesquisar"
-                    />
-                    <button id="botao">
-                      <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
-                    </button>
-                </form>
-                <a id="login" href="/perfil">
-                    <div>
-                      <img src="../static/img/perfil.png" alt="imagem do login" />
-                      <div>
-                        <p>{{texto}}</p>
-                      </div>
-                    </div>
-                  </a>
-                  <div id="sair">
-                    {% if ap == True %}
-                      {% endif %} 
-                    {%if ap == False %}
-                    <form action="/logout">
-                      <button>
-                          <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
-                      </button>
+            <div id="cont-sup">
+                <header>
+                <a href="/">
+                    <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+                    <h1>Kage</h1>
+                    <p>- COMÉRCIO E MANUTENÇÃO</p>
+                </a>
+                </header>
+                <div id="nav_pag"></div>
+                <div id="func">
+                    <form action="/pegando-valores-busca" method="post" id="pesquisa">
+                        <input
+                          id="campo"
+                          type="text"
+                          name="camp_pesq"
+                          autocomplete="off"
+                          placeholder=" Pesquisar"
+                        />
+                        <button id="botao">
+                          <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+                        </button>
                     </form>
-                    {% endif %}
-                  </div>
+                </div>
             </div>
+            {% if state == True %}
+            <div id="div-login">
+              <a id="login" href="/perfil">
+                <div>
+                  <img src="../static/img/perfil.png" alt="imagem do login" />
+                  <div>
+                    <p>Área do Usuário</p>
+                  </div>
+                </div>
+              </a>
+              <div id="sair">
+
+                <form action="/logout">
+                  <button>
+                      <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+          {% else %}
+            <div id="div-login">
+                <a id="login" href="/perfil">
+                <div>
+                    <img src="../static/img/perfil.png" alt="imagem do login" />
+                    <div>
+                    <p>Olá, faça login!</p>
+                    </div>
+                </div>
+                </a>
+                <div id="sair">
+                
+                </div>
+            </div>
+          {% endif %}        
         </div>
         <div id="hinf"></div>
     </div>
@@ -73,15 +91,17 @@
                 <p>Montagem</p>
               </div>
             </div>
+            <hr id="linha" /> 
           </div>
-          <hr id="linha" /> 
         <div id="funcoes">
             <div id="manut">
                 <div class="nome-func">
                     <h3>Manutenção</h3>
                 </div>
                 <div id="form-manut">
-                    <form action="" method="" id="manut-f">
+                    <form action="/insert-serv" method="" id="manut-f">
+                        <input type="text" name="type-serv" style="display: none;" value="manut">
+                        <input type="text" name="quant-serv" value="1" style="display: none;" id="quant-manut">
                         <div class="cliente">
                             <div id="dados-cliente">
                                 <label>Nome do Cliente</label>
@@ -200,7 +220,9 @@
                     <h3>Instalação</h3>
                 </div>
                 <div id="form-inst">
-                    <form action="">
+                    <form action="/insert-serv" method="post">
+                        <input type="text" name="type-serv" style="display: none;" value="inst">
+                        <input type="text" name="quant-serv" value="1" style="display: none;" id="quant-inst">
                         <div id="cliente">
                             <div id="dados-cliente">
                                 <label>Nome do Cliente</label>
@@ -218,7 +240,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="enviar">
+                            <div id="enviar-inst">
                                 <input type="submit">
                             </div>
                         </div>
@@ -230,7 +252,9 @@
                     <h3>Montagem</h3>
                 </div>
                 <div id="form-mont">
-                    <form action="">
+                    <form action="insert-serv" method="post">
+                        <input type="text" name="type-serv" style="display: none;" value="mont">
+                        <input type="text" name="quant-serv" value="1" style="display: none;" id="quant-mont">
                         <div id="cliente">
                             <div id="dados-cliente">
                                 <label>Nome do Cliente</label>
@@ -278,19 +302,19 @@
                 <li>
                     <img src="../static/img/telefone.png" alt="imagem" />
                     <a href="">
-                        <p style="margin-top: 26px">Telefone</p>
+                        <p >Telefone</p>
                     </a>
                 </li>
                 <li>
-                    <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+                    <img src="../static/img/celular.png" alt="imagem"  />
                     <a href="">
-                        <p style="margin-top: 30px">Celular</p>
+                        <p >Celular</p>
                     </a>
                 </li>
-                <li style="margin-top: 30px">
-                    <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+                <li >
+                    <img src="../static/img/o-email.png" alt="imagem" id="email-img" />
                     <a href="mailto:kagemanutencaogv@gmail.com">
-                        <p style="margin-left: 20px">E-mail</p>
+                        <p id="text-email">E-mail</p>
                     </a>
                 </li>
                 </ul>
