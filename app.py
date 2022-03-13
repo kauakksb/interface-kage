@@ -249,6 +249,8 @@ def serv():
 
 @app.route('/insert-serv')
 def insert_serv():
+    global user, email_logado
+
 
 
 
