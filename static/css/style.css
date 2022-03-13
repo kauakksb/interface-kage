@@ -80,7 +80,7 @@
         margin: 0;
         margin-top: 40px;
         margin-left: 2px;
-        font-size: 14px;
+        font-size: 13px;
         font-family: 'Roboto Slab', serif;
     }
     
@@ -2251,30 +2251,22 @@
     }
     
     #prop > #rest > #ofer > ul > .gp > li{
-        height: 175px;
-        width: 125px;
+        height: 185px;
+        width: 145px;
         background-color: rgb(88, 88, 88);
         margin: 10px 15px;
         border-radius: 5px;
         list-style-type: none;
     }
     
-    #prop > #rest > #ofer > ul > .gp > li:hover{
-        height: 175px;
-        width: 125px;
-        background-color: rgb(99, 98, 98);
-        margin: 10px 20px;  
-        border-radius: 5px;
-        list-style-type: none;
-    }
     
     #prop > #rest > #ofer > ul > .gp > li > a{
         display: flex;
         flex-direction: column;
         color: white;
         text-decoration: none;
-        height: 175px;
-        width: 125px;
+        height: 185px;
+        width: 140px;
         align-items: center;
     }
     
@@ -2298,32 +2290,23 @@
     
     #prop > #rest > #ofer > ul > .gp > li > a > #div-aval > #num-aval{
         font-family: 'Roboto Slab', serif;
-        font-size: 8px;
+        font-size: 9px;
         margin: 0;
     }
     
     #prop > #rest > #ofer > ul > .gp > li > a > #nome{
         margin: 0px;
         font-family: 'Roboto Slab', serif;
-        font-size: 10px;
+        font-size: 11px;
         width: 100%;
         margin-top: 5px;
-        margin-left: 12px;
-    }
-    #prop > #rest > #ofer > ul > .gp > li > a > #nome:hover{
-        margin: 0px;
-        font-family: 'Roboto Slab', serif;
-        font-size: 10px;
-        width: 100%;
-        margin-top: 5px;
-        text-decoration: underline;
         margin-left: 12px;
     }
     
     #prop > #rest > #ofer > ul > .gp > li > a > #pre-ori{
         margin: 0px;
         font-family: 'Roboto Slab', serif;
-        font-size: 8px;
+        font-size: 9px;
         width: 100%;
         margin-top: 5px;
         text-decoration: line-through;
@@ -2333,7 +2316,7 @@
     #prop > #rest > #ofer > ul > .gp > li > a > #pre{
         margin: 0px;
         font-family: 'Roboto Slab', serif;
-        font-size: 14px;
+        font-size: 15px;
         width: 100%;
         margin-top: 5px;
         margin-left: 12px;
@@ -2436,8 +2419,8 @@
     }
     
     #prod > #prods > .gp-prod > .list_prod > .prod-gp > li{
-        height: 175px;
-        width: 125px;
+        height: 190px;
+        width: 145px;
         background-color: rgb(250, 250, 250);
         margin: 0px 12px;
         border-radius: 2px;
@@ -2447,17 +2430,6 @@
         transition: 300ms;
     }
     
-    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li:hover{
-        height: 175px;
-        width: 125px;
-        margin: 0px 12px;
-        background-color: rgb(250, 250, 250);
-        border-radius: 2px;
-        border: 1px solid rgb(167, 167, 167);
-        list-style-type: none;
-        box-shadow: 1px 3px 5px 3px #a5a5a5;
-        
-    }
 
     #last{
         display: none;
@@ -2468,8 +2440,8 @@
         flex-direction: column;
         color: rgb(0, 0, 0);
         text-decoration: none;
-        height: 175px;
-        width: 125px;
+        height: 190px;
+        width: 140px;
         align-items: center;
     }
     
@@ -2479,7 +2451,7 @@
     
     #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval{
         height: 8px;
-        width: 125px;
+        width: 135px;
         display: flex;
         flex-direction: row;
         margin-top: 15px;
@@ -2492,32 +2464,23 @@
     
     #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #div-aval > #num-aval{
         font-family: 'Roboto Slab', serif;
-        font-size: 8px;
+        font-size: 9px;
         margin: 0;
     }
     
     #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #nome{
         margin: 0px;
         font-family: 'Roboto Slab', serif;
-        font-size: 10px;
-        width: 100px;
+        font-size: 11px;
+        width: 125px;
         margin-top: 5px;
-    }
-    
-    #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #nome:hover{
-        margin: 0px;
-        font-family: 'Roboto Slab', serif;
-        font-size: 10px;
-        font-weight: 600;
-        width: 175px;
-        text-decoration: underline;
     }
     
     #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #pre-ori{
         margin: 0px;
         font-family: 'Roboto Slab', serif;
-        font-size: 8px;
-        width: 100px;
+        font-size: 9px;
+        width: 125px;
         margin-top: 5px;
         text-decoration: line-through;
     }
@@ -2525,9 +2488,9 @@
     #prod > #prods > .gp-prod > .list_prod > .prod-gp > li > a > #pre{
         margin: 0px;
         font-family: 'Roboto Slab', serif;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 500;
-        width: 100px;
+        width: 125px;
         margin-top: 5px;
     }
     
