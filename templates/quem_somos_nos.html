@@ -11,54 +11,68 @@
 <body>
     <div id="head">
         <div id="hsup">
+          <div id="cont-sup">
             <header>
-                <a href="/">
-                    <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
-                    <h1>Kage</h1>
-                    <p>- COMÉRCIO E MANUTENÇÃO</p>
-                </a>
+              <a href="/">
+                <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+                <h1>Kage</h1>
+                <p>- COMÉRCIO E MANUTENÇÃO</p>
+              </a>
             </header>
-            <div id="nav_pag">
-
-            </div>
+            <div id="nav_pag"></div>
             <div id="func">
-                <form action="/pegando-valores-busca" method="post" id="pesquisa">
-                    <input
-                      id="campo"
-                      type="text"
-                      name="camp_pesq"
-                      autocomplete="off"
-                      placeholder=" Pesquisar"
-                    />
-                    <button id="botao">
-                      <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
-                    </button>
-                </form>
+              <form action="/produtos" method="post" id="pesquisa">
+                <input
+                  id="campo"
+                  type="text"
+                  name="camp_pesq"
+                  autocomplete="off"
+                  placeholder=" Pesquisar"
+                />
+                <button id="botao">
+                  <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
+                </button>
+              </form>
+            </div>
+          </div>
+            {% if state == True %}
+              <div id="div-login">
                 <a id="login" href="/perfil">
+                  <div>
+                    <img src="../static/img/perfil.png" alt="imagem do login" />
                     <div>
-                      <img src="../static/img/perfil.png" alt="imagem do login" />
-                      <div>
-                        <p>{{texto}}</p>
-                      </div>
+                      <p>Área do Usuário</p>
                     </div>
+                  </div>
                 </a>
                 <div id="sair">
-                    {% if ap == True %}
-                      {% endif %} 
-                    {%if ap == False %}
-                    <form action="/logout">
-                      <button>
-                          <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
-                      </button>
-                    </form>
-                    {% endif %}
+  
+                  <form action="/logout">
+                    <button>
+                        <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              
+            {% else %}
+              <div id="div-login">
+                <a id="login" href="/perfil">
+                  <div>
+                    <img src="../static/img/perfil.png" alt="imagem do login" />
+                    <div>
+                      <p>Olá, faça login!</p>
+                    </div>
                   </div>
-            </div>
+                </a>
+                <div id="sair">
+                  
+                </div>
+              </div>
+            {% endif %}           
         </div>
-        <div id="hinf">
-
-        </div>
-    </div>
+        <div id="hinf"></div>
+      </div>
     <section id="cont">
         <div id="tit">
             <img src="../static/img/engrenagem.png" alt="">
@@ -68,27 +82,30 @@
             <hr>
         </div>
         <div id="gp1">
-            <div id="pesq">
-                <h3>BUSCANDO SEMPRE A SATISFAÇÃO DOS CLIENTES</h3>
-                <p> 
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maiores quisquam quibusdam iusto corrupti exercitationem non magni modi, deleniti neque dolorem omnis, nostrum saepe! Quam rerum nesciunt excepturi debitis tenetur! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, 
-                </p>
-            </div>
-            <div id="pdir">
-                <img src="../static/img/caixa-de-ferramentas.png" alt="">
+            <h3>BUSCANDO SEMPRE A SATISFAÇÃO DOS CLIENTES</h3>
+            <div id="cont-gp">
+                <div id="pesq">
+                
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maiores quisquam quibusdam iusto corrupti exercitationem non magni modi, deleniti neque dolorem omnis, nostrum saepe! Quam rerum nesciunt excepturi debitis tenetur! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio,
+                    </p>
+                </div>
+                <div id="pdir">
+                    <img src="../static/img/caixa-de-ferramentas.png" alt="">
+                </div>
             </div>
         </div>
         <div id="gp2">
-            <div id="pesq2">
-                <img src="../static/img/mecanismo.png" alt="">
-            </div>
-            <div id="pdir2">
-                <div id="tgp">
-                    <h3>VISANDO A QUALIDADE E A TRANSPARÊNCIA</h3>
+            <h3>VISANDO A QUALIDADE E A TRANSPARÊNCIA</h3>
+            <div id="cont-gp">
+                <div id="pesq2">
+                    <img src="../static/img/mecanismo.png" alt="">
                 </div>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit sed consectetur atque placeat odio a iusto dolores iure tenetur illo quae voluptatum delectus, unde impedit ex praesentium aperiam dolore quas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, tempora omnis fugit modi, 
-                </p>
+                <div id="pdir2">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit sed consectetur atque placeat odio a iusto dolores iure tenetur illo quae voluptatum delectus, unde impedit ex praesentium aperiam dolore quas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, tempora omnis fugit modi,
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -102,19 +119,19 @@
                 <li>
                     <img src="../static/img/telefone.png" alt="imagem" />
                     <a href="">
-                        <p style="margin-top: 26px">Telefone</p>
+                        <p >Telefone</p>
                     </a>
                 </li>
                 <li>
-                    <img src="../static/img/celular.png" alt="imagem" style="width: 60px" />
+                    <img src="../static/img/celular.png" alt="imagem"  />
                     <a href="">
-                        <p style="margin-top: 30px">Celular</p>
+                        <p >Celular</p>
                     </a>
                 </li>
-                <li style="margin-top: 30px">
-                    <img src="../static/img/o-email.png" alt="imagem" style="height: 50px" />
+                <li >
+                    <img src="../static/img/o-email.png" alt="imagem" id="email-img" />
                     <a href="mailto:kagemanutencaogv@gmail.com">
-                        <p style="margin-left: 20px">E-mail</p>
+                        <p >E-mail</p>
                     </a>
                 </li>
                 </ul>

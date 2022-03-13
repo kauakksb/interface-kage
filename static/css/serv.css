@@ -507,6 +507,11 @@
     margin-top: 0px;
   }
   
+  #sup-bot{
+    display: flex;
+    flex-direction: row;
+  }
+
   .add div {
     height: 35px;
     width: 175px;

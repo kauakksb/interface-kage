@@ -247,14 +247,49 @@ def serv():
         return redirect('/login')
         
 
-@app.route('/insert-serv')
+@app.route('/insert-serv', methods = ["POST", "GET"])
 def insert_serv():
     global user, email_logado
 
+    if user.is_authenticated():
+        cliente = request.form.get('cliente')
+        quant_manut = int(request.form.get('quant-manut'))
+
+        maquinas = []
+
+        if quant_manut <= 5:
+            for i in range(0,quant_manut):
+                mod_maq = request.form.get(f'mod-maq{i+1}')
+                detal = request.form.get(f'detal{i+1}')
+                info = [mod_maq, detal]
+                maquinas.append(info[:])
+                info.clear()
 
 
+            try:
+                for i in range(0, quant_manut):
+                    maq = maquinas[i][0]
+                    det = maquinas[i][1]
+                    db.insertData('servicos', email_logado, cliente, maq, 0, det, 'Em Avaliação', commit =False)
 
-    return redirect('/serv')
+            except:
+                print('Não foi possível registrar os serviços')
+                db.closeConn()
+                return redirect('/serv')
+
+            db.con.commit()
+            print('Serviços registrados com sucesso')
+            db.closeConn()
+            return redirect('/serv')
+
+        else:
+            print('Número de registros inválido')
+            return redirect('/serv')
+
+    else:
+        return redirect('/login')
+
+    
 
 
 @app.route('/servicos')
@@ -269,5 +304,5 @@ def quem_somos_nos():
 
 
 if __name__ == '__main__':
-    
+
     app.run(debug = True)

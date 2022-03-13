@@ -124,7 +124,7 @@ class ClassDatabase:
 
 
 
-    def insertData(self, name_tb, *values):
+    def insertData(self, name_tb, *values, commit = True):
         self.connection()
 
         tamanho = len(values) - 1
@@ -150,15 +150,14 @@ class ClassDatabase:
         comando += ');'
 
         # Tentando executar comando de inserção de dados na tabela
-        try:
-            self.cursor.execute(comando)
+        self.cursor.execute(comando)
+        if commit == True:
             self.con.commit()
-        except Error as erro:
-            print(erro)
-            return
+
 
         # Encerrando conexão com o banco de dados caso ainda esteja conectado
-        self.closeConn()
+        if commit == True:
+            self.closeConn()
 
 
 

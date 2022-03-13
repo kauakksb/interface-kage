@@ -41,6 +41,8 @@ var text_probl4 = document.getElementById('det-probl4').value
 var text_probl5 = document.getElementById('det-probl5').value
 
 
+var quant_manut = Number(document.getElementById('quant-manut').value)
+
 
 // Variáveis para funcionamento do código
 let servs = []
@@ -341,6 +343,9 @@ function controle_geral(){
         document.getElementById('det-probl4').value = text_probl4
         document.getElementById('det-probl5').value = text_probl5
 
+        quant_manut += 1
+        document.getElementById('quant-manut').value = quant_manut
+
         clique = "pri"       
         
         
@@ -441,6 +446,9 @@ function controle_geral(){
 
         diminuir_sec()
         rev_elements()
+
+        quant_manut -= 1
+        document.getElementById('quant-manut').value = quant_manut
 
         clique = "sec"  
 
