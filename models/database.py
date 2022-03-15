@@ -129,7 +129,7 @@ class ClassDatabase:
         self.connection()
 
         if name_tb == 'servicos':
-            columns = 'email_cliente, nome_cliente, mod_maq, marca, valor, descricao, status'
+            columns = 'email_cliente, nome_cliente, mod_maq, marca, valor, descricao, status, categ'
         elif name_tb == 'produtos':
             columns = 'nome_prod, valor, quant, id_de_fabricacao, img_prod'
         elif name_tb == 'usuarios':

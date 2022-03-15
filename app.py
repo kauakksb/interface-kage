@@ -96,8 +96,11 @@ def login():
 
 @app.route('/validando-login', methods = ["GET", "POST"])
 def verific_login():
+    global target
+
     email = request.form.get('email')
     senha = request.form.get('senha')
+
 
     user = User.query.filter_by(email_usu = email).first()
 
@@ -136,7 +139,7 @@ def perfil():
     sinais2 = ['(',')', "'",',']
 
     if current_user.is_authenticated:
-        try:
+        try:    
             prods = []
             prods_carr = [] 
             valor_total = 0
@@ -179,7 +182,7 @@ def perfil():
             '''nada'''
 
         
-        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods, prods_carr = prods_carr, num_prods_carr = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant)
+        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods,  prods_carr = prods_carr, tamanho = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant)
     
     else:
         return redirect('/login')
@@ -570,10 +573,23 @@ def finalizar_compra():
 
     for elem in dados:
         if not elem:
-            return redirect('/entrega-pagamento')
+            return redirect('/entrega-pagamento')   
+
+    try:
+        produtos = manage_db.searchData('id_produto', 'carr', 'id_cliente', current_user.get_id())
+        for produto in produtos:
+            manage_db.insertData('hist', current_user.get_id(), produto[0], commit=False)
+    except:
+        manage_db.closeConn()
+        return 'Não foi possível realizar a compra'
+
+    manage_db.con.commit()
+    manage_db.closeConn()
+    return 'Compra realizada com sucesso'
 
 
-    return render_template('pagina_inicial.html')
+
+
 
 
 
@@ -595,47 +611,44 @@ def serv():
 def insert_serv():
     global user
 
-    try:
 
-        if current_user.is_authenticated:
-            cliente = request.form.get('cliente')
-            quant_manut = int(request.form.get('quant-manut'))
+    if current_user.is_authenticated:
+        cliente = request.form.get('cliente')
+        quant_manut = int(request.form.get('quant-serv'))
+        type_serv = request.form.get('type-serv')
 
-            maquinas = []
+        maquinas = []
 
-            if quant_manut <= 5:
-                for i in range(0,quant_manut):
-                    mod_maq = request.form.get(f'mod-maq{i+1}')
-                    detal = request.form.get(f'detal{i+1}')
-                    info = [mod_maq, detal]
-                    maquinas.append(info[:])
-                    info.clear()
+        if quant_manut <= 5:
+            for i in range(0,quant_manut):
+                mod_maq = request.form.get(f'mod-maq{i+1}')
+                detal = request.form.get(f'detal{i+1}')
+                info = [mod_maq, detal]
+                maquinas.append(info[:])
+                info.clear()
 
 
-                try:
-                    for i in range(0, quant_manut):
-                        maq = maquinas[i][0]
-                        det = maquinas[i][1]
-                        table_serv.createServ(current_user.get_id(),cliente,maq,'Desconhecido',0.0,det,'Em Avaliação', commit=False)
+            try:
+                for i in range(0, quant_manut):
+                    maq = maquinas[i][0]
+                    det = maquinas[i][1]
+                    table_serv.createServ(current_user.get_id(),cliente,maq,'Desconhecido',0.0,det,'Em Avaliação', type_serv    , commit=False)
 
-                except Error as erro:
-                    print(f'Não foi possível registrar os serviços         {erro}')
-                    table_serv.manage_db.closeConn()
-                    return redirect('/serv')
-
-                table_serv.manage_db.con.commit()
-                manage_db.closeConn()
-                print('Serviços registrados com sucesso')
+            except Error as erro:
+                print(f'Não foi possível registrar os serviços         {erro}')
+                table_serv.db.closeConn()
                 return redirect('/serv')
 
-            else:
-                print('Número de registros inválido')
-                return redirect('/serv')
+            table_serv.db.con.commit()
+            table_serv.db.closeConn()
+            print('Serviços registrados com sucesso')
+            return redirect('/serv')
 
         else:
-            print('Usuário não logado')
-            return redirect('/login')
-    except:
+            print('Número de registros inválido')
+            return redirect('/serv')
+
+    else:
         print('Usuário não logado')
         return redirect('/login')
 
@@ -652,6 +665,16 @@ def quem_somos_nos():
     return render_template('quem_somos_nos.html')
 
 
+
+@app.route('/login-admin')
+def login_admin():
+    global target
+    target = 'admin'
+    return render_template('login')
+
+@app.route('/admin')
+def admin():
+    return  render_template('admin.html')
 
 
 

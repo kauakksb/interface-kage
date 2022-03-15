@@ -73,9 +73,9 @@ var apoio4 = 'pri'
 var apoio5 = 'pri'
 var botao_clicado = '0'
 
-usab.style.height = "1800px"
-funcoes.style.height = "1600px"
-sec_serv.style.height = "1600px"
+usab.style.height = "2000px"
+funcoes.style.height = "1800px"
+sec_serv.style.height = "1800px"
 
 
 var alt_usab = usab.style.height

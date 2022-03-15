@@ -397,10 +397,10 @@ header > a > p{
 #servic {
   width: 100%;
   height: 1000px;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  visibility: hidden;
+  visibility: visible;
 }
 
 #serv-prest {
@@ -1098,6 +1098,7 @@ header > a > p{
 /* Cadastro de produtos */
 #cad-prod{
   width: 100%;
+  display: none;
 }
 
 .p{

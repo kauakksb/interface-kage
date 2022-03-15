@@ -124,7 +124,7 @@
                       <li class="nuos"><p>Número da OS:</p><p class="nuosc">{{servico[0]}}</p></li>
                       <li class="val"><p>Valor:</p><p class="valc">{{servico[5]}}</p></li>
                       <div class="ocult" id="{{id_oc}}">
-                        <li class="cat"><p>Categoria:</p><p class="categc">{{servico[4]}}</p></li>
+                        <li class="cat"><p>Categoria:</p><p class="categc">{{servico[8]}}</p></li>
                         <li class="marc"><p>Marca:</p><p class="marcc">{{servico[4]}}</p></li>
                       </div>
                     </ul>
@@ -218,62 +218,59 @@
                   <p class="pri">Itens</p>
                   <p class="seg">Preço</p>
                   <p class="ter">Quantidade</p>
-                  <p class="quar">Subtotal</p>
+                  <p class="quar">Excluir</p>
                   <br />
                   <hr />
                 </div>
                 <div id="baixo">
-                  <ul type="none">
-                    {% for d in range(0,num_prods_carr) %}
-                      {% set info_prod = prods_carr[d] %}
-                      {% set num_prod_carr = quant_prod[d]%}
-
+            
+                  <ul type="none" id="ul-grupo">
+                    {% for i in range(0, tamanho) %}
+                    {% set prod = prods_carr[i] %}
+                    {% set quant_prod = quant_prod[i] %}
                       <div class="grupo">
                         <li class="linha">
                           <div class="pri">
                             <a href="#">
                               <img
                                 id="img-prod"
-                                src="{{info_prod[5]}}"
+                                src="{{prod[5]}}"
                                 alt="imagem"
                               />
                             </a>
                             <a href="../html/perfil.html" class="link">
                               <p class="tab" class="nome">
-                                {{info_prod[1]}}
+                                {{prod[1]}}
                               </p>
-                              <p class="tab" id="pre_ori">R$ {{info_prod[2]}}</p>
-                              <p class="tab" id="pre_atu">R$ {{info_prod[2]}}</p>
+                              <p class="tab" id="pre_ori">R$ {{prod[2]}}</p>
+                              <p class="tab" id="pre_atu">R$ {{prod[2]}}</p>
                             </a>
                           </div>
                         </li>
                         <li>
-                          <p id="preco" class="seg">R$ {{info_prod[2]}}</p>
+                          <p id="preco" class="seg">R$ {{prod[2]}}</p>
                         </li>
                         <li>
                           <div class="ter" id="mais-menos">
                             <div id="div-bot-mais">
-                              <input type="button" name="mais" value="+" id="mais" />
+                              <div id="mais" >+</div>
                             </div>
                             <div id="quant">
-                              <input type="text" name="valor" value="{{num_prod_carr}}" size="1"/>
+                              <input type="text" name="valor" value="{{quant_prod}}" size="1" disabled />
                             </div>
                             <div id="div-bot-menos">
-                              <input
-                                type="button"
-                                name="menos"
-                                value="-"
-                                id="menos"
-                              />
+                              <div id="menos">-</div>
                             </div>
                           </div>
                         </li>
                         <li>
-                          <p id="sub" class="quar">R$ {{info_prod[2]}}</p>
+                          <form action="" id="remover-form">
+                            <input type="text" value="{{prod[0]}}" name="id_prod" style="display: none;">
+                            <bottom id="remover" class="quar">Remover</bottom>
+                          </form>
                         </li>
                       </div>
-                    {% endfor %}  
-                    
+                    {% endfor %}
                   </ul>
                 </div>
               </div>
@@ -282,18 +279,20 @@
               <div>
                 <div id="sub2">
                   <p>Subtotal</p>
-                  <p id="subtotal">R$ 000,00</p>
+                  <p id="subtotal">R$ {{valor}}</p>
                 </div>
                 <div id="tot">
                   <p>Total</p>
-                  <p id="total">R$ {{valor_total_carr}}</p>
+                  <p id="total">R$ {{valor}}</p>
                 </div>
               </div>
               <div id="finalizar">
-                <a href="/finalizar-compra">Continuar comprando</a>
-                <div id="div-bot-final">
-                  <a href="../html/pagina_de_compra.html"><input type="submit" value="Finalizar pedido" id="bot-final"/></a>
-                </div>
+                <a href="../html/pagina_inicial.html">Continuar comprando</a>
+                <form action="/pag-compra" method="post" id="form-car">
+                  <div id="div-bot-final">
+                    <input type="submit" value="Finalizar pedido" id="bot-final"/>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

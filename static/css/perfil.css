@@ -851,6 +851,7 @@ header > a > p{
   border: none;
   transition: 200ms;
   font-size: 16px;
+  text-align: center;
 }
 
 #mais:hover {
@@ -858,6 +859,8 @@ header > a > p{
   width: 24px;
   height: 24px;
   margin: 0px;
+  text-align: center;
+
 }
 
 #div-bot-mais {
@@ -891,6 +894,8 @@ header > a > p{
   border: none;
   transition: 200ms;
   font-size: 16px;
+  text-align: center;
+
 }
 
 #menos:hover {
@@ -898,6 +903,7 @@ header > a > p{
   width: 24px;
   height: 24px;
   margin: 0px;
+  text-align: center;
 }
 
 #div-bot-menos {
@@ -1009,7 +1015,7 @@ header > a > p{
   text-decoration: underline;
 }
 
-#finalizar > div > a > input {
+#bot-final{
   background-color: #ff8400;
   margin: 2px 3px;
   width: 250px;
@@ -1097,6 +1103,40 @@ header > a > p{
   flex-direction: row;
   margin: 15px 0px;
 }
+
+#remover{
+  color: white;
+  background-color: #ff8400;
+  padding-bottom: 2px;
+  margin: 1px;
+  width: 90px;
+  height: 21px;
+  border-radius: 4px;
+  border: none;
+  transition: 200ms;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+#remover:hover {
+  cursor: pointer;
+  width: 100px;
+  height: 25px;
+  margin: 0px;
+}
+
+#remover-form {
+  width: 100px;
+  height: 25px;
+  margin-top: 16.5px;
+  margin-left: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
 
 .img-prod {
   width: 25%;
