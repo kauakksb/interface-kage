@@ -78,6 +78,7 @@ email_logado = ''
 anonymous = True
 vez = 0
 vez_comp = 0
+aste = ''
 
 
 @app.route('/')
