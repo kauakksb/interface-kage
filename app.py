@@ -192,7 +192,7 @@ def perfil():
 
 @app.route('/cadastro')
 def cadastro():
-    global aste, vez
+    global aste, vez, advise
 
     if vez %2 == 0:
         return render_template("cadastro.html")
