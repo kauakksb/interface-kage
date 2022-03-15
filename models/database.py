@@ -133,7 +133,7 @@ class ClassDatabase:
         elif name_tb == 'produtos':
             columns = 'nome_prod, valor, quant, id_de_fabricacao, img_prod'
         elif name_tb == 'usuarios':
-            columns = 'email_usu, nome_usu, senha_usu, cpf, estado, cidade, bairro, rua, numero, comp'
+            columns = 'email_usu, nome_usu, senha_usu, cpf, estado, cidade, bairro, rua, numero, complemento'
         elif name_tb == 'carr':
             columns = 'id_cliente, id_produto, quant'
         elif name_tb == 'hist':

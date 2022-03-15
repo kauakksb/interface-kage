@@ -105,7 +105,7 @@ def verific_login():
 
     user = User.query.filter_by(email_usu = email).first()
 
-    if not email or not senha:
+    if len(email) == 0 or len(senha) == 0:
         return redirect('/login')
 
     try:
@@ -208,9 +208,11 @@ def cadastro():
 @app.route('/inserir-dados', methods = ['POST', 'GET'])
 def insert_cad():
 
-    global advise, vez, target
+    global advise, vez, target, aste
     global email, senha, nome, cpf, estado, cidade, bairro, rua, numero, comp
     i = 0
+
+    advise = ''
 
     try:
         email = request.form.get('email')
@@ -237,25 +239,15 @@ def insert_cad():
 
         dom_aceitos = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com']
 
-        email_testado = email
-        email_testado = email_testado.replace('@', ' @')
-        email_testado = email_testado.split()
 
+        emails = manage_db.searchData('email_usu', 'usuarios')
 
-        if email_testado[1] in dom_aceitos:
-
-            emails = manage_db.searchData('email_usu', 'usuarios')
-
-            if email in str(emails):
-                advise = 'Email inválido'
-                i += 1
-                vez += i
-                return redirect ('/cadastro')
-        else:
+        if email in str(emails):
             advise = 'Email inválido'
             i += 1
             vez += i
-            return redirect ('/cadastro')
+            return redirect('/cadastro')
+
 
         cpf_usuarios = manage_db.searchData('cpf', 'usuarios')
         cpf_usuarios = str(cpf_usuarios)
@@ -279,7 +271,7 @@ def insert_cad():
         numero = int(numero)
 
         try:
-            manage_db.insertData('usuarios', email, senha, nome, cpf, estado, cidade, bairro, rua, numero, comp)
+            manage_db.insertData('usuarios', email, nome, senha, cpf, estado, cidade, bairro, rua, numero, comp)
         except Error as erro:
             print(erro)
             if '1062' in str(erro):
@@ -290,6 +282,7 @@ def insert_cad():
             
     except:
         '''nada'''
+        return redirect('/carrinho')
 
     return 'Cadastro concluído com sucesso!'
 
