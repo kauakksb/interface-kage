@@ -12,7 +12,7 @@
     <div id="head">
       <div id="hsup">
         <header>
-          <a href="pagina_inicial.html">
+          <a href="/">
             <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
             <h1>Kage</h1>
             <p>- COMÉRCIO E MANUTENÇÃO</p>
@@ -35,7 +35,7 @@
 
     <section id="entr-container">
       <div id="entr-box">
-      <form action="">
+      <form action="/finalizar-compra" method="post">
         <div id="finalizar">
           <h2>Finalizar pedido</h2>
         </div>
@@ -44,51 +44,32 @@
             <p id="resumo-pedido">Resumo do pedido</p>
             <div id="scroll">
               <ul type="none">
+                {% for i in range(0, tamanho) %}
+              {% set dados = prods[i] %}
+              {% set quant_prod = quant[i] %}
                 <li>
                   <a href="pagina_do_produto.html" class="link">
-                    <img src="../static/img/bombadagua-.png" alt="imagem" />
-                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                  </a>
+                    <img src="{{dados[5]}}" alt="imagem" />
+                    <p class="nome">{{dados[1]}}</p>
+                    <p style="color: black; font-size: 13px;">{{quant_prod}} unidades</p>
+                    </a>
                 </li>
-                <li>
-                  <a href="pagina_do_produto.html" class="link">
-                    <img src="../static/img/bombadagua-.png" alt="imagem" />
-                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="pagina_do_produto.html" class="link">
-                    <img src="../static/img/bombadagua-.png" alt="imagem" />
-                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="pagina_do_produto.html" class="link">
-                    <img src="../static/img/bombadagua-.png" alt="imagem" />
-                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="pagina_do_produto.html" class="link">
-                    <img src="../static/img/bombadagua-.png" alt="imagem" />
-                    <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                  </a>
-                </li>
+              {% endfor %}
               </ul>
             </div>
             <div>
               <div id="finalzin">
                 <div id="sub">
                   <p class="alinhar">Subtotal</p>
-                  <p>R$ 000,00</p>
+                  <p>R$ {{valor}}</p>
                 </div>
                 <div id="val-entrega">
                   <p class="alinhar">Entrega</p>
-                  <p>R$ 000,00</p>
+                  <p>R$ {{frete1}}</p>
                 </div>
                 <div id="tot">
                   <p class="alinhar">Total</p>
-                  <p>R$ 000,00</p>
+                  <p>R$ {{valor}}</p>
                 </div>
                 <a href="carrinho.html" id="voltar">Voltar para meu carrinho de compras</a>
               </div>
@@ -97,12 +78,12 @@
           <div id="entrega">
             <h2 id="tit_entrega">Entrega</h2>
             <div>
-              <form class="linha">
+              <div class="linha">
                 <p class="p">CEP</p>
-                <input id="inputcep" type="text" maxlength="8">
+                <input id="inputcep" type="text" maxlength="8" name="cep">
                 <a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" rel="noreferrer" id="meu-cep">Não sei meu CEP</a>
-              </form><br>
-              <form action="">
+              </div><br>
+              <div>
                 <p class="p">Forma de entrega</p><br>
                 <label id="btn1" onclick="clique1()">
                   <div id="forma1">
@@ -110,7 +91,7 @@
                     <p>Entregue em até 10 dias</p>
                   </div>
                   <div id="valor1">
-                    <p>R$ 000,00</p>
+                    <p>R$ {{frete1}}</p>
                   </div>
                 </label>
                 <label id="btn2" onclick="clique2()">
@@ -119,39 +100,39 @@
                     <p>Entregue em até 6 dias</p>
                   </div>
                   <div id="valor2">
-                    <p>R$ 000,00</p>
+                    <p>R$ {{frete2}}</p>
                   </div>
-              </form>
+                </div>
               </label>
               <p id="end_entrega">Endereço de entrega</p>
               <div id="rua_num">
-                <form action="" class="linha">
+                <div class="linha">
                   <p class="p">Rua</p>
-                  <input type="text">
-                </form>
-                <form action="" id="padding" class="linha">
+                  <input type="text" name="rua-compra">
+                </div>
+                <div id="padding" class="linha">
                   <p class="p">Número</p>
-                  <input type="text">
-                </form>
+                  <input type="text" name="numero-compra">
+                </div>
               </div><br>
               <div id="comp_bairro">
-                <form action="" class="linha">
+                <div action="" class="linha">
                   <p class="p">Complemento e referência</p>
-                  <input type="text">
-                </form>
-                <form action="" id="padding" class="linha">
+                  <input type="text" name="comp-compra">
+                </div>
+                <div id="padding" class="linha">
                   <p class="p">Bairro</p>
-                  <input type="text">
-                </form>
+                  <input type="text" name="bairro">
+                </div>
               </div><br>
               <div id="cid_est">
-                <form action="" class="linha">
+                <div  class="linha">
                   <p class="p">Cidade</p>
-                  <input type="text">
-                </form>
-                <form action="" id="padding" class="opcao">
+                  <input type="text" name="cidade">
+                </div>
+                <div id="padding" class="opcao">
                   <p class="p">Estado</p>
-                  <select name="" id="">
+                  <select name="estado" id="">
                     <option value="uf" disabled selected>UF</option>
                     <option value="ac">AC</option>
                     <option value="al">AL</option>
@@ -181,7 +162,7 @@
                     <option value="se">SE</option>
                     <option value="to">TO</option>
                   </select>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -192,18 +173,18 @@
               <h2>Pagamento</h2>
             </div>
             <div>
-              <form action="">
+              <div>
                 <p class="p2">Número do cartão</p>
-                <input type="text" id="num-cartao">
-              </form>
-              <form action="">
+                <input type="text" id="num-cartao" name="num-card">
+              </div>
+              <div>
                 <p class="p2">Nome impresso no cartão</p>
-                <input type="text" id="nome-impre">
-              </form>
-              <form action="">
+                <input type="text" id="nome-impre" name="nome-card">
+              </div>
+              <div>
                 <p class="p2">Validade</p>
                 <div id="validade">
-                  <select name="" id="1">
+                  <select name="mes" id="1">
                     <option value="mes" disabled selected>Mês</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -219,7 +200,7 @@
                     <option value="12">12</option>
                   </select>
                   <p id="barra">/</p>
-                  <select name="" id="2">
+                  <select name="ano" id="2">
                     <option value="ano" disabled selected>Ano</option>
                     <option value="22">22</option>
                     <option value="23">23</option>
@@ -242,16 +223,16 @@
                     <option value="40">40</option>
                   </select>
                 </div>
-              </form>
-              <form action="">
+              </div>
+              <div>
                 <p class="p2">Código de segurança</p>
-                <input type="text" maxlength="3" id="cod">
-              </form>
-              <form action="" id="comprar">
+                <input type="text" maxlength="3" id="cod" name="cod-sec">
+              </div>
+              <div id="comprar">
                 <div>
                   <input type="submit" value="Finalizar compra" class="comprar">
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

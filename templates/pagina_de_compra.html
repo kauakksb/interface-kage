@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/pagina_de_compra.css" />
     <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon">
-    <title>Finalizar compra</title>
+    <title>Finalizar Compra</title>
   </head>
   <body>
     <div id="head">
@@ -74,51 +74,32 @@
           <p id="resumo-pedido">Resumo do pedido</p>
           <div id="scroll">
             <ul type="none">
-              <li>
-                <a href="pagina_do_produto.html" class="link">
-                  <img src="../static/img/bombadagua-.png" alt="imagem" />
-                  <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                </a>
-              </li>
-              <li>
-                <a href="pagina_do_produto.html" class="link">
-                  <img src="../static/img/bombadagua-.png" alt="imagem" />
-                  <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                </a>
-              </li>
-              <li>
-                <a href="pagina_do_produto.html" class="link">
-                  <img src="../static/img/bombadagua-.png" alt="imagem" />
-                  <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                </a>
-              </li>
-              <li>
-                <a href="pagina_do_produto.html" class="link">
-                  <img src="../static/img/bombadagua-.png" alt="imagem" />
-                  <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                </a>
-              </li>
-              <li>
-                <a href="pagina_do_produto.html" class="link">
-                  <img src="../static/img/bombadagua-.png" alt="imagem" />
-                  <p class="nome">Compressor Pressure Super Ar 120 500W</p>
-                </a>
-              </li>
+              {% for i in range(0, tamanho) %}
+              {% set dados = prods[i] %}
+              {% set quant_prod = quant[i] %}
+                <li>
+                  <a href="pagina_do_produto.html" class="link">
+                    <img src="{{dados[5]}}" alt="imagem" />
+                    <p class="nome">{{dados[1]}}</p>
+                    <p style="color: black; font-size: 13px;">{{quant_prod}} unidades</p>
+                    </a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
           <div>
             <div id="finalzin">
               <div id="sub">
                 <p class="alinhar">Subtotal</p>
-                <p>R$ 000,00</p>
+                <p>R$ {{valor}}</p>
               </div>
               <div id="entrega">
                 <p class="alinhar">Entrega</p>
-                <p>R$ 000,00</p>
+                <p>R$ {{frete}}</p>
               </div>
               <div id="tot">
                 <p class="alinhar">Total</p>
-                <p>R$ 000,00</p>
+                <p>R$ {{valor}}</p>
               </div>
               <a href="carrinho.html" id="voltar">Voltar para meu carrinho de compras</a>
             </div>
@@ -127,30 +108,30 @@
         
         <div id="dados">
           <p id="dados-pessoais"> Dados pessoais</p>
-          <form action="/entrega-pagamento">
+          <form action="/entrega-pagamento" method="post">
             <div id="preencher-dados">
               <div id="email" class="linha">
                 <label class="nome-input">E-mail</label>
-                <input type="text" id="email-preencher">
+                <input type="text" id="email-preencher" name="email-compra">
               </div> 
               <div class="grupo">
                 <div id="nome" class="linha">
                   <label class="nome-input">Nome</label>
-                  <input type="text">
+                  <input type="text" name="nome-compra">
                 </div>
                 <div id="sobrenome" class="linha">
                   <label class="nome-input">Sobrenome</label>
-                  <input type="text">
+                  <input type="text" name="sobrenome-compra">
                 </div>
               </div>
               <div class="grupo">
                 <div id="cpf" class="linha">
                   <label class="nome-input">CPF</label>
-                  <input type="text">
+                  <input type="text" placeholder="Somente os números" maxlength="11" name="cpf-compra">
                 </div>
                 <div id="telefone" class="linha">
                   <label class="nome-input">Telefone</label>
-                  <input type="text">
+                  <input type="text" name="telefone-compra">
                 </div>
               </div>
               <div id="fim">
@@ -166,6 +147,7 @@
                 </div>
               </div>  
             </div>
+            <p style="margin-top: 30px; width: 100%; text-align: center; font-size: 14px;">{{aviso_comp}}</p>
           </form>
         </div>
       </div>

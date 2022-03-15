@@ -6,52 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/carrinho.css" />
     <link rel="shortcut icon" href="../static/img/kage.ico" type="image/x-icon">
-    <title>Finalizar compra</title>
+    <title>Carrinho</title>
   </head>
   <body>
     <div id="head">
       <div id="hsup">
-        <header>
-          <a href="/">
-            <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
-            <h1>Kage</h1>
-            <p>- COMÉRCIO E MANUTENÇÃO</p>
-          </a>
-        </header>
-        <div id="nav_pag"></div>
-        <div id="func">
-          <form action="/pegando-valores-busca" method="post" id="pesquisa">
-            <input
-              id="campo"
-              type="text"
-              name="camp_pesq"
-              autocomplete="off"
-              placeholder=" Pesquisar"
-            />
-            <button id="botao">
-              <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
-            </button>
-          </form>
-          <a id="login" href="/perfil">
-            <div>
-              <img src="../static/img/perfil.png" alt="imagem do login" />
-              <div>
-                <p>{{texto}}</p>
-              </div>
-            </div>
-          </a>
-          <div id="sair">
-            {% if ap == True %}
-              {% endif %} 
-            {%if ap == False %}
-            <form action="/logout">
-              <button>
-                  <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+        <div id="cont-sup">
+          <header>
+            <a href="/">
+              <img src="../static/img/engrenagens.png" alt="Imagem da Logo" />
+              <h1>Kage</h1>
+              <p>- COMÉRCIO E MANUTENÇÃO</p>
+            </a>
+          </header>
+          <div id="nav_pag"></div>
+          <div id="func">
+            <form action="/produtos" method="post" id="pesquisa">
+              <input
+                id="campo"
+                type="text"
+                name="camp_pesq"
+                autocomplete="off"
+                placeholder=" Pesquisar"
+              />
+              <button id="botao">
+                <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
               </button>
             </form>
-            {% endif %}
           </div>
         </div>
+
+          {% if state == True %}
+            <div id="div-login">
+              <a id="login" href="/perfil">
+                <div>
+                  <img src="../static/img/perfil.png" alt="imagem do login" />
+                  <div>
+                    <p>Área do Usuário</p>
+                  </div>
+                </div>
+              </a>
+              <div id="sair">
+
+                <form action="/logout">
+                  <button>
+                      <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+          {% else %}
+            <div id="div-login">
+              <a id="login" href="/perfil">
+                <div>
+                  <img src="../static/img/perfil.png" alt="imagem do login" />
+                  <div>
+                    <p>Olá, faça login!</p>
+                  </div>
+                </div>
+              </a>
+              <div id="sair">
+                
+              </div>
+            </div>
+          {% endif %}           
       </div>
       <div id="hinf"></div>
     </div>
@@ -68,117 +87,83 @@
               <p class="pri">Itens</p>
               <p class="seg">Preço</p>
               <p class="ter">Quantidade</p>
-              <p class="quar">Subtotal</p>
+              <p class="quar">Excluir</p>
               <br />
               <hr />
             </div>
             <div id="baixo">
-              <ul type="none">
-                <div class="grupo">
-                  <li class="linha">
-                    <div class="pri">
-                      <a href="#">
-                        <img
-                          id="img-prod"
-                          src="../static/img/audaz-removebg-preview.png"
-                          alt="imagem"
-                        />
-                      </a>
-                      <a href="../html/perfil.html" class="link">
-                        <p class="tab" class="nome">
-                          Compressor Pressure Super Ar 120 500W
-                        </p>
-                        <p class="tab" id="pre_ori">R$ 000,00</p>
-                        <p class="tab" id="pre_atu">R$ 000,00</p>
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <p id="preco" class="seg">R$ 000,00</p>
-                  </li>
-                  <li>
-                    <div class="ter" id="mais-menos">
-                      <div id="div-bot-mais">
-                        <input type="button" name="mais" value="+" id="mais" />
+        
+              <ul type="none" id="ul-grupo">
+                {% for i in range(0, tamanho) %}
+                {% set prod = prods[i] %}
+                {% set quant_prod = quant[i] %}
+                  <div class="grupo">
+                    <li class="linha">
+                      <div class="pri">
+                        <a href="#">
+                          <img
+                            id="img-prod"
+                            src="{{prod[5]}}"
+                            alt="imagem"
+                          />
+                        </a>
+                        <a href="../html/perfil.html" class="link">
+                          <p class="tab" class="nome">
+                            {{prod[1]}}
+                          </p>
+                          <p class="tab" id="pre_ori">R$ {{prod[2]}}</p>
+                          <p class="tab" id="pre_atu">R$ {{prod[2]}}</p>
+                        </a>
                       </div>
-                      <div id="quant">
-                        <input type="text" name="valor" value="0" size="1"/>
+                    </li>
+                    <li>
+                      <p id="preco" class="seg">R$ {{prod[2]}}</p>
+                    </li>
+                    <li>
+                      <div class="ter" id="mais-menos">
+                        <div id="div-bot-mais">
+                          <div id="mais" >+</div>
+                        </div>
+                        <div id="quant">
+                          <input type="text" name="valor" value="{{quant_prod}}" size="1" disabled />
+                        </div>
+                        <div id="div-bot-menos">
+                          <div id="menos">-</div>
+                        </div>
                       </div>
-                      <div id="div-bot-menos">
-                        <input
-                          type="button"
-                          name="menos"
-                          value="-"
-                          id="menos"
-                        />
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <p id="sub" class="quar">R$ 000,00</p>
-                  </li>
-                </div>
-                <div class="grupo" style="border-bottom: none">
-                  <li class="linha">
-                    <div class="pri">
-                      <a href="#">
-                        <img
-                          id="img-prod"
-                          src="../static/img/bombadagua-.png"
-                          alt="imagem"
-                        />
-                      </a>
-                      <a href="../html/perfil.html" class="link">
-                        <p class="tab" class="nome">
-                          Compressor Pressure Super Ar 120 500W
-                        </p>
-                        <p class="tab" id="pre_ori">R$ 000,00</p>
-                        <p class="tab" id="pre_atu">R$ 000,00</p>
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <p id="preco" class="seg">R$ 000,00</p>
-                  </li>
-                  <li>
-                    <div class="ter" id="mais-menos">
-                      <div id="div-bot-mais">
-                        <input type="button" name="mais" value="+" id="mais" />
-                      </div>
-                      <div id="quant">
-                        <input type="text" name="valor" value="0" size="1"  />
-                      </div>
-                      <div id="div-bot-menos">
-                        <input type="button" name="menos" value="-" id="menos"/>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <p id="sub" class="quar">R$ 000,00</p>
-                  </li>
-                </div>
+                    </li>
+                    <li>
+                      <form action="" id="remover-form">
+                        <input type="text" value="{{prod[0]}}" name="id_prod" style="display: none;">
+                        <bottom id="remover" class="quar">Remover</bottom>
+                      </form>
+                    </li>
+                  </div>
+                {% endfor %}
               </ul>
             </div>
           </div>
         </div>
         <div id="final">
-            <div>
-              <div id="sub2">
-                <p>Subtotal</p>
-                <p id="subtotal">R$ 000,00</p>
-              </div>
-              <div id="tot">
-                <p>Total</p>
-                <p id="total">R$ 000,00</p>
-              </div>
+          <div>
+            <div id="sub2">
+              <p>Subtotal</p>
+              <p id="subtotal">R$ {{valor}}</p>
             </div>
-            <div id="finalizar">
-              <a href="../html/pagina_inicial.html">Continuar comprando</a>
-              <div id="div-bot-final">
-                <a href="../html/pagina_de_compra.html"><input type="submit" value="Finalizar pedido" id="bot-final"/></a>
-              </div>
+            <div id="tot">
+              <p>Total</p>
+              <p id="total">R$ {{valor}}</p>
             </div>
           </div>
+          <div id="finalizar">
+            <a href="../html/pagina_inicial.html">Continuar comprando</a>
+            <form action="/pag-compra" method="post" id="form-car">
+              <div id="div-bot-final">
+                <input type="submit" value="Finalizar pedido" id="bot-final"/>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
 

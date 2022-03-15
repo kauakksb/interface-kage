@@ -33,25 +33,41 @@
                     </button>
                   </form>
                 </form>
-                <a id="login" href="/perfil">
-                    <div>
-                      <img src="../static/img/perfil.png" alt="imagem do login" />
-                      <div>
-                        <p>{{texto}}</p>
-                      </div>
+                {% if current_user.is_authenticated %}
+                    <div id="div-login">
+                    <a id="login" href="/perfil">
+                        <div>
+                            <img src="../static/img/perfil.png" alt="imagem do login" />
+                            <div>
+                                <p>Área do Usuário</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="sair">
+
+                        <form action="/logout">
+                            <button>
+                                <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
+                            </button>
+                        </form>
                     </div>
-                  </a>
-                  <div id="sair">
-                    {% if ap == True %}
-                      {% endif %} 
-                    {%if ap == False %}
-                    <form action="/logout">
-                      <button>
-                          <abbr title="Sair"><img id="img-sair" src="../static/img/sair.png" alt=""></abbr>
-                      </button>
-                    </form>
-                    {% endif %}
-                  </div>
+                    </div>
+                    
+                {% else %}
+                    <div id="div-login">
+                        <a id="login" href="/perfil">
+                            <div>
+                                <img src="../static/img/perfil.png" alt="imagem do login" />
+                                <div>
+                                    <p>Olá, faça login!</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div id="sair">
+                            
+                        </div>
+                    </div>
+                {% endif %}        
             </div>
         </div>
         <div id="hinf"></div>

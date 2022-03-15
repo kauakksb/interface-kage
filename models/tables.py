@@ -185,7 +185,7 @@ class ClassTableServ:
     def createServ(self, email_cliente, nome_cliente, mod_maq, marca, valor, descricao, status, commit=True):
 
         try:
-            self.db.insertData('servicos', 0, email_cliente, nome_cliente, mod_maq, marca, valor, descricao, status, commit=commit)
+            self.db.insertData('servicos', email_cliente, nome_cliente, mod_maq, marca, valor, descricao, status, commit=commit)
         except Error as erro:
             print(f'Não foi possível cadastrar o serviço    {erro}')
             return

@@ -32,7 +32,7 @@
               <img src="../static/img/lupa.png" alt="Botão de pesquisa"/>
             </button>
           </form>
-          {% if state == True %}
+          {% if current_user.is_authenticated %}
             <a id="login" href="/perfil">
               <div>
                 <img src="../static/img/perfil.png" alt="imagem do login" />

@@ -1,5 +1,6 @@
 import sqlite3
 from sqlite3 import Cursor, Error
+from unicodedata import name
 
 
 class ClassDatabase:
@@ -127,8 +128,19 @@ class ClassDatabase:
     def insertData(self, name_tb, *values, commit = True):
         self.connection()
 
+        if name_tb == 'servicos':
+            columns = 'email_cliente, nome_cliente, mod_maq, marca, valor, descricao, status'
+        elif name_tb == 'produtos':
+            columns = 'nome_prod, valor, quant, id_de_fabricacao, img_prod'
+        elif name_tb == 'usuarios':
+            columns = 'email_usu, nome_usu, senha_usu, cpf, estado, cidade, bairro, rua, numero, comp'
+        elif name_tb == 'carr':
+            columns = 'id_cliente, id_produto, quant'
+        elif name_tb == 'hist':
+            columns = 'id_cliente, id_produto'
+
         tamanho = len(values) - 1
-        comando = f'''INSERT INTO {name_tb} VALUES('''
+        comando = f'''INSERT INTO {name_tb}({columns}) VALUES('''
 
         # Adicionando valores ao comando de inserção de dados
         for pos,dado in enumerate(values):

@@ -105,7 +105,8 @@
           </form>            
         </div>
         <div id="div-btn">
-          <form action="/finalizar-compra">
+          <form action="/carrinho" method="post">
+            <input type="text" name="id_prod" value="{{id_prod}}" style="display: none;visibility: hidden;">
             <button id="btn-buy">Comprar</button>
           </form>
         </div>

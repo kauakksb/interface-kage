@@ -33,6 +33,11 @@ body{
   background-color: rgb(110, 110, 110);
 }
 
+#cont-sup{
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+}
 
 
 /*  */
@@ -40,7 +45,7 @@ body{
 header{
   display: flex;
   flex-direction: row;
-  width: 33%;
+  width: 66%;
 }
 
 header > a{
@@ -53,7 +58,7 @@ header > a{
 }
 
 header > a > img{
-  margin-left: 15%;
+  margin-left: 7%;
   margin-top: 17px;
   height: 50px;
   width: 50px;
@@ -72,7 +77,7 @@ header > a > p{
   margin: 0;
   margin-top: 40px;
   margin-left: 2px;
-  font-size: 14px;
+  font-size: 13px;
   font-family: 'Roboto Slab', serif;
 }
 
@@ -84,7 +89,7 @@ header > a > p{
   display: flex;
   flex-direction: row;
   height: 85px;
-  width: 33%;
+  width: 0%;
   margin: 0;
   margin-left: 2%;
 }
@@ -96,15 +101,16 @@ header > a > p{
   flex-direction: row;
   width: 33%;
   height: 100px;
+  justify-content: right;
 }
 
 #func > #pesquisa{
   display: flex;
   flex-direction: row;
+  justify-content: right;
 }
 
 #func > #pesquisa > #campo{
-  margin-left:30%;
   width:200px;
   height: 25px;
   margin-top: 27px;
@@ -128,12 +134,16 @@ header > a > p{
 }
 
 
+#div-login{
+  width: 15%;
+  display: flex;
+  flex-direction:row;
+}
 
 /*  */
 /* Botão de Login */
-#func > #login{
-  margin-left: 8%;
-  width: 35%;
+#login{
+  width: 100%;
   height: 85px;
   text-decoration: none;
   color: white;
@@ -145,9 +155,8 @@ header > a > p{
   justify-content: center;
 }
 
-#func > #login:hover{
-  margin-left: 8%;
-  width: 35%;
+#login:hover{
+  width: 100%;
   height: 85px;
   text-decoration: underline;
   color: white;
@@ -155,16 +164,16 @@ header > a > p{
   font-family: 'Roboto Slab', serif;
 }
 
-#func > #login > div{
+#login > div{
   display: flex;
   flex-direction: row;
 }
 
-#func > #login > div > img{
+#login > div > img{
   height: 30px;
 }
 
-#func > #login > div > div{
+#login > div > div{
   height: 34px;
   display: flex;
   display: flex;
@@ -172,7 +181,7 @@ header > a > p{
   justify-content: center;
 }
 
-#func > #login > div > div > p{
+#login > div > div > p{
   text-align: justify;
   height: 25px;
   margin: 0;
@@ -237,7 +246,8 @@ ul {
 }
 
 #geral {
-  margin-bottom: 25px;
+  background-color: rgb(228, 228, 228);
+  padding-bottom: 50px;
 }
 
 #inicio {
@@ -254,11 +264,17 @@ ul {
   flex-direction: row;
   width: 100%;
   justify-content: center;
+  margin-top: 40px;
 }
 
 #engrenagem {
   height: 32px;
   padding-right: 5px;
+}
+
+#form-car{
+  display: flex;
+  flex-direction: row;
 }
 
 #tudo {
@@ -287,13 +303,17 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 301px;
+}
+
+#ul-grupo{
+  margin: 0px;
 }
 
 .grupo {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgb(206, 206, 206);
+  padding:0px;
   height: 150px;
 }
 
@@ -343,6 +363,7 @@ ul {
   border: none;
   transition: 200ms;
   font-size: 16px;
+  text-align: center;
 }
 
 #mais:hover {
@@ -383,6 +404,7 @@ ul {
   border: none;
   transition: 200ms;
   font-size: 16px;
+  text-align: center;
 }
 
 #menos:hover {
@@ -395,6 +417,37 @@ ul {
 #div-bot-menos {
   width: 26px;
   height: 26px;
+  margin-left: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+#remover{
+  color: white;
+  background-color: #ff8400;
+  padding-bottom: 2px;
+  margin: 1px;
+  width: 90px;
+  height: 21px;
+  border-radius: 4px;
+  border: none;
+  transition: 200ms;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+#remover:hover {
+  cursor: pointer;
+  width: 100px;
+  height: 25px;
+  margin: 0px;
+}
+
+#remover-form {
+  width: 100px;
+  height: 25px;
+  margin-top: 16.5px;
   margin-left: 3px;
   display: flex;
   justify-content: center;
@@ -501,7 +554,7 @@ ul {
   text-decoration: underline;
 }
 
-#finalizar > div > a > input {
+#bot-final{
   background-color: #ff8400;
   margin: 2px 3px;
   width: 250px;

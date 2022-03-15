@@ -36,7 +36,7 @@
           </div>
         </div>
 
-          {% if state == True %}
+          {% if current_user.is_authenticated %}
             <div id="div-login">
               <a id="login" href="/perfil">
                 <div>
