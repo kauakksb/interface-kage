@@ -78,6 +78,7 @@ email_logado = ''
 anonymous = True
 vez = 0
 vez_comp = 0
+aste = ''
 
 
 @app.route('/')
@@ -281,7 +282,11 @@ def insert_cad():
             
     except:
         '''nada'''
+<<<<<<< HEAD
         return redirect('/cadastro')
+=======
+        return redirect('/carrinho')
+>>>>>>> 2417511ae418d8c1a1ad1adf6b1caecec4368291
 
     return render_template('retorno.html', file = 'retorno', retorno = 'cadastro')
 
