@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block div%}
+    <div id="quadro">
+        {% if retorno == 'cadastro' %}
+        <p>
+            Cadastro realizado com sucesso
+        </p>
+        <div id="botoes">
+            <a href="/"><p>Voltar para página inicial</p></a>
+            <a href="/login"><p>Fazer login</p></a>
+        </div>
+        {% elif retorno == 'compra' %}
+        <p>
+            Compra realizada com sucesso
+        </p>
+        <div id="botoes">
+            <a href="/"><p>Voltar para página inicial</p></a>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

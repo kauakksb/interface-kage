@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&family=Signika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600&display=swap');
+
+#quadro{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quadro > p{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    margin-top: 90px;
+}
+
+#botoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#botoes a{
+    height: 30px;
+    width:225px;
+    background-color: #ff8400;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Roboto Slab', serif;
+    margin: 10px 0px;
+}
+
+#botoes p{
+    color: #ffffff;
+    text-align: center;
+    margin: 3px 0px;
+}

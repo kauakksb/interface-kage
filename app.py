@@ -83,14 +83,14 @@ vez_comp = 0
 @app.route('/')
 def homepage():
 
-    return render_template('pagina_inicial.html')
+    return render_template('pagina_inicial.html', file = 'style', filejs = 'inicio', titulo = 'Kage - Comércio e Manutenção')
 
 
 
 
 @app.route('/login', methods = ["GET", "POST"])
 def login():
-    return render_template('login.html')
+    return render_template('login.html', titulo = 'Login')
 
 
 
@@ -104,7 +104,7 @@ def verific_login():
 
     user = User.query.filter_by(email_usu = email).first()
 
-    if not email or not senha:
+    if len(email) == 0 or len(senha) == 0:
         return redirect('/login')
 
     try:
@@ -182,7 +182,7 @@ def perfil():
             '''nada'''
 
         
-        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods,  prods_carr = prods_carr, tamanho = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant)
+        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods,  prods_carr = prods_carr, tamanho = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant, titulo = 'Área Restrita', file = 'perfil')
     
     else:
         return redirect('/login')
@@ -192,14 +192,14 @@ def perfil():
 
 @app.route('/cadastro')
 def cadastro():
-    global aste, vez
+    global aste, vez, advise
 
     if vez %2 == 0:
         return render_template("cadastro.html")
 
     elif vez %2 == 1:
         vez += 1
-        return render_template("cadastro.html", p = advise, ast = aste, value_email = email, value_senha = senha, value_nome = nome, value_cpf = cpf, value_est = estado, value_cid = cidade, value_bair = bairro, value_rua = rua, value_num = str(numero), value_comp = comp)
+        return render_template("cadastro.html", p = advise, ast = aste, value_email = email, value_senha = senha, value_nome = nome, value_cpf = cpf, value_est = estado, value_cid = cidade, value_bair = bairro, value_rua = rua, value_num = str(numero), value_comp = comp, titulo = 'Cadastro')
     
 
 
@@ -207,9 +207,11 @@ def cadastro():
 @app.route('/inserir-dados', methods = ['POST', 'GET'])
 def insert_cad():
 
-    global advise, vez, target
+    global advise, vez, target, aste
     global email, senha, nome, cpf, estado, cidade, bairro, rua, numero, comp
     i = 0
+
+    advise = ''
 
     try:
         email = request.form.get('email')
@@ -236,25 +238,15 @@ def insert_cad():
 
         dom_aceitos = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com']
 
-        email_testado = email
-        email_testado = email_testado.replace('@', ' @')
-        email_testado = email_testado.split()
 
+        emails = manage_db.searchData('email_usu', 'usuarios')
 
-        if email_testado[1] in dom_aceitos:
-
-            emails = manage_db.searchData('email_usu', 'usuarios')
-
-            if email in str(emails):
-                advise = 'Email inválido'
-                i += 1
-                vez += i
-                return redirect ('/cadastro')
-        else:
+        if email in str(emails):
             advise = 'Email inválido'
             i += 1
             vez += i
-            return redirect ('/cadastro')
+            return redirect('/cadastro')
+
 
         cpf_usuarios = manage_db.searchData('cpf', 'usuarios')
         cpf_usuarios = str(cpf_usuarios)
@@ -278,7 +270,7 @@ def insert_cad():
         numero = int(numero)
 
         try:
-            manage_db.insertData('usuarios', email, senha, nome, cpf, estado, cidade, bairro, rua, numero, comp)
+            manage_db.insertData('usuarios', email, nome, senha, cpf, estado, cidade, bairro, rua, numero, comp)
         except Error as erro:
             print(erro)
             if '1062' in str(erro):
@@ -289,9 +281,9 @@ def insert_cad():
             
     except:
         '''nada'''
+        return redirect('/cadastro')
 
-    return 'Cadastro concluído com sucesso!'
-
+    return render_template('retorno.html', file = 'retorno', retorno = 'cadastro')
 
 
 
@@ -326,7 +318,7 @@ def produtos():
     elif len(results) % 5 <= 4:
         num = (len(results) // 5) + 1
 
-    return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = valor_inserido, state = state)
+    return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = valor_inserido, state = state, file = 'pagina_dos_produtos', titulo = 'Produtos')
 
 
 
@@ -345,7 +337,7 @@ def produto():
     except:
         print('Não foi possível buscar os dados do produto')
 
-    return render_template('pagina_do_produto.html', id_prod = id_prod, dados_prod = dados_prod)
+    return render_template('pagina_do_produto.html', id_prod = id_prod, dados_prod = dados_prod, file = 'pagina_do_produto', titulo = 'Produto')
 
 
 
@@ -447,10 +439,10 @@ def carrinho():
                 quant.append(id_prods[pos][1])
                 prods.clear()
         except:
-            return render_template('carrinho.html')
+            return render_template('carrinho.html', file = 'carrinho', titulo = 'Carrinho')
 
 
-        return render_template('carrinho.html', tamanho = len(list_prods), prods = list_prods, quant = quant , valor = valor, state = state)
+        return render_template('carrinho.html', tamanho = len(list_prods), prods = list_prods, quant = quant , valor = valor, state = state, file = 'carrinho', titulo = 'Carrinho')
 
     else:
         target = 'carrinho'
@@ -486,10 +478,10 @@ def pag_compra():
 
     if vez_comp % 2 == 0:
         aviso_comp = ''
-        return render_template('pagina_de_compra.html', prods = list_prods, valor = valor, frete = frete, tamanho = len(list_prods), quant =  quant, aviso_comp = aviso_comp)
+        return render_template('pagina_de_compra.html', prods = list_prods, valor = valor, frete = frete, tamanho = len(list_prods), quant =  quant, aviso_comp = aviso_comp, file = 'pagina_de_compra', titulo = 'Finalizar Compra')
     elif vez_comp % 2 == 1:
         vez_comp += 1
-        return render_template('pagina_de_compra.html', prods = list_prods, valor = valor, frete = frete, tamanho = len(list_prods), quant =  quant, aviso_comp = aviso_comp)
+        return render_template('pagina_de_compra.html', prods = list_prods, valor = valor, frete = frete, tamanho = len(list_prods), quant =  quant, aviso_comp = aviso_comp, file = 'pagina_de_compra', titulo = 'Finalizar Compra')
 
 
 
@@ -548,7 +540,7 @@ def entrega_pagamento():
     frete1 = valor * 0.03
     frete2 = valor * 0.0425
 
-    return render_template('entr-pag.html' ,prods = list_prods, valor = valor, frete1 = frete1, frete2 = frete2, tamanho = len(list_prods), quant =  quant)
+    return render_template('entr-pag.html' ,prods = list_prods, valor = valor, frete1 = frete1, frete2 = frete2, tamanho = len(list_prods), quant =  quant, file = 'entr-pag', titulo = 'Finalizar Compra')
 
 
 
@@ -585,9 +577,12 @@ def finalizar_compra():
 
     manage_db.con.commit()
     manage_db.closeConn()
-    return 'Compra realizada com sucesso'
+    return redirect('/compra-finalizada')
 
 
+@app.route('/compra-finalizada')
+def compra_finalizada():
+    return render_template('retorno.html', retorno = 'compra', file = 'retorno')
 
 
 
@@ -598,7 +593,7 @@ def serv():
     global user, target, state
 
     if current_user.is_authenticated:
-        return render_template('serv.html')
+        return render_template('serv.html', file = 'serv', filejs = 'serv')
 
     else:
         target = 'serv'
@@ -657,12 +652,12 @@ def insert_serv():
 
 @app.route('/servicos')
 def servicos():
-    return render_template('servicos.html')
+    return render_template('servicos.html', file = 'servicos')
 
 
 @app.route('/quem-somos-nos')
 def quem_somos_nos():
-    return render_template('quem_somos_nos.html')
+    return render_template('quem_somos_nos.html', file = 'quem_somos_nos')
 
 
 
@@ -675,6 +670,11 @@ def login_admin():
 @app.route('/admin')
 def admin():
     return  render_template('admin.html')
+
+
+@app.route('/retorno')
+def retorno():
+    return render_template('retorno.html')
 
 
 
