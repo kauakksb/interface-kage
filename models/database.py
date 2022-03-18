@@ -137,7 +137,7 @@ class ClassDatabase:
         elif name_tb == 'carr':
             columns = 'id_cliente, id_produto, quant'
         elif name_tb == 'hist':
-            columns = 'id_cliente, id_produto'
+            columns = 'id_cliente, id_produto, valor, quant, categ, status'
 
         tamanho = len(values) - 1
         comando = f'''INSERT INTO {name_tb}({columns}) VALUES('''

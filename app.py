@@ -565,7 +565,7 @@ def finalizar_compra():
 
     for elem in dados:
         if not elem:
-            return redirect('/entrega-pagamento')   
+            return redirect('/entrega-pagamento')
 
     try:
         produtos = manage_db.searchData('id_produto', 'carr', 'id_cliente', current_user.get_id())

@@ -319,14 +319,14 @@ class ClassTableHist:
             return False
 
 
-    def addProdHist(self, id_prod, id_cliente):
+    def addProdHist(self, id_prod, id_cliente, valor, quant, categ, status):
 
         if self.searchCarr(id_prod, id_cliente):
             print('Produto já adicionado ao histórico')
             return
 
         try:
-            self.db.insertData('hist', id_cliente, id_prod)
+            self.db.insertData('hist', id_cliente, id_prod, valor, quant, categ, status)
         except:
             print('Não foi possível adicionar o produto ao Histórico')
             return
