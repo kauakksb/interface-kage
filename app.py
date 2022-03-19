@@ -182,7 +182,7 @@ def perfil():
             '''nada'''
 
         
-        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods,  prods_carr = prods_carr, tamanho = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant, titulo = 'Área Restrita', file = 'perfil')
+        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods,  prods_carr = prods_carr, tamanho = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant, titulo = 'Área Restrita', file = 'perfil', filejs = 'area-restrita' )
     
     else:
         return redirect('/login')
