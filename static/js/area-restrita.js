@@ -73,9 +73,9 @@ var apoio4 = 'pri'
 var apoio5 = 'pri'
 var botao_clicado = '0'
 
-usab.style.height = "2000px"
-funcoes.style.height = "1800px"
-sec_serv.style.height = "1800px"
+// usab.style.height = "2000px"
+// funcoes.style.height = "1800px"
+// sec_serv.style.height = "1800px"
 
 
 var alt_usab = usab.style.height
@@ -439,56 +439,56 @@ function controle_geral(){
 
     function click_det_serv(){
 
-        function aumentar_pag(){
-            alt_usab = alt_usab.replace('px','')
-            alt_func = alt_func.replace('px','')
-            alt_serv = alt_serv.replace('px','')
+        // function aumentar_pag(){
+        //     alt_usab = alt_usab.replace('px','')
+        //     alt_func = alt_func.replace('px','')
+        //     alt_serv = alt_serv.replace('px','')
 
-            alt_usab = Number(alt_usab)
-            alt_func = Number(alt_func)
-            alt_serv = Number(alt_serv)
+        //     alt_usab = Number(alt_usab)
+        //     alt_func = Number(alt_func)
+        //     alt_serv = Number(alt_serv)
 
-            alt_usab = alt_usab + 125
-            alt_func = alt_func + 125
-            alt_serv = alt_serv + 125
+        //     alt_usab = alt_usab + 125
+        //     alt_func = alt_func + 125
+        //     alt_serv = alt_serv + 125
 
-            alt_usab = `${alt_usab}px`
-            alt_func = `${alt_func}px`
-            alt_serv = `${alt_serv}px`
+        //     alt_usab = `${alt_usab}px`
+        //     alt_func = `${alt_func}px`
+        //     alt_serv = `${alt_serv}px`
 
 
-            usab.style.transition = "200ms"
-            usab.style.height = alt_usab
-            funcoes.style.transition = "200ms"
-            funcoes.style.height = alt_func
-            sec_serv.style.transition = "200ms"
-            sec_serv.style.height = alt_serv
-        }
+        //     usab.style.transition = "200ms"
+        //     usab.style.height = alt_usab
+        //     funcoes.style.transition = "200ms"
+        //     funcoes.style.height = alt_func
+        //     sec_serv.style.transition = "200ms"
+        //     sec_serv.style.height = alt_serv
+        // }
 
-        function diminuir_pag(){
-            alt_usab = alt_usab.replace('px','')
-            alt_func = alt_func.replace('px','')
-            alt_serv = alt_serv.replace('px','')
+        // function diminuir_pag(){
+        //     alt_usab = alt_usab.replace('px','')
+        //     alt_func = alt_func.replace('px','')
+        //     alt_serv = alt_serv.replace('px','')
 
-            alt_usab = Number(alt_usab)
-            alt_func = Number(alt_func)
-            alt_serv = Number(alt_serv)
+        //     alt_usab = Number(alt_usab)
+        //     alt_func = Number(alt_func)
+        //     alt_serv = Number(alt_serv)
 
-            alt_usab = alt_usab - 125
-            alt_func = alt_func - 125
-            alt_serv = alt_serv - 125
+        //     alt_usab = alt_usab - 125
+        //     alt_func = alt_func - 125
+        //     alt_serv = alt_serv - 125
 
-            alt_usab = `${alt_usab}px`
-            alt_func = `${alt_func}px`
-            alt_serv = `${alt_serv}px`
+        //     alt_usab = `${alt_usab}px`
+        //     alt_func = `${alt_func}px`
+        //     alt_serv = `${alt_serv}px`
 
-            usab.style.transition = "200ms"
-            usab.style.height = alt_usab
-            funcoes.style.transition = "200ms"
-            funcoes.style.height = alt_func
-            sec_serv.style.transition = "200ms"
-            sec_serv.style.height = alt_serv
-        }
+        //     usab.style.transition = "200ms"
+        //     usab.style.height = alt_usab
+        //     funcoes.style.transition = "200ms"
+        //     funcoes.style.height = alt_func
+        //     sec_serv.style.transition = "200ms"
+        //     sec_serv.style.height = alt_serv
+        // }
 
         
         if( botao_clicado == '1'){
@@ -503,7 +503,7 @@ function controle_geral(){
                 texto_bot.innerText = "Menos Detalhes"
                 oc1.style.visibility = "visible"
                 explic.style.visibility = "visible"
-                aumentar_pag()
+                // aumentar_pag()
                 apoio1 = 'sec'
 
             } else if(apoio1 == 'sec'){
@@ -514,7 +514,7 @@ function controle_geral(){
                 explic.style.visibility = "hidden"
                 seta1.style.marginLeft = "15px"
                 seta1.setAttribute('src', '../static/img/seta-baixo.png')
-                diminuir_pag()
+                // diminuir_pag()
 
                 apoio1 = 'pri'
             }
@@ -534,7 +534,7 @@ function controle_geral(){
                 texto_bot2.innerText = "Menos Detalhes"
                 oc2.style.visibility = "visible"
                 explic2.style.visibility = "visible"
-                aumentar_pag()
+                // aumentar_pag()
 
                 apoio2 = 'sec'
 
@@ -547,7 +547,7 @@ function controle_geral(){
                 explic2.style.visibility = "hidden"
                 seta2.style.marginLeft = "15px"
                 seta2.setAttribute('src', '../static/img/seta-baixo.png')
-                diminuir_pag()
+                // diminuir_pag()
 
                 apoio2 = 'pri'
             }
@@ -564,7 +564,7 @@ function controle_geral(){
                 texto_bot3.innerText = "Menos Detalhes"
                 oc3.style.visibility = "visible"
                 explic3.style.visibility = "visible"
-                aumentar_pag()
+                // aumentar_pag()
 
                 apoio3 = 'sec'
 
@@ -577,7 +577,7 @@ function controle_geral(){
                 texto_bot3.innerText = "Mais Detalhes"
                 oc3.style.visibility = "hidden"
                 explic3.style.visibility = "hidden"
-                diminuir_pag()
+                // diminuir_pag()
                 apoio3 = 'pri'
             }
             
@@ -593,7 +593,7 @@ function controle_geral(){
                 texto_bot4.innerText = "Menos Detalhes"
                 oc4.style.visibility = "visible"
                 explic4.style.visibility = "visible"
-                aumentar_pag()
+                // aumentar_pag()
 
                 apoio4 = 'sec'
 
@@ -606,7 +606,7 @@ function controle_geral(){
                 texto_bot4.innerText = "Mais Detalhes"
                 oc4.style.visibility = "hidden"
                 explic4.style.visibility = "hidden"
-                diminuir_pag()
+                // diminuir_pag()
                 
                 apoio4 = 'pri'
             }
@@ -622,7 +622,7 @@ function controle_geral(){
                 texto_bot5.innerText = "Menos Detalhes"
                 oc5.style.visibility = "visible"
                 explic5.style.visibility = "visible"
-                aumentar_pag()
+                // aumentar_pag()
 
                 apoio5 = 'sec'
 
@@ -635,7 +635,7 @@ function controle_geral(){
                 texto_bot5.innerText = "Mais Detalhes"
                 oc5.style.visibility = "hidden"
                 explic5.style.visibility = "hidden"
-                diminuir_pag()
+                // diminuir_pag()
 
                 apoio5 = 'pri'
             }

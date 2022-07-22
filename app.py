@@ -22,7 +22,8 @@ from flask_login import current_user, login_user, logout_user
 
 from models.database import ClassDatabase
 from models.tables import ClassTableCarr, ClassTableHist, ClassTableProd, ClassTableServ, ClassTableUser
-
+from controllers.perfil import perfil
+from controllers.cadastro  import cadastro
 
 
 @lm.user_loader
@@ -90,7 +91,7 @@ def homepage():
 
 @app.route('/login', methods = ["GET", "POST"])
 def login():
-    return render_template('login.html', titulo = 'Login')
+    return render_template('login.html', titulo = 'Login', file = 'login-cadastro', filejs = None)
 
 
 
@@ -131,84 +132,31 @@ def logout():
 
 
 @app.route('/perfil')
-def perfil():
+def perfil_page():
     global target, user
     target = 'perfil'
-
-    sinais = ['[',']','(',')', "'"]
-    sinais2 = ['(',')', "'",',']
-
-    if current_user.is_authenticated:
-        try:    
-            prods = []
-            prods_carr = [] 
-            valor_total = 0
-            
-            servicos = manage_db.searchData('*', 'servicos','email_cliente', current_user.get_id())
-            info_pessoais = manage_db.searchData('*', 'usuarios', 'email_usu', current_user.get_id())
-            hist = manage_db.searchData('id_produto', 'hist', 'id_cliente', current_user.get_id())
-            carr = manage_db.searchData('id_produto','carr', 'id_cliente', current_user.get_id())
-
-            quant = str(manage_db.searchData('quant','carr', 'id_cliente', current_user.get_id()))
-            for sinal in sinais:
-                quant = quant.replace(sinal,'')
-            quant = quant.replace(',' ," ")
-            quant = quant.split()
-
-
-            for item in hist:
-                item = str(item)
-                for sinal in sinais2:
-                    item = item.replace(sinal, '')
-
-                item = int(item)
-                dados_prod = manage_db.searchData('*', 'produtos','id_prod', item)[0]
-                prods.append(dados_prod)
-
-            for prod in carr:
-                prod = str(prod)
-                for sinal in sinais2:
-                    prod = prod.replace(sinal, '')
-                
-                prod = int(prod)
-                dados_carr = manage_db.searchData('*', 'produtos','id_prod', prod)[0]
-                prods_carr.append(dados_carr)
-
-
-            for pos, produto in enumerate(prods_carr):  
-                valor_total += int(produto[2]) * int(quant[pos])        
-
-        except:
-            '''nada'''
-
-        
-        return render_template('perfil.html', servicos = servicos, num_serv = len(servicos), dados = info_pessoais, num_prods = len(prods), prods = prods,  prods_carr = prods_carr, tamanho = len(prods_carr), valor_total_carr = valor_total, quant_prod = quant, titulo = 'Área Restrita', file = 'perfil', filejs = 'area-restrita' )
     
-    else:
-        return redirect('/login')
-
+    return perfil()
+    
 
 
 
 @app.route('/cadastro')
-def cadastro():
+def cadastro_page():
     global aste, vez, advise
 
-    if vez %2 == 0:
-        return render_template("cadastro.html")
+    if vez % 2 == 0:
+        return render_template('cadastro.html')
 
-    elif vez %2 == 1:
-        vez += 1
-        return render_template("cadastro.html", p = advise, ast = aste, value_email = email, value_senha = senha, value_nome = nome, value_cpf = cpf, value_est = estado, value_cid = cidade, value_bair = bairro, value_rua = rua, value_num = str(numero), value_comp = comp, titulo = 'Cadastro')
+    elif vez % 2 == 1:
+        return render_template('cadastro.html', ast = aste, p = advise)
     
-
 
 
 @app.route('/inserir-dados', methods = ['POST', 'GET'])
 def insert_cad():
 
     global advise, vez, target, aste
-    global email, senha, nome, cpf, estado, cidade, bairro, rua, numero, comp
     i = 0
 
     advise = ''
@@ -240,6 +188,16 @@ def insert_cad():
 
 
         emails = manage_db.searchData('email_usu', 'usuarios')
+        email_testado = email
+        email_testado = email_testado.replace('@', ' @')
+        email_testado =  email_testado.split()
+
+        if email_testado[1] in dom_aceitos:
+            advise = 'Email inválido'
+            i += 1
+            vez += 1
+            return redirect('/cadastro')
+
 
         if email in str(emails):
             advise = 'Email inválido'
@@ -283,7 +241,7 @@ def insert_cad():
         '''nada'''
         return redirect('/cadastro')
 
-    return render_template('retorno.html', file = 'retorno', retorno = 'cadastro')
+    return render_template('retorno.html', file = 'retorno', retorno = 'cadastro', titulo = 'Cadastro concluído')
 
 
 
@@ -300,8 +258,22 @@ def produtos():
     global valor_inserido, results, num, state
 
     valor_inserido = ""
-    
     valor_inserido = request.form.get('camp_pesq')
+
+    if valor_inserido == None:
+        try:
+            results = manage_db.searchData('*','produtos')  
+        except:
+            return 'Não foi possível realizar a busca'
+
+        if len(results) % 5 == 0:
+            num = len(results) // 5
+        elif len(results) % 5 <= 4:
+            num = (len(results) // 5) + 1
+
+        return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = 'Produtos', state = state, file = 'pagina_dos_produtos', titulo = 'Produtos')
+
+
     if len(str(valor_inserido)) == 0:
         return redirect('/produtos')
 
@@ -318,7 +290,7 @@ def produtos():
     elif len(results) % 5 <= 4:
         num = (len(results) // 5) + 1
 
-    return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = valor_inserido, state = state, file = 'pagina_dos_produtos', titulo = 'Produtos')
+    return render_template('pagina_dos_produtos.html', num = num, prods = results, num_elem = len(results), buscado = valor_inserido, state = state, file = 'pagina_dos_produtos', titulo = 'Produtos', filejs = None)
 
 
 
@@ -337,7 +309,7 @@ def produto():
     except:
         print('Não foi possível buscar os dados do produto')
 
-    return render_template('pagina_do_produto.html', id_prod = id_prod, dados_prod = dados_prod, file = 'pagina_do_produto', titulo = 'Produto')
+    return render_template('pagina_do_produto.html', id_prod = id_prod, dados_prod = dados_prod, file = 'pagina_do_produto', titulo = 'Produto', filejs = None)
 
 
 
@@ -382,15 +354,17 @@ def rev_carr():
         id_prod = request.form.get('id_prod')
 
         try:
-            prods = manage_db.searchData('id_produto', 'carr', 'id_cliente', current_user.get_id(), 'id_produto', id_prod)
+            prod = manage_db.searchData('id_produto', 'carr', 'id_cliente', current_user.get_id(), 'id_produto', id_prod)
         except:
             print('Não foi possível realizar a busca')
             return redirect('/produto')
 
         try:
-            manage_db.deleteData('carr', 'id_cliente', current_user.get_id(), 'id_produto', id_prod)
+            manage_db.deleteData('carr', 'id_cliente', current_user.get_id(), 'id_produto', prod[0])
         except:
             return redirect('/')
+
+        return redirect(f'/{target}')
     
     else:
         target = 'carrinho'
@@ -447,8 +421,6 @@ def carrinho():
     else:
         target = 'carrinho'
         return redirect('/login')
-
-
 
 
 
@@ -568,9 +540,12 @@ def finalizar_compra():
             return redirect('/entrega-pagamento')
 
     try:
-        produtos = manage_db.searchData('id_produto', 'carr', 'id_cliente', current_user.get_id())
+        produtos = manage_db.searchData('*', 'carr', 'id_cliente', current_user.get_id())
+        print(produtos)
         for produto in produtos:
-            manage_db.insertData('hist', current_user.get_id(), produto[0], commit=False)
+            dado_prod = manage_db.searchData('*', 'produtos', 'id_prod', produto[1])
+            print(dado_prod)    
+            manage_db.insertData('hist', current_user.get_id(), produto[1], dado_prod[0][2], produto[2], dado_prod[0][4], 'Aguardando confirmação', commit=False)
     except:
         manage_db.closeConn()
         return 'Não foi possível realizar a compra'
@@ -593,7 +568,7 @@ def serv():
     global user, target, state
 
     if current_user.is_authenticated:
-        return render_template('serv.html', file = 'serv', filejs = 'serv')
+        return render_template('serv.html', file = 'serv', filejs = 'serv', titulo = 'Serviços')
 
     else:
         target = 'serv'
@@ -627,7 +602,7 @@ def insert_serv():
                 for i in range(0, quant_manut):
                     maq = maquinas[i][0]
                     det = maquinas[i][1]
-                    table_serv.createServ(current_user.get_id(),cliente,maq,'Desconhecido',0.0,det,'Em Avaliação', type_serv    , commit=False)
+                    table_serv.createServ(current_user.get_id(), cliente,maq, 'Desconhecido', 0.0, det, 'Em Avaliação', type_serv, commit=False)
 
             except Error as erro:
                 print(f'Não foi possível registrar os serviços         {erro}')
@@ -652,12 +627,12 @@ def insert_serv():
 
 @app.route('/servicos')
 def servicos():
-    return render_template('servicos.html', file = 'servicos')
+    return render_template('servicos.html', file = 'servicos', filejs = None, titulo = 'Serviços')
 
 
 @app.route('/quem-somos-nos')
 def quem_somos_nos():
-    return render_template('quem_somos_nos.html', file = 'quem_somos_nos')
+    return render_template('quem_somos_nos.html', file = 'quem_somos_nos', titulo = 'Quem somos nós', filejs = None)
 
 
 

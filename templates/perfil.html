@@ -98,7 +98,7 @@
                 {% set dados_prod = prods[c] %}
                 <li class="prod-hist">
                   <div class="img-prod">
-                    <img src="{{dados_prod[5]}}" alt="" />
+                    <img src="{{dados_prod[6]}}" alt="" />
                   </div>
                   <hr class="linha-prod" />
                   <div class="info-hist">
@@ -167,7 +167,7 @@
                             <a href="#">
                               <img
                                 id="img-prod"
-                                src="{{prod[5]}}"
+                                src="{{prod[6]}}"
                                 alt="imagem"
                               />
                             </a>
@@ -212,11 +212,11 @@
               <div>
                 <div id="sub2">
                   <p>Subtotal</p>
-                  <p id="subtotal">R$ {{valor}}</p>
+                  <p id="subtotal">R$ {{valor_total_carr}}</p>
                 </div>
                 <div id="tot">
                   <p>Total</p>
-                  <p id="total">R$ {{valor}}</p>
+                  <p id="total">R$ {{valor_total_carr}}</p>
                 </div>
               </div>
               <div id="finalizar">

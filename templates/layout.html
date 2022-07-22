@@ -173,7 +173,10 @@
         </li>
         </ul>
     </footer>
-
-    <script src="../static/js/{{filejs}}.js"></script>
+    {% if filejs == None %}
+      
+    {% else%}  
+      <script src="../static/js/{{filejs}}.js"></script>
+    {% endif %}
   </body>
 </html>
